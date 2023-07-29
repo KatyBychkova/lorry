@@ -1,0 +1,72 @@
+.section {
+  background-color: #f0f0f0;
+  display: flex;
+  position: relative;
+  background-image: url(../public/assets/images/invite-friend-bg.png);
+  background-repeat: no-repeat;
+  background-size: 50%;
+  background-position: center right;
+}
+
+/* .bg {
+  background-image: url(../public/assets/images/invite-friend-bg.png);
+  background-repeat: no-repeat;
+  background-size: 50%;
+  background-position: center right;
+  height: 100%;
+} */
+
+.wrapper {
+  display: flex;
+  width: 1220px;
+  height: 590px;
+}
+
+/* @media (max-width: 1220px) {
+  .section {
+    height: 480px;
+  }
+} */
+
+.info {
+  flex: 0 0 50%;
+  align-self: center;
+  padding-left: 30px;
+  width: 580px;
+}
+
+.title {
+  font-size: 30px;
+  font-weight: 800;
+  line-height: 30px;
+  text-decoration: none solid rgb(48, 48, 48);
+  letter-spacing: normal;
+  position: relative;
+  padding-bottom: 15px;
+  max-width: 300px;
+  text-transform: uppercase;
+}
+
+.title::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 3px;
+  width: 100px;
+  background-color: #064488;
+}
+
+/* .imageWrapper {
+ 
+  flex: 0 1 auto;
+} */
+
+.text p + p {
+  line-height: 21;
+  padding-bottom: 5px;
+}
+
+.text span {
+  color: #d1274a;
+}

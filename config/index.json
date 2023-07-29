@@ -1,0 +1,107 @@
+{
+  "cities": ["Екатеринбург", "Пермь", "Елабуга", "Тюмень", "Омск"],
+
+  "company": {
+    "telegram": {
+      "name": "Мы в телеграм",
+      "href": "https://t.me/GKglobaltruck",
+      "icon": "/assets/images/ts.png"
+    },
+    "contacts": ["+7 965 540 03 12", "+7 965 540 03 45"],
+    "callToAction": {
+      "text": "Заказать звонок",
+      "href": "#"
+    }
+  },
+
+  "about": {
+    "titleBeforAccent": "Работа водителем\n ",
+    "titleAccent": "КАТЕГОРИИ \"Е\"",
+    "titleAfterAccent": " В КОМАНДЕ \n ПРОФЕССИОНАЛОВ",
+    "subtitle": "Проиндексировали доход вне сезона!\n Приглашаем на новые условия",
+    "description": "Лорри — лидер на рынке грузоперевозок Уральского Федерального округа, сочетающий в своем бизнесе многолетнюю историю и современные тенденции перевозок.\n Мы осуществляем автогрузоперевозки по РФ и ближнему зарубежью,\nвходим в TOP-10 крупнейших автоперевозчиков.",
+    "image": "../public/assets/images/main-bg.png"
+  },
+
+  "benefits": {
+    "title": "РАБОТА С НАМИ – ЭТО:",
+    "items": [
+      {
+        "name": "стабильность",
+        "imageName": "imageStabilize",
+        "icon": "../public/assets/images/benefits-stabilize.png",
+        "features": [
+          "■ компания входит в группу компаний GT Globaltruck, являющейся одной из системообразующих организаций страны",
+          "■ стабильный доход от 130.000 рублей с фиксированными датами выплат",
+          "■ командировочные перед выходом в рейс"
+        ]
+      },
+      {
+        "name": "БЕЗОПАСНОСТЬ",
+        "imageName": "imagerPotection",
+        "icon": "../public/assets/images/benefits-protection.png",
+        "features": ["■ техническая и информационная поддержка в пути", "■ поддержка водителей в сложных жизненных ситуациях", "■ корпоративная мобильная связь"]
+      },
+      {
+        "name": "КОМФОРТ",
+        "imageName": "imageComfort",
+        "icon": "../public/assets/images/benefits-comfort.png",
+        "features": ["■ собственный автопарк", "■ различные графики работы", "■ ремонт и техническое обслуживание без участия водителей"]
+      }
+    ]
+  },
+
+  "requestForm": {
+    "title": "ВОДИТЕЛЬ КАТЕГОРИИ \"Е\" ПРИСОЕДИНЯЙСЯ К НАМ",
+    "imageBack": "../public/assets/images/request-form-back.png",
+    "imageFront": "../public/assets/images/request-form-front.png",
+    "infoConditions": {
+      "text": "Нажимая на кнопку вы принимаете условия",
+      "linkText": "обработки информации",
+      "href": "#"
+    }
+  },
+
+  "inviteFriend": {
+    "title": "ПРИГЛАСИ ДРУГА РАБОТАТЬ К НАМ",
+    "subtitle1": "В Компании действует акция:\n ",
+    "subtitleAccent": "\"Приведи друга - получи 10 000 рублей\".",
+    "bonus": "10 000 рублей",
+    "subtitle2": "Больше друзей - больше бонусов!",
+    "image": "../public/assets/images/invite-friend-bg.png"
+  },
+
+  "capabilities": {
+    "title": "ПРИГЛАСИ ДРУГА РАБОТАТЬ К НАМ",
+    "image": "../public/assets/images/capabilities-bg.png",
+    "text": {
+      "top": "Наши автоколонны находятся в крупнейших городах Уральского Федерального округа и Сибири –",
+      "bottom": "Мы принимаем водителей-экспедиторов по всей территории Уральского Федерального округа, Сибири и Поволжья. Расстояние – не преграда."
+    },
+    "callToAction": {
+      "text": "Оставляйте заявку",
+      "href": "#",
+      "textEnd": ", и мы расскажем еще больше!"
+    }
+  },
+
+  "footer": {
+    "logoLorry": "../public/assets/images/logo-lorry-white.svg",
+    "logoGT": "../public/assets/images/logo-gt.svg",
+    "email": {
+      "name": "rabota@lorry.com",
+      "href": "#",
+      "icon": "../public/assets/icons/mail.svg"
+    },
+    "contacts": {
+      "tel1": "+7 965 540 03 12",
+      "tel2": "+7 965 540 03 45",
+      "icon": "../public/assets/icons/tel.svg"
+    },
+    "privacy": {
+      "text": "Политика конфиденциальности",
+      "href": "#"
+    },
+    "copy": "© 2020 Все права защищены"
+  }
+}

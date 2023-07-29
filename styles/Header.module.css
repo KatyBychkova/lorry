@@ -1,0 +1,90 @@
+.section {
+  background-color: transparent;
+  max-width: 1190px;
+  padding-top: 40px;
+  padding-bottom: 60px;
+  margin: 0 auto;
+}
+
+.wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  width: 164px;
+  height: 72px;
+  order: 1;
+  margin-right: 35px;
+}
+
+.telegram {
+  position: relative;
+  padding-left: 32px;
+  order: 2;
+  flex: 0 1 560px;
+}
+
+.telegram::before {
+  content: "";
+  background-image: url(../public/assets/icons/teleg.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: absolute;
+  top: 4px;
+  left: 0;
+  width: 20px;
+  height: 20px;
+}
+
+.telegram_link {
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 28px;
+  cursor: pointer;
+  text-decoration: none;
+  color: #303030;
+}
+
+.tel {
+  display: flex;
+  flex-direction: column;
+  order: 3;
+  min-width: 145px;
+}
+
+.tel_item {
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 28px;
+  cursor: pointer;
+  text-decoration: none;
+  /* color: #fff; */
+  color: #303030;
+  align-self: end;
+}
+
+.callToAction {
+  text-transform: uppercase;
+  order: 4;
+  /* background-color: #000;
+  padding: 20px 40px;
+  border-radius: 5px; */
+  min-width: 240px;
+  margin-left: 20px;
+}
+
+.callToAction div {
+  background-color: #fff;
+  padding: 20px 40px;
+  border-radius: 5px;
+}
+
+.callToAction_btn {
+  font-size: 17px;
+  font-weight: 700;
+  line-height: 26px;
+  cursor: pointer;
+  text-decoration: none;
+  color: #064488;
+}

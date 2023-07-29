@@ -1,0 +1,44 @@
+.section {
+  background-image: url(../public/assets/images/main-bg.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-color: #f0f0f0;
+  background-position: right;
+  padding-bottom: 95px;
+}
+
+.container {
+  max-width: 1190px;
+  padding: 0 15px;
+  margin: 0 auto;
+}
+
+.title {
+  text-transform: uppercase;
+  font-size: 56px;
+  font-weight: 800;
+  line-height: 56px;
+  color: #064488;
+  max-width: 840px;
+  margin-bottom: 20px;
+}
+
+.title span {
+  color: #d1274a;
+}
+
+.subtitle {
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 31px;
+  color: #d1274a;
+  max-width: 450px;
+  margin-bottom: 30px;
+}
+
+.description {
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 26px;
+  max-width: 620px;
+}
