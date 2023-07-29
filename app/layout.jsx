@@ -1,5 +1,6 @@
 import "../styles/globals.css";
 import "../styles/fonts.css";
+import Main from "./page";
 
 export const metadata = {
   title: "Lorry",

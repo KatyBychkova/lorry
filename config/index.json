@@ -51,11 +51,16 @@
     ]
   },
 
-  "requestForm": {
+  "callToAction": {
     "title": "ВОДИТЕЛЬ КАТЕГОРИИ \"Е\" ПРИСОЕДИНЯЙСЯ К НАМ",
-    "imageBack": "../public/assets/images/request-form-back.png",
-    "imageFront": "../public/assets/images/request-form-front.png",
-    "infoConditions": {
+    "imageBack": "/../public/assets/images/call-to-action-back.png",
+    "imageFront": "/../public/assets/images/call-to-action-front.png",
+    "labelName": "Ваше имя",
+    "labelTel": "Телефон",
+    "placeholderName": "Ваше имя",
+    "placeholderTel": "+7 (999) 999-99-99",
+    "submitBtnText": "+7 (999) 999-99-99",
+    "terms": {
       "text": "Нажимая на кнопку вы принимаете условия",
       "linkText": "обработки информации",
       "href": "#"

@@ -1,0 +1,62 @@
+.section {
+}
+
+.container {
+  max-width: 1190px;
+  padding: 0 15px;
+  margin: 0 auto;
+}
+.wrapper {
+  display: flex;
+  justify-content: space-between;
+  column-gap: 50px;
+  padding-bottom: 50px;
+  padding-top: 85px;
+}
+
+.images {
+  max-width: 560px;
+  position: relative;
+}
+
+.imageBack {
+  border-radius: 5px;
+
+  padding: 0;
+
+  /* width={560} height={440} */
+}
+.imageFront {
+  position: absolute;
+
+  left: 10%;
+  bottom: 6px;
+  padding: 0;
+}
+
+.text {
+  max-width: 560px;
+}
+
+.title {
+  display: inline-block;
+  font-size: 30px;
+  font-weight: 800;
+  line-height: 30px;
+  padding-top: 25px;
+  letter-spacing: normal;
+  position: relative;
+  padding-bottom: 15px;
+  margin-bottom: 40px;
+  text-transform: uppercase;
+}
+
+.title::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 3px;
+  width: 100px;
+  background-color: #064488;
+}
