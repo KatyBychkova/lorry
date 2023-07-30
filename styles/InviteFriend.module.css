@@ -8,6 +8,12 @@
   background-position: center right;
 }
 
+.container {
+  max-width: 1190px;
+  padding: 0 15px;
+  margin: 0 auto;
+}
+
 /* .bg {
   background-image: url(../public/assets/images/invite-friend-bg.png);
   background-repeat: no-repeat;
@@ -18,7 +24,7 @@
 
 .wrapper {
   display: flex;
-  width: 1220px;
+
   height: 590px;
 }
 
@@ -45,6 +51,7 @@
   padding-bottom: 15px;
   max-width: 300px;
   text-transform: uppercase;
+  margin-bottom: 40px;
 }
 
 .title::after {
@@ -62,9 +69,10 @@
   flex: 0 1 auto;
 } */
 
-.text p + p {
-  line-height: 21;
-  padding-bottom: 5px;
+.text p {
+  font-size: 18px;
+  width: 400px;
+  padding-bottom: 3px;
 }
 
 .text span {

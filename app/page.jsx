@@ -1,8 +1,10 @@
 import About from "@/components/about";
 import Benefits from "@/components/benefits";
 import CallToAction from "@/components/callToAction";
+import Capabilities from "@/components/capabilities";
+import Footer from "@/components/footer";
 import Header from "@/components/header";
-import InviteFriendSection from "@/components/inviteFriendSection";
+import InviteFriend from "@/components/inviteFriend";
 
 const Main = () => {
   return (
@@ -10,6 +12,9 @@ const Main = () => {
       <About></About>
       <Benefits></Benefits>
       <CallToAction></CallToAction>
+      <InviteFriend></InviteFriend>
+      <Capabilities></Capabilities>
+      <Footer></Footer>
     </div>
   );
 };

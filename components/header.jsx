@@ -20,7 +20,7 @@ const Header = () => {
         </div>
         <div className={styles.tel}>
           {contacts.map((item, index) => (
-            <Link className={styles.tel_item} key={item} href={`${"tel:" + item}`}>
+            <Link className={styles.tel_item} key={`${item}-${index}`} href={`${"tel:" + item}`}>
               {item}
             </Link>
           ))}

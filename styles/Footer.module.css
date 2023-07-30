@@ -1,0 +1,84 @@
+.section {
+  background-color: #064488;
+  color: #fff;
+  height: 170px;
+}
+
+.container {
+  max-width: 1190px;
+  padding: 0 15px;
+  margin: 0 auto;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 35px 0;
+  height: 100px;
+}
+
+.logos,
+.contacts,
+.terms {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.tel {
+  display: flex;
+  flex-direction: column;
+  min-width: 145px;
+  position: relative;
+  padding-left: 30px;
+}
+
+.tel::before {
+  content: "";
+  background-image: url(../public/assets/icons/tel.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 20px;
+  height: 20px;
+  transform: translateY(-50%);
+}
+
+.email {
+  position: relative;
+  padding-left: 30px;
+}
+
+.email::before {
+  content: "";
+  background-image: url(../public/assets/icons/mail.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 20px;
+  height: 20px;
+  transform: translateY(-50%);
+}
+
+.tel_item,
+.email_link,
+.privacy_link,
+.copy {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 22px;
+
+  text-decoration: none;
+  color: inherit;
+}
+
+.email_link,
+.privacy_link,
+.tel_item {
+  cursor: pointer;
+}

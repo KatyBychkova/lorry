@@ -9,37 +9,34 @@ import { useState } from "react";
 const CallToAction = () => {
   const { callToAction } = config;
   const { title, imageBack, imageFront, terms, labelName, labelTel, placeholderName, placeholderTel, submitBtnText } = callToAction;
-  const [name, setName] = useState("");
-  //   const [tel, setTel] = useState("");
 
-  //   const [values, setValues] = useState({
-  //     name: "",
-  //     tel: "",
-  //   });
+  const [data, setData] = useState({
+    name: "",
+    tel: "",
+  });
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(name);
+    console.log([`"${data.name}": "${data.tel}"`]);
   };
 
-  const handleChange = (e) => {
-    const { value, name } = e.target;
-    console.log(value);
-    setName(value);
-    // setValues((prev) => ({
-    //   ...prev,
-    //   [name]: value,
-    // }));
+  const handleChange = ({ target }) => {
+    setData((prev) => ({
+      ...prev,
+      [target.name]: target.value,
+    }));
   };
 
   return (
     <section>
       <div className={styles.container}>
         <div className={styles.wrapper}>
-          {/* <div className={styles.images}>
-            <Image className={styles.imageBack} src={imageBack} layout="intrinsic" width={560} height={440} objectPosition="right"></Image>
-            <Image className={styles.imageFront} src={imageFront} layout="intrinsic" width={412} height={483}></Image>
-          </div> */}
+          <div className={styles.images}>
+            {/* <Image className={styles.imageBack} src={imageBack.src} layout="intrinsic" width={412} height={483} alt={imageBack.alt} priority={true}></Image>
+            {/* <Image className={styles.imageBack} src={imageBack.src} fill sizes="(max-width: 1200px) 560, (max-width: 1000px) 350px," alt={imageBack.alt} priority={true}></Image> */}
+
+            {/* <Image className={styles.imageFront} src={imageFront} layout="intrinsic" width={412} height={483}></Image> */}
+          </div>
           <div className={styles.text}>
             <h1 className={styles.title}>{title}</h1>
             <div className={styles.form}>
@@ -47,12 +44,12 @@ const CallToAction = () => {
                 <p>
                   <label htmlFor="name">{labelName}</label>
                   {/* <input id="name" type="text" name="email" /> */}
-                  <input placeholder={placeholderName} type="text" name="name" onChange={handleChange} />
+                  <input id="name" placeholder={placeholderName} type="text" name="name" value={data.name} onChange={handleChange} />
                 </p>
 
                 <p>
                   <label htmlFor="tel">{labelTel}</label>
-                  <input id="tel" placeholder={placeholderTel} type="text" name="email" onChange={handleChange} />
+                  <input id="tel" placeholder={placeholderTel} type="text" name="tel" value={data.tel} onChange={handleChange} />
                 </p>
 
                 <p>
