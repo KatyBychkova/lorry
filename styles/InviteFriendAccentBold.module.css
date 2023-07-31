@@ -2,5 +2,5 @@ p.boldText {
   font-weight: 700;
 }
 span.colorText {
-  color: #d1274a;
+  color: var(--accent-color);
 }

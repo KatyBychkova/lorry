@@ -1,11 +1,11 @@
 .section {
-  background-color: #064488;
+  background-color: var(--primary-color);
   color: #fff;
   height: 170px;
 }
 
 .container {
-  max-width: 1190px;
+  max-width: var(--container-width);
   padding: 0 15px;
   margin: 0 auto;
 }

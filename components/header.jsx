@@ -3,7 +3,7 @@ import config from "../config/index";
 import LogoLorryHeader from "./logoLorryHeader";
 import Link from "next/link";
 
-const Header = () => {
+const Header = ({ openModal }) => {
   const { company } = config;
   const { telegram, contacts, callToAction } = company;
   const { href } = telegram;
@@ -27,9 +27,9 @@ const Header = () => {
         </div>
         <div className={styles.callToAction}>
           <div>
-            <Link className={styles.callToAction_btn} href={callToAction.href}>
+            <button className={styles.callToAction_btn} onClick={() => openModal(true)}>
               {callToAction.text}
-            </Link>
+            </button>
           </div>
         </div>
       </div>

@@ -1,5 +1,5 @@
 .section {
-  background-color: #f0f0f0;
+  background-color: var(--main-bg-color);
   display: flex;
   position: relative;
   background-image: url(../public/assets/images/invite-friend-bg.png);
@@ -9,7 +9,7 @@
 }
 
 .container {
-  max-width: 1190px;
+  max-width: var(--container-width);
   padding: 0 15px;
   margin: 0 auto;
 }
@@ -61,7 +61,7 @@
   left: 0;
   height: 3px;
   width: 100px;
-  background-color: #064488;
+  background-color: var(--primary-color);
 }
 
 /* .imageWrapper {
@@ -76,5 +76,5 @@
 }
 
 .text span {
-  color: #d1274a;
+  color: var(--accent-color);
 }

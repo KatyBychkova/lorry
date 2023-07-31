@@ -12,16 +12,15 @@
   margin: 0 auto;
 }
 
-.image_wrapper,
-.image {
-  display: none;
-}
-
 .container {
   max-width: var(--container-width);
   padding: 0 15px;
   margin: 0 auto;
   overflow: hidden;
+}
+
+.image_wrapper {
+  display: none;
 }
 
 .title {

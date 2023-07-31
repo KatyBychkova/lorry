@@ -3,7 +3,7 @@ import config from "../config/index";
 import Link from "next/link";
 import Image from "next/image";
 
-const Capabilities = () => {
+const Capabilities = ({ openModal }) => {
   const { capabilities, cities } = config;
   const { title, image, text, callToAction } = capabilities;
 
@@ -25,9 +25,10 @@ const Capabilities = () => {
               <p className={styles.text_bottom}>{text.bottom}</p>
             </div>
             <div className={styles.callToAction}>
-              <span className={styles.callToAction_link}>
-                <Link href={callToAction.href}>{callToAction.linkText}</Link>
-              </span>
+              <button className={styles.callToAction_btn} onClick={() => openModal(true)}>
+                {callToAction.linkText}
+              </button>
+
               {callToAction.text}
             </div>
           </div>

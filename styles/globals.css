@@ -2,6 +2,39 @@
 @tailwind components;
 @tailwind utilities; */
 
+:root {
+  --main-bg-color: #f0f0f0;
+  --primary-color: #064488;
+  --accent-color: #d1274a;
+  --font-color: #303030;
+  --minor-color: #fff;
+  --container-width: 1190px;
+}
+
+@media (max-width: 1200px) {
+  :root {
+    --container-width: 940px;
+  }
+}
+
+@media (max-width: 960px) {
+  :root {
+    --container-width: 630px;
+  }
+}
+
+@media (max-width: 640px) {
+  :root {
+    --container-width: 465px;
+  }
+}
+
+@media (max-width: 480px) {
+  :root {
+    --container-width: 310px;
+  }
+}
+
 html {
   box-sizing: border-box;
 }
@@ -48,7 +81,7 @@ select {
 }
 
 body {
-  color: #303030;
+  color: var(--font-color);
   font-family: "Gilroy", "Arial", sans-serif;
   font-size: 16px;
   line-height: 21px;

@@ -53,7 +53,7 @@ const CallToAction = () => {
                 </p>
 
                 <p>
-                  <button type="submit">Отправить</button>
+                  <button type="submit">{submitBtnText}</button>
                 </p>
               </form>
             </div>

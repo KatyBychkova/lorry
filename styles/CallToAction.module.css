@@ -2,7 +2,7 @@
 }
 
 .container {
-  max-width: 1190px;
+  max-width: var(--container-width);
   padding: 0 15px;
   margin: 0 auto;
 }
@@ -67,5 +67,5 @@
   left: 0;
   height: 3px;
   width: 100px;
-  background-color: #064488;
+  background-color: var(--primary-color);
 }
