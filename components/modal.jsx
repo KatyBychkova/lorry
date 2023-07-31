@@ -2,34 +2,61 @@
 
 import styles from "../styles/Modal.module.css";
 import config from "../config/index";
-
 import Link from "next/link";
-
+import PhoneInput from "react-phone-input-2";
+// import "react-phone-input-2/lib/style.css";
 import { useState } from "react";
 
 const Modal = ({ isVisible, onClose, children }) => {
   const { modal, cities } = config;
   const { placeholderName, labelTel, placeholderTel, labelDept, submitBtnText } = modal;
 
-  const [data, setData] = useState({
-    name: "",
-    tel: "",
-    dept: "",
-  });
+  //   const [data, setData] = useState({
+  //   name: "",
+  //   tel: "",
+  //   dept: "",
+  // });
+
+  // if (!isVisible) return null;
+
+  // const handleSubmit = (e) => {
+  //   e.preventDefault();
+  //   console.log([`"${data.name}": "${data.tel}", "${data.name}": "${data.dept}"`]);
+  // };
+
+  // const handleChange = ({ target }) => {
+  //   setData((prev) => ({
+  //     ...prev,
+  //     [target.name]: target.value,
+  //   }));
+  // };
+
+  const [name, setName] = useState("");
+  const [tel, setTel] = useState("");
+  const [dept, setDept] = useState("");
+  const [valid, setValid] = useState("");
 
   if (!isVisible) return null;
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log([`"${data.name}": "${data.tel}", "${data.name}": "${data.dept}"`]);
+  const handleNameChange = (e) => {
+    const { value } = e.target;
+    setName(value);
   };
 
-  const handleChange = ({ target }) => {
-    setData((prev) => ({
-      ...prev,
-      [target.name]: target.value,
-    }));
+  const handleTelChange = (value) => {
+    setTel(value);
   };
+
+  const handleDeptChange = (e) => {
+    const { value } = e.target;
+    setDept(value);
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log([name, tel, dept]);
+  };
+
   return (
     <div
       className={styles.modal}
@@ -42,17 +69,17 @@ const Modal = ({ isVisible, onClose, children }) => {
           <div className={styles.content} onClick={(e) => e.stopPropagation()}>
             <form className={styles.form} onSubmit={handleSubmit}>
               <div className={styles.form_name}>
-                <input id="name" placeholder={placeholderName} type="text" name="name" value={data.name} onChange={handleChange} />
+                <input id="name" placeholder={placeholderName} type="text" name="name" value={name} onChange={handleNameChange} />
               </div>
 
               <div className={styles.form_tel}>
                 <label htmlFor="tel">{labelTel}</label>
-                <input id="tel" placeholder={placeholderTel} type="text" name="tel" value={data.tel} onChange={handleChange} />
+                <PhoneInput id="tel" country={"ru"} name="tel" value={tel} onChange={handleTelChange} inputProps={{ required: true }} />
               </div>
 
               <div className={styles.form_dept}>
                 <div className={styles.label_dept}>{labelDept}</div>
-                <select className={styles.depts} name="dept" onChange={handleChange}>
+                <select className={styles.depts} name="dept" onChange={handleDeptChange}>
                   {cities.map((item, index) => (
                     <option className={styles.item} key={`${item}-${index}`} value={item}>
                       {item}
@@ -83,13 +110,3 @@ const Modal = ({ isVisible, onClose, children }) => {
 };
 
 export default Modal;
-
-{
-  /* <div className={styles.callToAction}>
-          <div>
-            <Link className={styles.callToAction_btn} href={callToAction.href}>
-              {callToAction.text}
-            </Link>
-          </div>
-        </div> */
-}

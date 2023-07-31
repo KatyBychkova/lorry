@@ -14,6 +14,7 @@ const CallToAction = () => {
 
   const [name, setName] = useState("");
   const [tel, setTel] = useState("");
+  const [valid, setValid] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -34,36 +35,39 @@ const CallToAction = () => {
       <div className={styles.container}>
         <div className={styles.wrapper}>
           <div className={styles.images}>
-            {/* <Image className={styles.imageBack} src={imageBack.src} layout="intrinsic" width={412} height={483} alt={imageBack.alt} priority={true}></Image>
-            {/* <Image className={styles.imageBack} src={imageBack.src} fill sizes="(max-width: 1200px) 560, (max-width: 1000px) 350px," alt={imageBack.alt} priority={true}></Image> */}
+            <Image className={styles.imageBack} src={imageBack.src} fill sizes="(max-width: 1200px) 560" alt={imageBack.alt} priority={true}></Image>
 
-            {/* <Image className={styles.imageFront} src={imageFront} layout="intrinsic" width={412} height={483}></Image> */}
+            <Image className={styles.imageFront} src={imageFront.src} fill sizes="(max-width: 1200px) 560"></Image>
           </div>
           <div className={styles.text}>
             <h1 className={styles.title}>{title}</h1>
             <div className={styles.form}>
               <form onSubmit={handleSubmit}>
-                <div>
-                  <label htmlFor="name">{labelName}</label>
-                  {/* <input id="name" type="text" name="email" /> */}
+                <div className={styles.form_name}>
+                  <label className={styles.label_name} htmlFor="name">
+                    {labelName}
+                  </label>
                   <input id="name" placeholder={placeholderName} type="text" name="name" value={name} onChange={handleNameChange} />
                 </div>
 
-                <div>
-                  <label htmlFor="tel">{labelTel}</label>
+                <div className={styles.form_tel}>
+                  <label className={styles.label_tel} htmlFor="tel">
+                    {labelTel}
+                  </label>
                   <PhoneInput id="tel" placeholder={placeholderTel} country={"ru"} name="tel" value={tel} onChange={handleTelChange} inputProps={{ required: true }} />
                 </div>
-
-                <div>
-                  <button type="submit">{submitBtnText}</button>
+                <div className={styles.callToAction}>
+                  <div>
+                    <button className={styles.callToAction_btn} type="submit">
+                      {submitBtnText}
+                    </button>
+                  </div>
                 </div>
               </form>
             </div>
+
             <div className={styles.terms}>
-              {terms.text}{" "}
-              <span>
-                <Link href={terms.href}>{terms.linkText}</Link>
-              </span>
+              {terms.text} <button className={styles.terms_btn}>{terms.linkText}</button>
             </div>
           </div>
         </div>

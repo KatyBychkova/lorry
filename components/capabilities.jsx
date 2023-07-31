@@ -28,7 +28,6 @@ const Capabilities = ({ openModal }) => {
               <button className={styles.callToAction_btn} onClick={() => openModal(true)}>
                 {callToAction.linkText}
               </button>
-
               {callToAction.text}
             </div>
           </div>
