@@ -35,9 +35,11 @@ const CallToAction = () => {
       <div className={styles.container}>
         <div className={styles.wrapper}>
           <div className={styles.images}>
-            <Image className={styles.imageBack} src={imageBack.src} fill sizes="(max-width: 1200px) 560" alt={imageBack.alt} priority={true}></Image>
+            <div className={styles.imageBack_inner}>
+              <Image className={styles.imageBack} src={imageBack.src} fill sizes="(max-width: 1200px) 560" alt={imageBack.alt} priority={true}></Image>
+            </div>
 
-            <Image className={styles.imageFront} src={imageFront.src} fill sizes="(max-width: 1200px) 560"></Image>
+            <Image className={styles.imageFront} src={imageFront.src} width={412} height={483} alt={imageFront.alt} priority={true}></Image>
           </div>
           <div className={styles.text}>
             <h1 className={styles.title}>{title}</h1>
@@ -67,7 +69,10 @@ const CallToAction = () => {
             </div>
 
             <div className={styles.terms}>
-              {terms.text} <button className={styles.terms_btn}>{terms.linkText}</button>
+              {terms.text}
+              <span>
+                <button className={styles.terms_btn}>{terms.linkText}</button>
+              </span>
             </div>
           </div>
         </div>

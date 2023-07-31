@@ -173,28 +173,17 @@
     padding-bottom: 0;
   }
 
-  /* .image_wrapper {
-    height: 100%;
-    display: block;
-    bottom: -2px;
-    position: relative;
-  }
-
-  .image {
-    display: inline-block;
-    object-fit: cover;
-  } */
-
   .image_wrapper {
     height: 100%;
     display: block;
     bottom: -2px;
   }
 
-  .image {
+  img.image {
     display: block;
-    object-fit: cover;
-    position: relative;
+    object-fit: contain;
+    position: relative !important;
+    object-position: bottom;
   }
 
   .title {
@@ -220,7 +209,7 @@
   }
 }
 
-@media (max-width: 480px) {
+/* @media (max-width: 480px) {
   .container {
     text-align: center;
   }
@@ -239,4 +228,4 @@
   .image {
     width: 100%;
   }
-}
+} */
