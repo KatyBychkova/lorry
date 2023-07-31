@@ -11,7 +11,7 @@ import Modal from "@/components/modal";
 import { useState } from "react";
 
 const Main = () => {
-  const [showModal, setShowModal] = useState("true");
+  const [showModal, setShowModal] = useState(false);
   return (
     <div>
       <About openModal={setShowModal}></About>

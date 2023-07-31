@@ -5,26 +5,28 @@ import config from "../config/index";
 import Link from "next/link";
 import Image from "next/image";
 import { useState } from "react";
+import PhoneInput from "react-phone-input-2";
+import "react-phone-input-2/lib/style.css";
 
 const CallToAction = () => {
   const { callToAction } = config;
   const { title, imageBack, imageFront, terms, labelName, labelTel, placeholderName, placeholderTel, submitBtnText } = callToAction;
 
-  const [data, setData] = useState({
-    name: "",
-    tel: "",
-  });
+  const [name, setName] = useState("");
+  const [tel, setTel] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log([`"${data.name}": "${data.tel}"`]);
+    console.log([`"${name}": "${tel}"`]);
   };
 
-  const handleChange = ({ target }) => {
-    setData((prev) => ({
-      ...prev,
-      [target.name]: target.value,
-    }));
+  const handleNameChange = (e) => {
+    const { value } = e.target;
+    setName(value);
+  };
+
+  const handleTelChange = (value) => {
+    setTel(value);
   };
 
   return (
@@ -41,20 +43,20 @@ const CallToAction = () => {
             <h1 className={styles.title}>{title}</h1>
             <div className={styles.form}>
               <form onSubmit={handleSubmit}>
-                <p>
+                <div>
                   <label htmlFor="name">{labelName}</label>
                   {/* <input id="name" type="text" name="email" /> */}
-                  <input id="name" placeholder={placeholderName} type="text" name="name" value={data.name} onChange={handleChange} />
-                </p>
+                  <input id="name" placeholder={placeholderName} type="text" name="name" value={name} onChange={handleNameChange} />
+                </div>
 
-                <p>
+                <div>
                   <label htmlFor="tel">{labelTel}</label>
-                  <input id="tel" placeholder={placeholderTel} type="text" name="tel" value={data.tel} onChange={handleChange} />
-                </p>
+                  <PhoneInput id="tel" placeholder={placeholderTel} country={"ru"} name="tel" value={tel} onChange={handleTelChange} inputProps={{ required: true }} />
+                </div>
 
-                <p>
+                <div>
                   <button type="submit">{submitBtnText}</button>
-                </p>
+                </div>
               </form>
             </div>
             <div className={styles.terms}>
