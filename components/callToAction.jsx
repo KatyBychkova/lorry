@@ -4,7 +4,7 @@ import styles from "../styles/CallToAction.module.css";
 import config from "../config/index";
 import Link from "next/link";
 import Image from "next/image";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/material.css";
 import inputStyles from "../styles/inputTelStyles";
@@ -13,23 +13,58 @@ const CallToAction = () => {
   const { callToAction } = config;
   const { title, imageBack, imageFront, terms, labelName, labelTel, placeholderName, placeholderTel, submitBtnText } = callToAction;
   const { inputTelStyles } = inputStyles;
-  const [name, setName] = useState("");
-  const [tel, setTel] = useState("");
-  // const [valid, setValid] = useState("");
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log([`"${name}": "${tel}"`]);
-  };
+  // const [name, setName] = useState("");
+  // const [tel, setTel] = useState("");
+  const [data, setData] = useState({
+    name: "",
+    tel: "",
+  });
+  const [errors, setErrors] = useState();
 
   const handleNameChange = (e) => {
-    const { value } = e.target;
-    setName(value);
+    const { name, value } = e.target;
+    setData((prev) => ({
+      ...prev,
+      [name]: value,
+    }));
+
+    // setName(value);
+    // setData((data.name = value));
+  };
+  const handleTelChange = (value) => {
+    setData((prev) => ({
+      ...prev,
+      tel: value,
+    }));
+    // setTel(value);
+    // setData((data.tel = value));
+  };
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log([`"${data.name}": "${data.tel}"`]);
+    console.log([data]);
   };
 
-  const handleTelChange = (value) => {
-    setTel(value);
-  };
+  // const handleSubmit = (e) => {
+  //   e.preventDefault();
+  //   console.log([`"${data.name}": "${data.tel}"`]);
+  // };
+
+  // const handleChange = (e) => {
+  //   console.log(e);
+  //   setData((prev) => ({
+  //     ...prev,
+  //     [target.name]: target.value,
+  //   }));
+  // };
+
+  // useEffect(() => {
+  //   validate();
+  // }, [name, tel]);
+
+  // const validate = () => {
+  //   const errors = {};
+  // };
 
   return (
     <section>
@@ -50,7 +85,7 @@ const CallToAction = () => {
                   <label className={styles.label_name} htmlFor="name">
                     {labelName}
                   </label>
-                  <input id="name" placeholder={placeholderName} type="text" name="name" value={name} onChange={handleNameChange} />
+                  <input id="name" placeholder={placeholderName} type="text" name="name" value={data.name} onChange={handleNameChange} />
                 </div>
 
                 <div className={styles.form_tel}>
@@ -61,7 +96,7 @@ const CallToAction = () => {
                     id="tel"
                     country={"ru"}
                     name="tel"
-                    value={tel}
+                    value={data.tel}
                     onChange={handleTelChange}
                     inputProps={{ required: true }}
                     inputStyle={{ ...inputTelStyles }}
