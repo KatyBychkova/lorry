@@ -34,6 +34,7 @@ const Capabilities = ({ openModal }) => {
               {callToAction.text}
             </div>
           </div>
+
           <div className={styles.imageInner}>
             <div className={styles.imageWrapper}>
               <Image className={styles.image} src={image.src} width={760} height={430} alt={image.alt} priority={true} />
@@ -41,10 +42,6 @@ const Capabilities = ({ openModal }) => {
           </div>
         </div>
       </div>
-
-      {/* <Image className={styles.image}  layout="responsive"
-          width={900}
-          height={599} src="/../public/assets/images/invite-friend-bg.png" fill alt="мужчина протягивает руку в знак дружбы" /> */}
     </section>
   );
 };

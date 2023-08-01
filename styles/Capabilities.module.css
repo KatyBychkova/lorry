@@ -15,15 +15,14 @@
   align-items: end;
   justify-content: left;
 }
+.info {
+  align-self: flex-end;
+  margin-right: 50px;
+}
 
 .text {
   width: 500px;
   font-size: 18px;
-}
-
-.info {
-  align-self: flex-end;
-  margin-right: 50px;
 }
 
 .title {

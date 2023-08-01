@@ -5,7 +5,7 @@ import InviteFriendAccentBold from "./inviteFriendAccentBold";
 
 const InviteFriend = () => {
   const { inviteFriend } = config;
-  const { title, subtitleBeforeAccent, subtitleAccentBold, subtitleColorAccent, bonusAccent, subtitleAfterAccent, image } = inviteFriend;
+  const { title, subtitleBeforeAccent, image } = inviteFriend;
 
   return (
     <section className={styles.section}>
@@ -19,22 +19,15 @@ const InviteFriend = () => {
               <p>Больше друзей - больше бонусов!</p>
             </div>
           </div>
-          {/* <div className={styles.imageWrapper}>
-          <Image
-            className={styles.image}
-            layout="fill"
-            objectFit="cover"
-            objectPosition="right"
-            src="/../public/assets/images/invite-friend-bg.png"
-            alt="мужчина дружественно протягивает руку"
-          />
-        </div> */}
+
+          <div className={styles.imageInner}>
+            <div className={styles.imageWrapper}>
+              <Image className={styles.image} src={image.src} width={900} height={600} alt={image.alt} priority={true} />
+              {/* <Image className={styles.image} src={image.src} fill sizes="(max-width: 1200px) 900px" alt={image.alt} priority={true}></Image> */}
+            </div>
+          </div>
         </div>
       </div>
-
-      {/* <Image className={styles.image}  layout="responsive"
-          width={900}
-          height={599} src="/../public/assets/images/invite-friend-bg.png" fill alt="мужчина протягивает руку в знак дружбы" /> */}
     </section>
   );
 };
