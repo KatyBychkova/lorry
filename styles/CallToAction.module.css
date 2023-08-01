@@ -30,8 +30,6 @@
 .imageBack {
   border-radius: 5px;
   object-fit: cover;
-
-  /* width={560} height={440} */
 }
 
 .imageFront {

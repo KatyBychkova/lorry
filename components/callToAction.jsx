@@ -6,15 +6,18 @@ import Link from "next/link";
 import Image from "next/image";
 import { useState } from "react";
 import PhoneInput from "react-phone-input-2";
-import "react-phone-input-2/lib/style.css";
+// import "react-phone-input-2/lib/style.css";
+
+import "react-phone-input-2/lib/material.css";
+import inputStyles from "../styles/inputTelStyles";
 
 const CallToAction = () => {
   const { callToAction } = config;
   const { title, imageBack, imageFront, terms, labelName, labelTel, placeholderName, placeholderTel, submitBtnText } = callToAction;
-
+  const { inputTelStyles } = inputStyles;
   const [name, setName] = useState("");
   const [tel, setTel] = useState("");
-  const [valid, setValid] = useState("");
+  // const [valid, setValid] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -56,7 +59,16 @@ const CallToAction = () => {
                   <label className={styles.label_tel} htmlFor="tel">
                     {labelTel}
                   </label>
-                  <PhoneInput id="tel" placeholder={placeholderTel} country={"ru"} name="tel" value={tel} onChange={handleTelChange} inputProps={{ required: true }} />
+                  <PhoneInput
+                    id="tel"
+                    country={"ru"}
+                    name="tel"
+                    value={tel}
+                    onChange={handleTelChange}
+                    inputProps={{ required: true }}
+                    inputStyle={{ ...inputTelStyles }}
+                    specialLabel={null}
+                  />
                 </div>
                 <div className={styles.callToAction}>
                   <div>
