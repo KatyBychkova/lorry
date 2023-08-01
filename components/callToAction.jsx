@@ -6,8 +6,6 @@ import Link from "next/link";
 import Image from "next/image";
 import { useState } from "react";
 import PhoneInput from "react-phone-input-2";
-// import "react-phone-input-2/lib/style.css";
-
 import "react-phone-input-2/lib/material.css";
 import inputStyles from "../styles/inputTelStyles";
 

@@ -13,7 +13,6 @@
   z-index: 10000;
   outline: 0;
   display: block;
-  /* width: calc(100vw - 22px); */
 }
 
 .container {
@@ -35,12 +34,7 @@
   padding: 40px 45px;
 }
 
-.content {
-  max-width: 550px;
-}
-
 .form {
-  /* max-width: 330px; */
   box-sizing: border-box;
 }
 
@@ -58,9 +52,12 @@
 }
 
 .form_tel {
-  display: inline-block;
   font-size: 14px;
   padding: 25px 0 15px;
+}
+
+.label_tel {
+  line-height: 4;
 }
 
 .form input::placeholder {
@@ -84,6 +81,10 @@
 
 .depts {
   cursor: pointer;
+}
+
+.label_tel {
+  line-height: 4;
 }
 
 .label_dept {

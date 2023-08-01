@@ -3,14 +3,15 @@
 import styles from "../styles/Modal.module.css";
 import config from "../config/index";
 import Link from "next/link";
-import PhoneInput from "react-phone-input-2";
-// import "react-phone-input-2/lib/style.css";
 import { useState } from "react";
+import PhoneInput from "react-phone-input-2";
+import "react-phone-input-2/lib/material.css";
+import inputStyles from "../styles/inputTelStyles";
 
 const Modal = ({ isVisible, onClose, children }) => {
   const { modal, cities } = config;
   const { placeholderName, labelTel, placeholderTel, labelDept, submitBtnText } = modal;
-
+  const { inputTelStylesModal } = inputStyles;
   //   const [data, setData] = useState({
   //   name: "",
   //   tel: "",
@@ -73,8 +74,19 @@ const Modal = ({ isVisible, onClose, children }) => {
               </div>
 
               <div className={styles.form_tel}>
-                <label htmlFor="tel">{labelTel}</label>
-                <PhoneInput id="tel" country={"ru"} name="tel" value={tel} onChange={handleTelChange} inputProps={{ required: true }} />
+                <label className={styles.label_tel} htmlFor="tel">
+                  {labelTel}
+                </label>
+                <PhoneInput
+                  id="tel"
+                  country={"ru"}
+                  name="tel"
+                  value={tel}
+                  onChange={handleTelChange}
+                  inputProps={{ required: true }}
+                  inputStyle={{ ...inputTelStylesModal }}
+                  specialLabel={null}
+                />
               </div>
 
               <div className={styles.form_dept}>
