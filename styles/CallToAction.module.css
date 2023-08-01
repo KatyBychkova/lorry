@@ -9,6 +9,7 @@
 .wrapper {
   display: flex;
   justify-content: space-between;
+  align-items: end;
   column-gap: 50px;
   padding-bottom: 70px;
   padding-top: 100px;
@@ -47,9 +48,9 @@
 
 .title {
   display: inline-block;
-  font-size: 30px;
+  font-size: var(--title-font-size);
+  line-height: var(--title-line-height);
   font-weight: 800;
-  line-height: 30px;
   text-decoration: none solid rgb(48, 48, 48);
   letter-spacing: normal;
   position: relative;
@@ -221,6 +222,10 @@
 }
 
 @media (max-width: 640px) {
+  .title {
+    padding-bottom: 10px;
+  }
+
   .images {
     width: 460px;
     height: 260px;
@@ -273,11 +278,6 @@
 
   .callToAction {
     margin: 0 auto;
-  }
-
-  .title {
-    font-size: 20px;
-    line-height: 20px;
   }
 
   .title::after {
