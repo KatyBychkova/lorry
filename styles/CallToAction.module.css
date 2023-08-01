@@ -9,7 +9,7 @@
 .wrapper {
   display: flex;
   justify-content: space-between;
-  align-items: end;
+  align-items: flex-end;
   column-gap: 50px;
   padding-bottom: 70px;
   padding-top: 100px;

@@ -14,8 +14,9 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  padding: 35px 0;
-  height: 100px;
+  column-gap: 15px;
+  padding: 35px 110px 35px 0;
+  height: 90px;
 }
 
 .logos,
@@ -47,12 +48,12 @@
   transform: translateY(-50%);
 }
 
-.email {
+.email_link {
   position: relative;
   padding-left: 30px;
 }
 
-.email::before {
+.email_link::before {
   content: "";
   background-image: url(../public/assets/icons/mail.svg);
   background-repeat: no-repeat;
@@ -81,4 +82,103 @@
 .privacy_link,
 .tel_item {
   cursor: pointer;
+}
+
+@media screen and (max-width: 1200px) {
+  .wrapper {
+    padding-right: 160px;
+  }
+
+  .tel::before {
+    top: 12px;
+  }
+
+  .logo_lorry {
+    position: relative;
+    top: -18px;
+  }
+}
+
+@media screen and (max-width: 960px) {
+  .section {
+    height: 230px;
+  }
+  .wrapper {
+    flex-direction: column;
+    row-gap: 15px;
+    padding-right: 60px;
+  }
+
+  .logos,
+  .contacts,
+  .terms {
+    flex-direction: row;
+    justify-content: space-between;
+    row-gap: 10px;
+  }
+
+  .logo_lorry,
+  .logo_gt,
+  .tel,
+  .email,
+  .privacy,
+  .copy {
+    width: 210px;
+  }
+
+  .logo_lorry {
+    top: -8px;
+  }
+
+  .tel::before {
+    top: 50%;
+    transform: translateY(-50%);
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .section {
+    height: 240px;
+  }
+  .wrapper {
+    padding-right: 0px;
+  }
+}
+
+@media screen and (max-width: 492px) {
+  .section,
+  .container {
+    height: 340px;
+    text-align: center;
+  }
+
+  .wrapper {
+    align-items: center;
+  }
+
+  .logos,
+  .contacts,
+  .terms {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .logo_lorry,
+  .logo_gt,
+  .tel,
+  .email,
+  .privacy,
+  .copy {
+    width: auto;
+  }
+
+  .tel_item {
+    align-self: center;
+  }
+
+  .tel::before {
+    left: 18px;
+    top: 0;
+    transform: translate(0);
+  }
 }

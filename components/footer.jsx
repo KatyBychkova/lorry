@@ -14,8 +14,12 @@ const Footer = () => {
       <div className={styles.container}>
         <div className={styles.wrapper}>
           <div className={styles.logos}>
-            <LogoLorryFooter></LogoLorryFooter>
-            <LogoGtFooter></LogoGtFooter>
+            <div className={styles.logo_lorry}>
+              <LogoLorryFooter></LogoLorryFooter>
+            </div>
+            <div className={styles.logo_gt}>
+              <LogoGtFooter></LogoGtFooter>
+            </div>
           </div>
           <div className={styles.contacts}>
             <div className={styles.tel}>

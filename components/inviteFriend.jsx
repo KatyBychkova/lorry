@@ -23,7 +23,6 @@ const InviteFriend = () => {
           <div className={styles.imageInner}>
             <div className={styles.imageWrapper}>
               <Image className={styles.image} src={image.src} width={900} height={600} alt={image.alt} priority={true} />
-              {/* <Image className={styles.image} src={image.src} fill sizes="(max-width: 1200px) 900px" alt={image.alt} priority={true}></Image> */}
             </div>
           </div>
         </div>
