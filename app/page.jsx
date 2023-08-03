@@ -7,6 +7,7 @@ import Capabilities from "@/components/capabilities";
 import Footer from "@/components/footer";
 import InviteFriend from "@/components/inviteFriend";
 import Modal from "@/components/modal";
+import ModalTerms from "@/components/modalTerms";
 
 import { useState } from "react";
 
@@ -22,6 +23,7 @@ const Main = () => {
       <Capabilities openModal={setShowModal}></Capabilities>
       <Footer></Footer>
       <Modal isVisible={showModal} onClose={() => setShowModal(false)}></Modal>
+      <ModalTerms></ModalTerms>
     </div>
   );
 };
