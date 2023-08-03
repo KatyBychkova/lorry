@@ -1,26 +1,26 @@
 {
   "inputTelStyles": {
-    "box-sizing": "border-box",
+    "boxSizing": "border-box",
     "height": "50px",
-    "border-color": "#064488",
+    "borderColor": "#064488",
     "width": "100%",
-    "font-size": "20px",
+    "fontSize": "20px",
     "color": "#303030",
     "margin": "0px",
-    "font-family": "Gilroy",
-    "line-height": "21px"
+    "fontFamily": "Gilroy",
+    "lineHeight": "21px"
   },
 
   "inputTelStylesModal": {
     "display": "inline-block",
-    "box-sizing": "border-box",
+    "boxSizing": "border-box",
     "height": "60px",
-    "border-color": "#c9c9c9",
+    "borderColor": "#c9c9c9",
     "width": "100%",
-    "font-size": "20px",
+    "fontSize": "20px",
     "color": "#303030",
     "margin": "0px",
-    "font-family": "Gilroy",
-    "line-height": "21px"
+    "fontFamily": "Gilroy",
+    "lineHeight": "21px"
   }
 }

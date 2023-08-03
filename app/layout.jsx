@@ -21,4 +21,16 @@ const RootLayout = ({ children }) => {
   );
 };
 
+// const RootLayout = ({ children }) => {
+//   // const [showModal, setShowModal] = useState(false);
+//   return (
+//     <html lang="ru">
+//       <body>
+//         <Main>{children}</Main>
+//         {/* <Modal isVisible={showModal} onClose={() => setShowModal(false)}></Modal> */}
+//       </body>
+//     </html>
+//   );
+// };
+
 export default RootLayout;

@@ -25,9 +25,15 @@ const Header = ({ openModal }) => {
             </Link>
           ))}
         </div>
+
         <div className={styles.callToAction}>
           <div>
-            <button className={styles.callToAction_btn} onClick={() => openModal(true)}>
+            <button
+              className={styles.callToAction_btn}
+              onClick={() => {
+                openModal(true);
+              }}
+            >
               {callToAction.text}
             </button>
           </div>

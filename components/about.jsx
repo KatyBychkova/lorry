@@ -17,10 +17,13 @@ const About = ({ openModal }) => {
             {titleAfterAccent}
           </h1>
           <h3 className={styles.subtitle}>{subtitle}</h3>
-          <div className={styles.description}>{description}</div>
-        </div>
-        <div className={styles.image_wrapper}>
-          <Image className={styles.image} src={image.src} fill sizes="(max-width: 650px) 100vw" alt={image.alt} priority={true}></Image>
+          <div className={styles.description}>
+            {description.map((disc, index) => (
+              <p className={styles.description_part} key={index}>
+                {disc}
+              </p>
+            ))}
+          </div>
         </div>
       </div>
     </section>

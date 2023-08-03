@@ -12,6 +12,7 @@ import { useState } from "react";
 
 const Main = () => {
   const [showModal, setShowModal] = useState(false);
+
   return (
     <div>
       <About openModal={setShowModal}></About>
@@ -20,7 +21,6 @@ const Main = () => {
       <InviteFriend></InviteFriend>
       <Capabilities openModal={setShowModal}></Capabilities>
       <Footer></Footer>
-      {/* <button onClick={() => setShowModal(true)}>Открыть модальное окно</button> */}
       <Modal isVisible={showModal} onClose={() => setShowModal(false)}></Modal>
     </div>
   );

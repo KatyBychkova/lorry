@@ -8,63 +8,31 @@ import { useEffect, useState } from "react";
 import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/material.css";
 import inputStyles from "../styles/inputTelStyles";
+import { useForm, Controller } from "react-hook-form";
+import { ErrorMessage } from "@hookform/error-message";
 
 const CallToAction = () => {
   const { callToAction } = config;
   const { title, imageBack, imageFront, terms, labelName, labelTel, placeholderName, placeholderTel, submitBtnText } = callToAction;
   const { inputTelStyles } = inputStyles;
-  // const [name, setName] = useState("");
-  // const [tel, setTel] = useState("");
-  const [data, setData] = useState({
-    name: "",
-    tel: "",
+
+  const onSubmit = (data) => {
+    console.log(JSON.stringify(data));
+    // console.log([`"${data.name}": "${data.tel}"`]);
+  };
+
+  const {
+    register,
+    handleSubmit,
+    control,
+    formState: { errors },
+  } = useForm({
+    defaultValues: {
+      name: "",
+      tel: "",
+    },
+    criteriaMode: "all",
   });
-  const [errors, setErrors] = useState();
-
-  const handleNameChange = (e) => {
-    const { name, value } = e.target;
-    setData((prev) => ({
-      ...prev,
-      [name]: value,
-    }));
-
-    // setName(value);
-    // setData((data.name = value));
-  };
-  const handleTelChange = (value) => {
-    setData((prev) => ({
-      ...prev,
-      tel: value,
-    }));
-    // setTel(value);
-    // setData((data.tel = value));
-  };
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log([`"${data.name}": "${data.tel}"`]);
-    console.log([data]);
-  };
-
-  // const handleSubmit = (e) => {
-  //   e.preventDefault();
-  //   console.log([`"${data.name}": "${data.tel}"`]);
-  // };
-
-  // const handleChange = (e) => {
-  //   console.log(e);
-  //   setData((prev) => ({
-  //     ...prev,
-  //     [target.name]: target.value,
-  //   }));
-  // };
-
-  // useEffect(() => {
-  //   validate();
-  // }, [name, tel]);
-
-  // const validate = () => {
-  //   const errors = {};
-  // };
 
   return (
     <section>
@@ -80,29 +48,63 @@ const CallToAction = () => {
           <div className={styles.text}>
             <h1 className={styles.title}>{title}</h1>
             <div className={styles.form}>
-              <form onSubmit={handleSubmit}>
+              <form onSubmit={handleSubmit(onSubmit)}>
                 <div className={styles.form_name}>
                   <label className={styles.label_name} htmlFor="name">
                     {labelName}
                   </label>
-                  <input id="name" placeholder={placeholderName} type="text" name="name" value={data.name} onChange={handleNameChange} />
+                  <input
+                    {...register("name", {
+                      required: "Поле обязательно для заполнения",
+                    })}
+                    id="name"
+                    placeholder={placeholderName}
+                  />
+                  <ErrorMessage
+                    errors={errors}
+                    name="name"
+                    render={({ messages }) => {
+                      console.log("messages", messages);
+                      return messages ? Object.entries(messages).map(([type, message]) => <p key={type}>{message}</p>) : null;
+                    }}
+                  />
                 </div>
 
                 <div className={styles.form_tel}>
                   <label className={styles.label_tel} htmlFor="tel">
                     {labelTel}
                   </label>
-                  <PhoneInput
-                    id="tel"
-                    country={"ru"}
+
+                  <Controller
+                    control={control}
                     name="tel"
-                    value={data.tel}
-                    onChange={handleTelChange}
-                    inputProps={{ required: true }}
-                    inputStyle={{ ...inputTelStyles }}
-                    specialLabel={null}
+                    // rules={{ required: true }}
+                    render={({ field: { ref, ...field } }) => (
+                      <PhoneInput
+                        {...field}
+                        id="tel"
+                        country="ru"
+                        name="tel"
+                        {...register("tel", {
+                          required: "Поле обязательно для заполнения",
+                        })}
+                        // onChange={handleTelChange}
+                        inputProps={{ ref, required: true }}
+                        inputStyle={{ ...inputTelStyles }}
+                        specialLabel={null}
+                      />
+                    )}
                   />
+                  {/* <ErrorMessage
+          errors={errors}
+          name="name"
+          render={({ messages }) => {
+            console.log("messages", messages);
+            return messages ? Object.entries(messages).map(([type, message]) => <p key={type}>{message}</p>) : null;
+          }}
+        /> */}
                 </div>
+
                 <div className={styles.callToAction}>
                   <div>
                     <button className={styles.callToAction_btn} type="submit">

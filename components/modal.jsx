@@ -3,7 +3,7 @@
 import styles from "../styles/Modal.module.css";
 import config from "../config/index";
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/material.css";
 import inputStyles from "../styles/inputTelStyles";
@@ -12,30 +12,14 @@ const Modal = ({ isVisible, onClose, children }) => {
   const { modal, cities } = config;
   const { placeholderName, labelTel, placeholderTel, labelDept, submitBtnText } = modal;
   const { inputTelStylesModal } = inputStyles;
-  //   const [data, setData] = useState({
-  //   name: "",
-  //   tel: "",
-  //   dept: "",
-  // });
-
-  // if (!isVisible) return null;
-
-  // const handleSubmit = (e) => {
-  //   e.preventDefault();
-  //   console.log([`"${data.name}": "${data.tel}", "${data.name}": "${data.dept}"`]);
-  // };
-
-  // const handleChange = ({ target }) => {
-  //   setData((prev) => ({
-  //     ...prev,
-  //     [target.name]: target.value,
-  //   }));
-  // };
 
   const [name, setName] = useState("");
   const [tel, setTel] = useState("");
   const [dept, setDept] = useState("");
   const [valid, setValid] = useState("");
+  const [falseScroll] = useState(false);
+
+  isVisible && !falseScroll ? (document.body.style.overflow = "hidden") : (document.body.style.overflow = "auto");
 
   if (!isVisible) return null;
 
