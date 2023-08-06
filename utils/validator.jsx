@@ -1,12 +1,14 @@
 export function validator(data, config) {
   const errors = {};
 
+  // validateMethod --- validateMethod ---  перебираем методы по названию (напр. isRequired:)
+  // data --- data[fieldName] --- доступ по ключу к полю объекта data, kats@list.ru, например (email: "kats@list.ru")
+  // config --- config[fieldName][validateMethod] доступ по ключам к полю метода, что открывает доступ к ключам этого метода и их значениям (message: "Электронная почта обязательна для заполнения" )
   function validate(validateMethod, data, config) {
     let statusValidate;
     switch (validateMethod) {
       case "isRequired": {
         statusValidate = data.trim() === "";
-
         break;
       }
       case "isTel": {
@@ -39,9 +41,3 @@ export function validator(data, config) {
   }
   return errors;
 }
-
-// function validator возвращает объект
-// errors = {
-//     email: "Электронная почта обязательна для заполнения",
-//     password: "Пароль обязателен для заполнения"
-// };

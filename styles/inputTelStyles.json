@@ -8,7 +8,8 @@
     "color": "#303030",
     "margin": "0px",
     "fontFamily": "Gilroy",
-    "lineHeight": "21px"
+    "lineHeight": "21px",
+    "outline": "none"
   },
 
   "inputTelStylesModal": {
@@ -21,6 +22,7 @@
     "color": "#303030",
     "margin": "0px",
     "fontFamily": "Gilroy",
-    "lineHeight": "21px"
+    "lineHeight": "21px",
+    "outline": "none"
   }
 }

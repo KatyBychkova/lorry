@@ -85,6 +85,7 @@ const CallToAction = ({ openModalTerms }) => {
                         id="tel"
                         country="ru"
                         name="tel"
+                        ref={register}
                         {...register("tel", {
                           required: "Поле обязательно для заполнения",
                         })}

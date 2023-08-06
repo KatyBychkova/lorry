@@ -79,6 +79,11 @@
   outline: none;
 }
 
+.form input:focus,
+.form select:focus {
+  box-shadow: 0 0 0 1px #1976d2;
+}
+
 .depts {
   cursor: pointer;
 }
