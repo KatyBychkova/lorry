@@ -13,17 +13,18 @@ import { useState } from "react";
 
 const Main = () => {
   const [showModal, setShowModal] = useState(false);
+  const [showModalTerms, setShowModalTerms] = useState(false);
 
   return (
     <div>
       <About openModal={setShowModal}></About>
       <Benefits></Benefits>
-      <CallToAction></CallToAction>
+      <CallToAction openModalTerms={setShowModalTerms}></CallToAction>
       <InviteFriend></InviteFriend>
       <Capabilities openModal={setShowModal}></Capabilities>
-      <Footer></Footer>
+      <Footer openModalTerms={setShowModalTerms}></Footer>
       <Modal isVisible={showModal} onClose={() => setShowModal(false)}></Modal>
-      <ModalTerms></ModalTerms>
+      {/* <ModalTerms isVisibleTerms={showModalTerms} onClose={() => setShowModalTerms(false)}></ModalTerms> */}
     </div>
   );
 };

@@ -23,6 +23,8 @@
 }
 
 .imageBack_inner {
+  height: 412px;
+  position: relative;
   max-width: 560px;
   display: flex;
 }
@@ -44,6 +46,16 @@
   padding: 0;
 }
 
+/* .images {
+  background-image: url(../public/assets/images/call-to-action-front.png), url(../public/assets/images/call-to-action-back.png);
+  background-repeat: no-repeat, no-repeat;
+  background-position: center bottom, right bottom;
+  background-size: contain, auto 70%;
+  max-width: 560px;
+  width: 100%;
+  height: 412px;
+  border-radius: 5px;
+} */
 .title {
   display: inline-block;
   font-size: var(--title-font-size);
@@ -140,6 +152,7 @@
   text-align: top;
   vertical-align: middle;
   margin-left: -2px;
+  cursor: pointer;
 }
 
 @media (max-width: 1200px) {

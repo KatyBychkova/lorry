@@ -19,8 +19,12 @@ const Modal = ({ isVisible, onClose, children }) => {
   const [valid, setValid] = useState("");
   const [pageScroll] = useState(false);
 
-  isVisible && !pageScroll ? (document.body.style.overflow = "hidden") : (document.body.style.overflow = "auto");
-
+  // isVisible && !pageScroll ? (document.body.style.overflow = "hidden") : (document.body.style.overflow = "auto");
+  if (isVisible && !pageScroll) {
+    document.body.style.overflow = "hidden";
+  } else {
+    document.body.style.overflow = "auto";
+  }
   if (!isVisible) return null;
 
   const handleNameChange = (e) => {

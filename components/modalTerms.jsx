@@ -1,14 +1,20 @@
 "use client";
 
-import styles from "../styles/Modal.module.css";
+import styles from "../styles/ModalTerms.module.css";
 import termsContent from "../config/terms";
+import { useState } from "react";
 
-const ModalTerms = ({ isVisible, onClose, children }) => {
+const ModalTerms = ({ isVisibleTerms, onClose, children }) => {
   const { title, paragraphs, agreement } = termsContent;
+  const [pageScrollTerms] = useState(false);
 
-  // isVisible && !pageScroll ? (document.body.style.overflow = "hidden") : (document.body.style.overflow = "auto");
+  if (isVisibleTerms && !pageScrollTerms) {
+    document.body.style.overflow = "hidden";
+  } else {
+    document.body.style.overflow = "auto";
+  }
 
-  // if (!isVisible) return null;
+  if (!isVisibleTerms) return null;
 
   return (
     <div
@@ -20,21 +26,25 @@ const ModalTerms = ({ isVisible, onClose, children }) => {
       <div className={styles.container}>
         <div className={styles.wrapper}>
           <div className={styles.content} onClick={(e) => e.stopPropagation()}>
-            <h1>
-              {title.text}
-              <span>{title.attributes}</span>
-            </h1>
-
-            <div className={styles.tel}>
+            <div className={styles.title}>
+              <h1 className={styles.title_text}>
+                {title.text}
+                <span className={styles.title_attrubutes}>{title.attributes}</span>
+              </h1>
+            </div>
+            <div className={styles.paragraphs}>
               {paragraphs.map((item, index) => (
-                <div key={index}>
+                <div className={styles.paragraph} key={index}>
                   <h4>{item.title}</h4>
                   {item.points.map((point, i) => (
-                    <p key={i}>{point}</p>
+                    <p className={styles.point} key={i}>
+                      {point}
+                    </p>
                   ))}
                 </div>
               ))}
             </div>
+            <div className={styles.agreement}>{agreement}</div>
           </div>
         </div>
       </div>

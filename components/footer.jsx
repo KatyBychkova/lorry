@@ -4,7 +4,7 @@ import LogoLorryFooter from "./logoLorryFooter";
 import LogoGtFooter from "./logoGtFooter";
 import Link from "next/link";
 
-const Footer = () => {
+const Footer = ({ openModalTerms }) => {
   const { company, footer } = config;
   const { contacts, email } = company;
   const { privacy, copy } = footer;
@@ -37,7 +37,13 @@ const Footer = () => {
           </div>
           <div className={styles.terms}>
             <div className={styles.privacy}>
-              <Link className={styles.privacy_link} href={privacy.href}>
+              <Link
+                onClick={() => {
+                  openModalTerms(true);
+                }}
+                className={styles.privacy_link}
+                href={privacy.href}
+              >
                 {privacy.text}
               </Link>
             </div>

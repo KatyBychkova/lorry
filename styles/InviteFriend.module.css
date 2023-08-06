@@ -1,16 +1,13 @@
-/* .section {
-  background-color: var(--main-bg-color);
-  display: flex;
-  position: relative;
-  background-image: url(../public/assets/images/invite-friend-bg.png);
-  background-repeat: no-repeat;
-  background-size: 50%;
-  background-position: center right;
-} */
-
 .section {
   overflow: hidden;
   background-color: var(--main-bg-color);
+}
+
+.inner {
+  background-image: url(../public/assets/images/invite-friend-bg.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: right top;
 }
 
 .container {
@@ -23,26 +20,12 @@
   display: flex;
   align-items: flex-end;
   justify-content: left;
+  height: 590px;
 }
 
 .info {
   align-self: center;
   width: 500px;
-}
-
-.imageInner {
-  position: relative;
-}
-
-.imageWrapper {
-  position: relative;
-  left: 50%;
-}
-
-img.image {
-  position: relative;
-  object-fit: contain;
-  z-index: 10;
 }
 
 .title {
@@ -81,43 +64,27 @@ img.image {
   color: var(--accent-color);
 }
 
-@media screen and (max-width: 1900px) {
-  .imageWrapper {
-    left: 30%;
-  }
-}
-
-@media screen and (max-width: 1500px) {
-  .imageWrapper {
-    left: 15%;
+@media screen and (max-width: 1600px) {
+  .inner {
+    background-position: left calc(50vw - 20%) top;
   }
 }
 
 @media screen and (max-width: 1200px) {
-  .image {
+  .inner {
+    background-position: left calc(60vw - 40%) top;
+  }
+  .wrapper {
     height: 480px;
-    width: 736px;
-  }
-}
-
-@media screen and (max-width: 1100px) {
-  .imageWrapper {
-    left: 5%;
-  }
-}
-
-@media screen and (max-width: 1000px) {
-  .imageWrapper {
-    left: 0;
   }
 }
 
 @media screen and (max-width: 960px) {
-  .imageWrapper {
-    left: -10%;
+  .inner {
+    background-position: left calc(50vw - 40%) top;
   }
   .info {
-    width: 300px;
+    width: 400px;
     position: relative;
     z-index: 15;
   }
@@ -131,32 +98,28 @@ img.image {
 }
 
 @media screen and (max-width: 760px) {
-  .imageWrapper {
-    left: -15%;
+  .inner {
+    background-position: left 30vw top;
+    background-size: cover;
   }
 }
 
 @media screen and (max-width: 640px) {
+  .inner {
+    background-size: 500px;
+    background-position: center top -10%;
+    padding-bottom: 20px;
+    height: 540px;
+    overflow: hidden;
+  }
+
   .wrapper {
-    flex-direction: column-reverse;
     align-items: center;
   }
 
   .info {
-    align-self: flex-start;
-    margin-bottom: 70px;
-  }
-  .imageWrapper {
-    left: 0;
-    max-width: 500px;
-  }
-
-  .imageInner {
-    top: -30px;
-  }
-  .image {
-    height: auto;
-    width: 500px;
+    align-self: flex-end;
+    margin-bottom: 0px;
   }
 
   .text {
@@ -171,6 +134,13 @@ img.image {
 }
 
 @media screen and (max-width: 480px) {
+  .inner {
+    background-size: 430px;
+    background-position: center top -10%;
+    padding-bottom: 20px;
+    height: 490px;
+    overflow: hidden;
+  }
   .info {
     text-align: center;
     margin-bottom: 50px;

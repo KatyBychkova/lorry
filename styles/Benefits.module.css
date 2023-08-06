@@ -113,8 +113,7 @@
 .item_list li + li {
   margin: 25px 0;
 }
-
-@media (max-width: 1200px) {
+@media screen and (max-width: 1200px) {
   .item_wrapper {
     padding: 6px 20px 6px 6px;
   }
@@ -141,8 +140,7 @@
     margin: 10px 0;
   }
 }
-
-@media (max-width: 960px) {
+@media screen and (max-width: 960px) {
   .items {
     flex-wrap: wrap;
     column-gap: 15px;
@@ -158,8 +156,7 @@
     margin-bottom: 70px;
   }
 }
-
-@media (max-width: 640px) {
+@media screen and (max-width: 640px) {
   .title {
     padding-bottom: 10px;
   }
