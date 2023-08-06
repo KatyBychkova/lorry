@@ -6,11 +6,10 @@ import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/material.css";
 import inputStyles from "../styles/inputTelStyles";
 import styles from "../styles/Modal.module.css";
-import { object, string, number, date, InferType } from "yup";
+import * as yup from "yup";
 import { validator } from "../utils/validator";
-import { connect, getIn } from "formik";
 
-const ModalForm = () => {
+const ModalForm = ({ ...props }) => {
   const { modal, cities } = config;
   const { placeholderName, labelTel, placeholderTel, labelDept, submitBtnText } = modal;
   const { inputTelStylesModal } = inputStyles;
@@ -18,6 +17,9 @@ const ModalForm = () => {
   //   const [name, setName] = useState("");
   //   const [tel, setTel] = useState("");
   //   const [dept, setDept] = useState("");
+
+  const [nameDirty, setNameDirty] = useState(false);
+  const [telDirty, setTelDirty] = useState(false);
 
   const [data, setData] = useState({
     name: "",
@@ -27,11 +29,8 @@ const ModalForm = () => {
 
   const [errors, setErrors] = useState({});
 
-  const ErrorMessage = (props) => {
-    // All FormikProps available on props.formik!
-
-    const touch = getIn(props.formik.touched, props.name);
-    return touch;
+  const blurHandlerName = (e) => {
+    e.target.name == "name" ? setNameDirty(true) : null;
   };
 
   const handleNameChange = (e) => {
@@ -66,6 +65,13 @@ const ModalForm = () => {
       isRequired: {
         message: "Поле обязательно для заполнения",
       },
+      min: {
+        message: "Имя должно содержать минимум 2 символа",
+        value: 2,
+      },
+      isName: {
+        message: "Имя некорректно",
+      },
     },
     tel: {
       isRequired: {
@@ -73,6 +79,10 @@ const ModalForm = () => {
       },
       isTel: {
         message: "Номер введен некорректно",
+      },
+      min: {
+        message: "Слишком короткий номер",
+        value: 4,
       },
     },
   };
@@ -88,19 +98,26 @@ const ModalForm = () => {
     e.preventDefault();
     const isValid = validate();
     if (!isValid) return;
-    console.log([data]);
-    // console.log(Object.keys(errors).length);
+    console.log(JSON.stringify(data));
+    props.onClose();
   };
 
   return (
     <form className={styles.form} onSubmit={handleSubmit}>
-      {errors.name ? <div style={{ color: "red" }}>{errors.name}</div> : null}
-      <div className={styles.form_name}>
-        <input id="name" placeholder={placeholderName} type="text" name="name" value={data.name} error={errors.name} onChange={handleNameChange} />
+      <div className={telDirty && errors.tel ? styles.form_error : styles.form_name}>
+        <input
+          id="name"
+          placeholder={placeholderName}
+          type="text"
+          name="name"
+          value={data.name}
+          error={errors.name}
+          onChange={handleNameChange}
+          onBlur={(e) => blurHandlerName(e)}
+        />
+        {errors.name && nameDirty ? <div className={styles.error_text}>{errors.name}</div> : null}
       </div>
-
       <div className={styles.form_tel}>
-        {errors.tel ? <div style={{ color: "red" }}>{errors.tel}</div> : null}
         <label className={styles.label_tel} htmlFor="tel">
           {labelTel}
         </label>
@@ -112,11 +129,12 @@ const ModalForm = () => {
           error={errors.tel}
           onChange={handleTelChange}
           inputProps={{ required: true }}
-          inputStyle={{ ...inputTelStylesModal, autoFocus: false }}
+          inputStyle={{ ...inputTelStylesModal }}
           specialLabel={null}
+          onBlur={(e) => setTelDirty(true)}
         />
+        {telDirty && errors.tel ? <div className={styles.error_text}>{errors.tel}</div> : null}
       </div>
-
       <div className={styles.form_dept}>
         <div className={styles.label_dept}>{labelDept}</div>
         <select className={styles.depts} name="dept" onChange={handleDeptChange}>
@@ -127,9 +145,8 @@ const ModalForm = () => {
           ))}
         </select>
       </div>
-
       <div className={styles.callToAction}>
-        <button className={styles.callToAction_btn} type="submit">
+        <button className={styles.callToAction_btn} disabled={!isValid} type="submit">
           {submitBtnText}
         </button>
       </div>

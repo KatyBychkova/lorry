@@ -2,7 +2,7 @@
 
 import styles from "../styles/Modal.module.css";
 import { useEffect, useState } from "react";
-import ModalForm from "./modalForm_try_val";
+import ModalForm from "./modalForm";
 
 const Modal = ({ isVisible, onClose, children }) => {
   const [pageScroll] = useState(false);
@@ -19,9 +19,9 @@ const Modal = ({ isVisible, onClose, children }) => {
       }}
     >
       <div className={styles.container}>
-        <div className={styles.wrapper}>
-          <div className={styles.content} onClick={(e) => e.stopPropagation()}>
-            <ModalForm></ModalForm>
+        <div className={styles.wrapper} onClick={(e) => e.stopPropagation()}>
+          <div className={styles.content}>
+            <ModalForm onClose={onClose}></ModalForm>
           </div>
         </div>
       </div>

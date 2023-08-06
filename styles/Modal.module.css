@@ -1,3 +1,17 @@
+.error_text {
+  color: red;
+  font-size: 14px;
+  line-height: 16px;
+}
+
+.form_error input {
+  border: 1px solid red;
+}
+
+.form input:focus,
+.form select:focus {
+  box-shadow: 0 0 0 1px #1976d2;
+}
 .modal {
   position: fixed;
   top: 0;
@@ -103,11 +117,6 @@
   text-transform: uppercase;
   order: 4;
   margin-top: 30px;
-  min-width: 240px;
-  background-color: var(--primary-color);
-  padding: 20px 40px;
-  border-radius: 5px;
-  text-align: center;
 }
 
 .callToAction_btn {
@@ -121,6 +130,16 @@
   text-decoration: none;
   color: #fff;
   outline: none;
+  width: 100%;
+  min-width: 240px;
+  background-color: var(--primary-color);
+  padding: 20px 40px;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.callToAction .callToAction_btn:disabled {
+  background-color: #4278b16c;
 }
 
 @media screen and (max-width: 560px) {

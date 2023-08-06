@@ -15,6 +15,8 @@ const Main = () => {
   const [showModal, setShowModal] = useState(false);
   const [showModalTerms, setShowModalTerms] = useState(false);
 
+  const handleClose = () => setShowModal(false);
+
   return (
     <div>
       <About openModal={setShowModal}></About>
@@ -23,7 +25,7 @@ const Main = () => {
       <InviteFriend></InviteFriend>
       <Capabilities openModal={setShowModal}></Capabilities>
       <Footer openModalTerms={setShowModalTerms}></Footer>
-      <Modal isVisible={showModal} onClose={() => setShowModal(false)}></Modal>
+      <Modal isVisible={showModal} onClose={handleClose}></Modal>
       {/* <ModalTerms isVisibleTerms={showModalTerms} onClose={() => setShowModalTerms(false)}></ModalTerms> */}
     </div>
   );
