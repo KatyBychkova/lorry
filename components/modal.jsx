@@ -10,7 +10,9 @@ const Modal = ({ isVisible, onClose, modalType }) => {
   const typeForm = "modalForm";
   const typeTerms = "modalTerms";
 
-  isVisible && !pageScroll ? (document.body.style.overflow = "hidden") : (document.body.style.overflow = "auto");
+  isVisible && !pageScroll
+    ? ((document.body.style.overflow = "hidden"), (document.body.style.paddingRight = "22px"))
+    : ((document.body.style.overflow = "auto"), (document.body.style.paddingRight = "0")); // paddingRight задан, чтобы страница за модальным окном не дергалась из-за пропадающего/появляющегося скролла справа
 
   if (!isVisible) return null;
 
