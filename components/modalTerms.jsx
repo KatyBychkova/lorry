@@ -2,7 +2,6 @@
 
 import styles from "../styles/ModalTerms.module.css";
 import termsContent from "../config/terms";
-import { useState } from "react";
 
 const ModalTerms = ({ ...props }) => {
   const { title, paragraphs, agreement } = termsContent;
@@ -18,10 +17,10 @@ const ModalTerms = ({ ...props }) => {
             </h1>
           </div>
           <div className={styles.paragraphs}>
-            {paragraphs.map((item, index) => (
+            {paragraphs.map((paragraph, index) => (
               <div className={styles.paragraph} key={index}>
-                <h4>{item.title}</h4>
-                {item.points.map((point, i) => (
+                <h4>{paragraph.title}</h4>
+                {paragraph.points.map((point, i) => (
                   <p className={styles.point} key={i}>
                     {point}
                   </p>

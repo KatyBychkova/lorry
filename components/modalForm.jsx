@@ -6,12 +6,11 @@ import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/material.css";
 import inputStyles from "../styles/inputTelStyles";
 import styles from "../styles/Modal.module.css";
-import * as yup from "yup";
 import { validator } from "../utils/validator";
 
 const ModalForm = ({ ...props }) => {
   const { modal, cities } = config;
-  const { placeholderName, labelTel, placeholderTel, labelDept, submitBtnText } = modal;
+  const { placeholderName, labelTel, labelDept, submitBtnText } = modal;
   const { inputTelStylesModal } = inputStyles;
 
   const [nameDirty, setNameDirty] = useState(false);
@@ -20,7 +19,7 @@ const ModalForm = ({ ...props }) => {
   const [data, setData] = useState({
     name: "",
     tel: "",
-    dept: "",
+    dept: "Екатеринбург",
   });
 
   const [errors, setErrors] = useState({});
@@ -135,9 +134,9 @@ const ModalForm = ({ ...props }) => {
       <div className={styles.form_dept}>
         <div className={styles.label_dept}>{labelDept}</div>
         <select className={styles.depts} name="dept" onChange={handleDeptChange}>
-          {cities.map((item, index) => (
-            <option className={styles.item} key={`${item}-${index}`} value={item}>
-              {item}
+          {cities.map((city, index) => (
+            <option key={`${city}-${index}`} value={city}>
+              {city}
             </option>
           ))}
         </select>
