@@ -3,14 +3,14 @@ import config from "../config/index";
 import Header from "./header";
 import Image from "next/image";
 
-const About = ({ openModal }) => {
+const About = ({ openModal, setModal }) => {
   const { about } = config;
   const { titleBeforAccent, titleAccent, titleAfterAccent, subtitle, description, image } = about;
   return (
     <section className={styles.section}>
       <div className={styles.inner}>
         <div className={styles.container}>
-          <Header openModal={openModal}></Header>
+          <Header openModal={openModal} setModal={setModal}></Header>
           <h1 className={styles.title}>
             {titleBeforAccent}
             <span> {titleAccent}</span>

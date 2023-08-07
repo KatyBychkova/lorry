@@ -3,9 +3,10 @@ import config from "../config/index";
 import Link from "next/link";
 import Image from "next/image";
 
-const Capabilities = ({ openModal }) => {
+const Capabilities = ({ openModal, setModal }) => {
   const { capabilities, cities } = config;
   const { title, image, text, callToAction } = capabilities;
+  const modalType = "modalForm";
 
   return (
     <section className={styles.section}>
@@ -28,7 +29,12 @@ const Capabilities = ({ openModal }) => {
             </div>
 
             <div className={styles.callToAction}>
-              <button className={styles.callToAction_btn} onClick={() => openModal(true)}>
+              <button
+                className={styles.callToAction_btn}
+                onClick={() => {
+                  openModal(true), setModal(modalType);
+                }}
+              >
                 {callToAction.linkText}
               </button>
               {callToAction.text}

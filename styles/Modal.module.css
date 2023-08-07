@@ -18,15 +18,15 @@
   right: 0;
   bottom: 0;
   left: 0;
-  overflow-y: auto;
-  transition: opasity ease-in-out 0.3s;
   cursor: pointer;
-  width: 100%;
+  overflow-y: auto;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.6);
   z-index: 10000;
   outline: 0;
   display: block;
+  padding-left: 20px;
+  padding-right: 30px;
 }
 
 .container {

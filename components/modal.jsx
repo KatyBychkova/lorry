@@ -1,11 +1,14 @@
 "use client";
 
 import styles from "../styles/Modal.module.css";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import ModalForm from "./modalForm";
+import ModalTerms from "./modalTerms";
 
-const Modal = ({ isVisible, onClose, children }) => {
+const Modal = ({ isVisible, onClose, modalType }) => {
   const [pageScroll] = useState(false);
+  const typeForm = "modalForm";
+  const typeTerms = "modalTerms";
 
   isVisible && !pageScroll ? (document.body.style.overflow = "hidden") : (document.body.style.overflow = "auto");
 
@@ -21,7 +24,8 @@ const Modal = ({ isVisible, onClose, children }) => {
       <div className={styles.container}>
         <div className={styles.wrapper} onClick={(e) => e.stopPropagation()}>
           <div className={styles.content}>
-            <ModalForm onClose={onClose}></ModalForm>
+            {modalType === typeForm && <ModalForm onClose={onClose}></ModalForm>}
+            {modalType === typeTerms && <ModalTerms onClose={onClose}> </ModalTerms>}
           </div>
         </div>
       </div>

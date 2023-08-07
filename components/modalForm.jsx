@@ -14,10 +14,6 @@ const ModalForm = ({ ...props }) => {
   const { placeholderName, labelTel, placeholderTel, labelDept, submitBtnText } = modal;
   const { inputTelStylesModal } = inputStyles;
 
-  //   const [name, setName] = useState("");
-  //   const [tel, setTel] = useState("");
-  //   const [dept, setDept] = useState("");
-
   const [nameDirty, setNameDirty] = useState(false);
   const [telDirty, setTelDirty] = useState(false);
 
@@ -127,6 +123,7 @@ const ModalForm = ({ ...props }) => {
           name="tel"
           value={data.tel}
           error={errors.tel}
+          placeholder={placeholderName}
           onChange={handleTelChange}
           inputProps={{ required: true }}
           inputStyle={{ ...inputTelStylesModal }}

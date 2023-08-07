@@ -11,10 +11,11 @@ import inputStyles from "../styles/inputTelStyles";
 import { useForm, Controller } from "react-hook-form";
 import { ErrorMessage } from "@hookform/error-message";
 
-const CallToAction = ({ openModalTerms }) => {
+const CallToAction = ({ openModal, setModal }) => {
   const { callToAction } = config;
   const { title, imageBack, imageFront, terms, labelName, labelTel, placeholderName, placeholderTel, submitBtnText } = callToAction;
   const { inputTelStyles } = inputStyles;
+  const modalType = "modalTerms";
 
   const onSubmit = (data) => {
     console.log(JSON.stringify(data));
@@ -122,7 +123,7 @@ const CallToAction = ({ openModalTerms }) => {
                 <button
                   className={styles.terms_btn}
                   onClick={() => {
-                    openModalTerms(true);
+                    openModal(true), setModal(modalType);
                   }}
                 >
                   {terms.linkText}

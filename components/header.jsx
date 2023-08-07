@@ -3,10 +3,11 @@ import config from "../config/index";
 import LogoLorryHeader from "./logoLorryHeader";
 import Link from "next/link";
 
-const Header = ({ openModal }) => {
+const Header = ({ openModal, setModal }) => {
   const { company } = config;
   const { telegram, contacts, callToAction } = company;
   const { href } = telegram;
+  const modalType = "modalForm";
   return (
     <header className={styles.section}>
       <div className={styles.wrapper}>
@@ -31,7 +32,7 @@ const Header = ({ openModal }) => {
             <button
               className={styles.callToAction_btn}
               onClick={() => {
-                openModal(true);
+                openModal(true), setModal(modalType);
               }}
             >
               {callToAction.text}

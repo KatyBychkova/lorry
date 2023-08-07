@@ -7,26 +7,30 @@ import Capabilities from "@/components/capabilities";
 import Footer from "@/components/footer";
 import InviteFriend from "@/components/inviteFriend";
 import Modal from "@/components/modal";
-import ModalTerms from "@/components/modalTerms";
 
 import { useState } from "react";
 
 const Main = () => {
   const [showModal, setShowModal] = useState(false);
-  const [showModalTerms, setShowModalTerms] = useState(false);
+  const [modalType, setModalType] = useState(null);
 
-  const handleClose = () => setShowModal(false);
+  const handleClose = () => {
+    setShowModal(false), setModalType(null);
+  };
+
+  const handleModalType = (modalType) => {
+    setModalType(modalType);
+  };
 
   return (
     <div>
-      <About openModal={setShowModal}></About>
+      <About openModal={setShowModal} setModal={handleModalType}></About>
       <Benefits></Benefits>
-      <CallToAction openModalTerms={setShowModalTerms}></CallToAction>
+      <CallToAction openModal={setShowModal} setModal={handleModalType}></CallToAction>
       <InviteFriend></InviteFriend>
-      <Capabilities openModal={setShowModal}></Capabilities>
-      <Footer openModalTerms={setShowModalTerms}></Footer>
-      <Modal isVisible={showModal} onClose={handleClose}></Modal>
-      {/* <ModalTerms isVisibleTerms={showModalTerms} onClose={() => setShowModalTerms(false)}></ModalTerms> */}
+      <Capabilities openModal={setShowModal} setModal={handleModalType}></Capabilities>
+      <Footer openModal={setShowModal} setModal={handleModalType}></Footer>
+      <Modal isVisible={showModal} onClose={handleClose} modalType={modalType}></Modal>
     </div>
   );
 };
