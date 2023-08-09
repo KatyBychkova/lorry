@@ -13,7 +13,9 @@ const CallToAction = ({ openModal, setModal }) => {
   const { callToAction } = config;
   const { title, imageBack, imageFront, terms, labelName, labelTel, placeholderName, placeholderTel, submitBtnText } = callToAction;
   const { inputTelStyles, inputTelStylesError } = inputStyles;
-  const modalType = "modalTerms";
+
+  const typeTerms = "modalTerms";
+  const typeModalSubmitted = "modalSubmitted ";
 
   const [nameDirty, setNameDirty] = useState(false);
   const [telDirty, setTelDirty] = useState(false);
@@ -87,6 +89,7 @@ const CallToAction = ({ openModal, setModal }) => {
     const isValid = validate();
     if (!isValid) return;
     console.log(JSON.stringify(data));
+    openModal(true), setModal(typeModalSubmitted);
     // props.onClose();
   };
 
@@ -154,7 +157,7 @@ const CallToAction = ({ openModal, setModal }) => {
                 <button
                   className={styles.terms_btn}
                   onClick={() => {
-                    openModal(true), setModal(modalType);
+                    openModal(true), setModal(typeTerms);
                   }}
                 >
                   {terms.linkText}

@@ -7,11 +7,13 @@ import Capabilities from "@/components/capabilities";
 import Footer from "@/components/footer";
 import InviteFriend from "@/components/inviteFriend";
 import Modal from "@/components/modal";
+import ModalSubmitted from "@/components/modalSubmitted";
 
 import { useState } from "react";
 
 const Main = () => {
   const [showModal, setShowModal] = useState(false);
+  // const [showModalSubmitted, setShowModalSubmitted] = useState(false);
   const [modalType, setModalType] = useState(null);
 
   const handleClose = () => {
@@ -30,7 +32,7 @@ const Main = () => {
       <InviteFriend></InviteFriend>
       <Capabilities openModal={setShowModal} setModal={handleModalType}></Capabilities>
       <Footer openModal={setShowModal} setModal={handleModalType}></Footer>
-      <Modal isVisible={showModal} onClose={handleClose} modalType={modalType}></Modal>
+      <Modal isVisible={showModal} onClose={handleClose} openModal={setShowModal} setModal={handleModalType} modalType={modalType}></Modal>
     </div>
   );
 };

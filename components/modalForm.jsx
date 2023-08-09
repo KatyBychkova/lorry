@@ -8,10 +8,11 @@ import inputStyles from "../styles/inputTelStyles";
 import styles from "../styles/ModalForm.module.css";
 import { validator } from "../utils/validator";
 
-const ModalForm = ({ ...props }) => {
+const ModalForm = ({ openModalSubmitted, onClose }) => {
   const { modal, cities } = config;
   const { placeholderName, labelTel, labelDept, submitBtnText } = modal;
   const { inputTelStylesModal, inputTelStylesModalError } = inputStyles;
+  const typeModalSubmitted = "modalSubmitted ";
 
   const [nameDirty, setNameDirty] = useState(false);
   const [telDirty, setTelDirty] = useState(false);
@@ -94,7 +95,8 @@ const ModalForm = ({ ...props }) => {
     const isValid = validate();
     if (!isValid) return;
     console.log(JSON.stringify(data));
-    props.onClose();
+    onClose();
+    openModalSubmitted();
   };
 
   return (
