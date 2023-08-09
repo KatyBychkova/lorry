@@ -1,0 +1,118 @@
+.error_text {
+  color: red;
+  font-size: 14px;
+  line-height: 16px;
+}
+
+.container {
+  display: flex;
+  margin: 0 auto;
+
+  top: 20%;
+  position: relative;
+  left: auto;
+  right: auto;
+  height: max-content;
+  z-index: 1;
+  cursor: default;
+  background-color: #fff;
+}
+
+.wrapper {
+  display: flex;
+  padding: 70px 45px 40px;
+  width: auto;
+}
+
+.form {
+  max-width: 400px;
+}
+
+.form_error input {
+  border: 1px solid red;
+}
+
+.form input:focus,
+.form select:focus {
+  box-shadow: 0 0 0 1px #1976d2;
+}
+
+.form_tel {
+  font-size: 14px;
+  padding: 25px 0 15px;
+}
+
+.label_tel {
+  line-height: 4;
+}
+
+.form input::placeholder {
+  font-size: 16px;
+}
+
+.form input,
+.depts {
+  box-sizing: border-box;
+  width: 100%;
+  padding-top: 20px;
+  border: 1px solid #c9c9c9;
+  border-radius: 5px;
+  margin: 0;
+  height: 60px;
+  padding: 0 20px;
+  font-size: 20px;
+  line-height: 1.33;
+  outline: none;
+}
+
+.form input:focus,
+.form select:focus {
+  box-shadow: 0 0 0 1px #1976d2;
+}
+
+.depts {
+  cursor: pointer;
+}
+
+.label_tel {
+  line-height: 4;
+}
+
+.label_dept {
+  font-size: 20px;
+  line-height: 1.55;
+  font-weight: 300;
+  padding: 25px 10px 10px 0;
+}
+
+.callToAction {
+  text-transform: uppercase;
+  order: 4;
+  margin-top: 30px;
+}
+
+.callToAction_btn {
+  background-color: transparent;
+  border: none;
+  font-size: 20px;
+  line-height: 1.55;
+  font-weight: 500;
+  line-height: 26px;
+  cursor: pointer;
+  text-decoration: none;
+  color: #fff;
+  outline: none;
+  width: 100%;
+  min-width: 240px;
+  background-color: var(--primary-color);
+  padding: 20px 40px;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.callToAction .callToAction_btn:disabled {
+  background-color: #4278b16c;
+}
+
+@media screen and (max-width: 560px) {
+}

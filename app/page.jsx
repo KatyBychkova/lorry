@@ -26,7 +26,7 @@ const Main = () => {
     <div>
       <About openModal={setShowModal} setModal={handleModalType}></About>
       <Benefits></Benefits>
-      <CallToAction openModal={setShowModal} setModal={handleModalType}></CallToAction>
+      <CallToAction openModal={setShowModal} setModal={handleModalType} onClose={handleClose}></CallToAction>
       <InviteFriend></InviteFriend>
       <Capabilities openModal={setShowModal} setModal={handleModalType}></Capabilities>
       <Footer openModal={setShowModal} setModal={handleModalType}></Footer>

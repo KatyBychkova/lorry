@@ -8,8 +8,8 @@ const ModalTerms = ({ ...props }) => {
 
   return (
     <div className={styles.container}>
-      <div className={styles.wrapper}>
-        <div className={styles.content} onClick={(e) => e.stopPropagation()}>
+      <div className={styles.wrapper} onClick={(e) => e.stopPropagation()}>
+        <div className={styles.content}>
           <div className={styles.title}>
             <h1 className={styles.title_text}>
               {title.text}

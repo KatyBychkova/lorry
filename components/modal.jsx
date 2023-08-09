@@ -23,14 +23,9 @@ const Modal = ({ isVisible, onClose, modalType }) => {
         onClose();
       }}
     >
-      <div className={styles.container}>
-        <div className={styles.wrapper} onClick={(e) => e.stopPropagation()}>
-          <div className={styles.content}>
-            {modalType === typeForm && <ModalForm onClose={onClose}></ModalForm>}
-            {modalType === typeTerms && <ModalTerms onClose={onClose}> </ModalTerms>}
-          </div>
-        </div>
-      </div>
+      {modalType === typeForm && <ModalForm onClose={onClose}></ModalForm>}
+      {modalType === typeTerms && <ModalTerms onClose={onClose}> </ModalTerms>}
+
       <button
         className={styles.close_btn}
         onClick={() => {

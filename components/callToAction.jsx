@@ -2,38 +2,93 @@
 
 import styles from "../styles/CallToAction.module.css";
 import config from "../config/index";
-import Link from "next/link";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/material.css";
 import inputStyles from "../styles/inputTelStyles";
-import { useForm, Controller } from "react-hook-form";
-import { ErrorMessage } from "@hookform/error-message";
+import { validator } from "../utils/validator";
 
 const CallToAction = ({ openModal, setModal }) => {
   const { callToAction } = config;
   const { title, imageBack, imageFront, terms, labelName, labelTel, placeholderName, placeholderTel, submitBtnText } = callToAction;
-  const { inputTelStyles } = inputStyles;
+  const { inputTelStyles, inputTelStylesError } = inputStyles;
   const modalType = "modalTerms";
 
-  const onSubmit = (data) => {
-    console.log(JSON.stringify(data));
-    // console.log([`"${data.name}": "${data.tel}"`]);
+  const [nameDirty, setNameDirty] = useState(false);
+  const [telDirty, setTelDirty] = useState(false);
+
+  const [data, setData] = useState({
+    name: "",
+    tel: "",
+  });
+
+  const [errors, setErrors] = useState({});
+
+  const blurHandlerName = (e) => {
+    e.target.name == "name" ? setNameDirty(true) : null;
   };
 
-  const {
-    register,
-    handleSubmit,
-    control,
-    formState: { errors },
-  } = useForm({
-    defaultValues: {
-      name: "",
-      tel: "",
+  const handleNameChange = (e) => {
+    const { name, value } = e.target;
+    setData((prev) => ({
+      ...prev,
+      [name]: value,
+    }));
+  };
+
+  const handleTelChange = (value) => {
+    setData((prev) => ({
+      ...prev,
+      tel: value,
+    }));
+  };
+
+  useEffect(() => {
+    validate();
+  }, [data]);
+
+  const validatorConfig = {
+    name: {
+      isRequired: {
+        message: "Поле обязательно для заполнения",
+      },
+      min: {
+        message: "Имя должно содержать минимум 2 символа",
+        value: 2,
+      },
+      isName: {
+        message: "Имя некорректно",
+      },
     },
-    criteriaMode: "all",
-  });
+    tel: {
+      isRequired: {
+        message: "Поле обязательно для заполнения",
+      },
+      isTel: {
+        message: "Номер введен некорректно",
+      },
+      min: {
+        message: "Слишком короткий номер",
+        value: 9,
+      },
+    },
+  };
+
+  const validate = () => {
+    const errors = validator(data, validatorConfig);
+    setErrors(errors);
+    return Object.keys(errors).length === 0;
+  };
+  const isValid = Object.keys(errors).length === 0;
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const isValid = validate();
+    if (!isValid) return;
+    console.log(JSON.stringify(data));
+    // props.onClose();
+  };
 
   return (
     <section>
@@ -49,67 +104,43 @@ const CallToAction = ({ openModal, setModal }) => {
           <div className={styles.text}>
             <h1 className={styles.title}>{title}</h1>
             <div className={styles.form}>
-              <form onSubmit={handleSubmit(onSubmit)}>
-                <div className={styles.form_name}>
-                  <label className={styles.label_name} htmlFor="name">
-                    {labelName}
-                  </label>
+              <form className={styles.form} onSubmit={handleSubmit}>
+                <div className={telDirty && errors.tel ? styles.form_error : styles.form_name}>
                   <input
-                    {...register("name", {
-                      required: "Поле обязательно для заполнения",
-                    })}
                     id="name"
                     placeholder={placeholderName}
-                  />
-                  <ErrorMessage
-                    errors={errors}
+                    type="text"
                     name="name"
-                    render={({ messages }) => {
-                      console.log("messages", messages);
-                      return messages ? Object.entries(messages).map(([type, message]) => <p key={type}>{message}</p>) : null;
-                    }}
+                    value={data.name}
+                    error={errors.name}
+                    onChange={handleNameChange}
+                    onBlur={(e) => blurHandlerName(e)}
+                    style={errors.name && nameDirty ? { borderColor: "#d1274a", boxShadow: "none" } : { borderColor: "#064488" }}
                   />
+                  {errors.name && nameDirty ? <div className={styles.error_text}>{errors.name}</div> : null}
                 </div>
-
                 <div className={styles.form_tel}>
                   <label className={styles.label_tel} htmlFor="tel">
                     {labelTel}
                   </label>
-
-                  <Controller
-                    control={control}
+                  <PhoneInput
+                    id="tel"
+                    country="ru"
                     name="tel"
-                    // rules={{ required: true }}
-                    render={({ field: { ref, ...field } }) => (
-                      <PhoneInput
-                        {...field}
-                        id="tel"
-                        country="ru"
-                        name="tel"
-                        ref={register}
-                        {...register("tel", {
-                          required: "Поле обязательно для заполнения",
-                        })}
-                        // onChange={handleTelChange}
-                        inputProps={{ ref, required: true }}
-                        inputStyle={{ ...inputTelStyles }}
-                        specialLabel={null}
-                      />
-                    )}
+                    value={data.tel}
+                    error={errors.tel}
+                    onChange={handleTelChange}
+                    inputProps={{ required: true }}
+                    inputStyle={telDirty && errors.tel ? { ...inputTelStylesError } : { ...inputTelStyles }}
+                    specialLabel={null}
+                    onBlur={(e) => setTelDirty(true)}
                   />
-                  {/* <ErrorMessage
-          errors={errors}
-          name="name"
-          render={({ messages }) => {
-            console.log("messages", messages);
-            return messages ? Object.entries(messages).map(([type, message]) => <p key={type}>{message}</p>) : null;
-          }}
-        /> */}
+                  {telDirty && errors.tel ? <div className={styles.error_text}>{errors.tel}</div> : null}
                 </div>
 
                 <div className={styles.callToAction}>
                   <div>
-                    <button className={styles.callToAction_btn} type="submit">
+                    <button className={styles.callToAction_btn} disabled={!isValid} type="submit">
                       {submitBtnText}
                     </button>
                   </div>
