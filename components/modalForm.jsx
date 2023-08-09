@@ -113,7 +113,7 @@ const ModalForm = ({ openModalSubmitted, onClose }) => {
               error={errors.name}
               onChange={handleNameChange}
               onBlur={(e) => blurHandlerName(e)}
-              style={errors.name && nameDirty ? { borderColor: "#d1274a", boxShadow: "none" } : { borderColor: "#064488" }}
+              style={errors.name && nameDirty ? { borderColor: "#d1274a", boxShadow: "none" } : { borderColor: "#c9c9c9" }}
             />
             {errors.name && nameDirty ? <div className={styles.error_text}>{errors.name}</div> : null}
           </div>

@@ -1,4 +1,4 @@
-const CloseButton = () => {
+const CloseButtonIcon = () => {
   return (
     <svg class="t-form-success-popup__close-icon" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 23 23">
       <g fill-rule="evenodd">
@@ -8,4 +8,4 @@ const CloseButton = () => {
   );
 };
 
-export default CloseButton;
+export default CloseButtonIcon;

@@ -14,7 +14,7 @@
   box-sizing: border-box;
 }
 
-.close_btn {
+.close_btn button {
   position: fixed;
   right: 60px;
   top: 40px;
