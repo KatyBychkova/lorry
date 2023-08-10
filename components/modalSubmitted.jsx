@@ -1,11 +1,14 @@
 "use client";
 
 import styles from "../styles/ModalSubmitted.module.css";
+import config from "../config/index";
 import IconSubmitted from "./iconSubmitted";
 import CloseButtonIconForModalSubmitted from "./closeButtonIconForModalSubmitted";
 import CloseButtonForModal from "./closeButtonForModal";
 
 const modalSubmitted = ({ onClose }) => {
+  const { successSubmit } = config;
+  const { text } = successSubmit;
   return (
     <div className={styles.container}>
       <div className={styles.wrapper} onClick={(e) => e.stopPropagation()}>
@@ -14,7 +17,7 @@ const modalSubmitted = ({ onClose }) => {
             <IconSubmitted></IconSubmitted>
           </div>
 
-          <div className={styles.text}>Спасибо! Данные успешно отправлены!</div>
+          <div className={styles.text}>{text}</div>
 
           <div className={styles.close_btn}>
             <CloseButtonForModal onClose={onClose}>

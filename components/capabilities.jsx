@@ -1,6 +1,5 @@
 import styles from "../styles/Capabilities.module.css";
 import config from "../config/index";
-import Link from "next/link";
 import Image from "next/image";
 
 const Capabilities = ({ openModal, setModal }) => {
