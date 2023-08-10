@@ -2,7 +2,8 @@
 
 import styles from "../styles/ModalSubmitted.module.css";
 import IconSubmitted from "./iconSubmitted";
-import CloseButtonIcon from "./closeButtonIcon";
+import CloseButtonIconForModalSubmitted from "./closeButtonIconForModalSubmitted";
+import CloseButtonForModal from "./closeButtonForModal";
 
 const modalSubmitted = ({ onClose }) => {
   return (
@@ -15,14 +16,11 @@ const modalSubmitted = ({ onClose }) => {
 
           <div className={styles.text}>Спасибо! Данные успешно отправлены!</div>
 
-          <button
-            className={styles.close_btn}
-            onClick={() => {
-              onClose();
-            }}
-          >
-            <CloseButtonIcon></CloseButtonIcon>
-          </button>
+          <div className={styles.close_btn}>
+            <CloseButtonForModal onClose={onClose}>
+              <CloseButtonIconForModalSubmitted></CloseButtonIconForModalSubmitted>
+            </CloseButtonForModal>
+          </div>
         </div>
       </div>
     </div>

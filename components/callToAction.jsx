@@ -27,11 +27,6 @@ const CallToAction = ({ openModal, setModal }) => {
 
   const [data, setData] = useState(initialData);
 
-  // const [data, setData] = useState({
-  //   name: "",
-  //   tel: "",
-  // });
-
   const [errors, setErrors] = useState({});
 
   const blurHandlerName = (e) => {

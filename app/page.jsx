@@ -13,7 +13,6 @@ import { useState } from "react";
 
 const Main = () => {
   const [showModal, setShowModal] = useState(false);
-  // const [showModalSubmitted, setShowModalSubmitted] = useState(false);
   const [modalType, setModalType] = useState(null);
 
   const handleClose = () => {

@@ -10,7 +10,6 @@
   z-index: 10000;
   outline: 0;
   display: flex;
-
   box-sizing: border-box;
 }
 
@@ -35,9 +34,4 @@
     border: 2px solid red;
     display: block;
   }
-  /* 
-  .modal .container {
-    display: block;
-      width: 100vw;
-  } */
 }

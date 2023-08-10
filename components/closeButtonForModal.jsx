@@ -1,13 +1,11 @@
-import IconCloseBtnForModal from "./iconCloseBtnForModal";
-
-const CloseButtonForModal = ({ onClose }) => {
+const CloseButtonForModal = ({ onClose, children }) => {
   return (
     <button
       onClick={() => {
         onClose();
       }}
     >
-      <IconCloseBtnForModal></IconCloseBtnForModal>
+      {children}
     </button>
   );
 };

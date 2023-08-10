@@ -6,6 +6,7 @@ import ModalForm from "./modalForm";
 import ModalTerms from "./modalTerms";
 import ModalSubmitted from "./modalSubmitted";
 import CloseButtonForModal from "./closeButtonForModal";
+import CloseButtonIconForModal from "./closeButtonIconForModal";
 
 const Modal = ({ isVisible, onClose, modalType, openModal, setModal }) => {
   const [pageScroll] = useState(false);
@@ -35,7 +36,9 @@ const Modal = ({ isVisible, onClose, modalType, openModal, setModal }) => {
       {modalType === typeModalSubmitted && <ModalSubmitted onClose={onClose}> </ModalSubmitted>}
       {modalType !== typeModalSubmitted && (
         <div className={styles.close_btn}>
-          <CloseButtonForModal onClose={onClose}></CloseButtonForModal>
+          <CloseButtonForModal onClose={onClose}>
+            <CloseButtonIconForModal></CloseButtonIconForModal>
+          </CloseButtonForModal>
         </div>
       )}
     </div>
