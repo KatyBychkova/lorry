@@ -1,7 +1,7 @@
 .container {
   display: flex;
   margin: 0 auto;
-  margin-top: 70px;
+  margin-top: 40vh;
   top: 0;
   position: relative;
   left: auto;
@@ -13,8 +13,6 @@
   border-radius: 15px;
 }
 
-.wrapper {
-}
 .content {
   position: relative;
   display: flex;
@@ -40,4 +38,19 @@
   cursor: pointer;
   border: none;
   background: transparent;
+}
+
+@media screen and (max-width: 560px) {
+  div.modal {
+    padding-left: 0;
+    padding-right: 0;
+    padding-top: 70px;
+    border: 2px solid red;
+    display: block;
+  }
+
+  .container {
+    max-width: 300px;
+    margin-top: 20vh;
+  }
 }

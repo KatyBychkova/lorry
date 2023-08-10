@@ -79,6 +79,11 @@
   width: 100px;
   background-color: var(--primary-color);
 }
+.error_text {
+  color: red;
+  font-size: 14px;
+  line-height: 16px;
+}
 
 .form input {
   box-sizing: border-box;
@@ -92,7 +97,6 @@
   font-size: 20px;
   line-height: 1.33;
   outline: none;
-  margin-bottom: 20px;
 }
 .form input:focus {
   box-shadow: 0 0 0 1px #1976d2;
@@ -109,6 +113,7 @@
   font-size: 18px;
   font-weight: 700;
   padding-bottom: 5px;
+  margin-top: 20px;
 }
 
 .callToAction {
@@ -194,8 +199,9 @@
     transform: translateX(-50%);
   }
 
-  .form input {
-    margin-bottom: 15px;
+  .label_name,
+  .label_tel {
+    margin-top: 15px;
   }
 
   .callToAction {

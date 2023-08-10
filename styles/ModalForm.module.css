@@ -7,7 +7,6 @@
 .container {
   display: flex;
   margin: 0 auto;
-
   top: 20%;
   position: relative;
   left: auto;
@@ -115,4 +114,11 @@
 }
 
 @media screen and (max-width: 560px) {
+  .container {
+    top: 60px;
+    left: auto;
+    right: auto;
+    height: calc(100% - 60px);
+    z-index: 1;
+  }
 }

@@ -20,15 +20,28 @@ const CallToAction = ({ openModal, setModal }) => {
   const [nameDirty, setNameDirty] = useState(false);
   const [telDirty, setTelDirty] = useState(false);
 
-  const [data, setData] = useState({
+  const [initialData] = useState({
     name: "",
     tel: "",
   });
+
+  const [data, setData] = useState(initialData);
+
+  // const [data, setData] = useState({
+  //   name: "",
+  //   tel: "",
+  // });
 
   const [errors, setErrors] = useState({});
 
   const blurHandlerName = (e) => {
     e.target.name == "name" ? setNameDirty(true) : null;
+  };
+
+  const cleanForm = () => {
+    setNameDirty(false);
+    setTelDirty(false);
+    setData(initialData);
   };
 
   const handleNameChange = (e) => {
@@ -90,7 +103,7 @@ const CallToAction = ({ openModal, setModal }) => {
     if (!isValid) return;
     console.log(JSON.stringify(data));
     openModal(true), setModal(typeModalSubmitted);
-    // props.onClose();
+    cleanForm();
   };
 
   return (
@@ -132,6 +145,7 @@ const CallToAction = ({ openModal, setModal }) => {
                     name="tel"
                     value={data.tel}
                     error={errors.tel}
+                    placeholder={placeholderTel}
                     onChange={handleTelChange}
                     inputProps={{ required: true }}
                     inputStyle={telDirty && errors.tel ? { ...inputTelStylesError } : { ...inputTelStyles }}
