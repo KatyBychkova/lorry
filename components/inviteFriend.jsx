@@ -1,6 +1,5 @@
 import styles from "../styles/InviteFriend.module.css";
 import config from "../config/index";
-import Image from "next/image";
 import InviteFriendAccentBold from "./inviteFriendAccentBold";
 
 const InviteFriend = () => {

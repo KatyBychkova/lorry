@@ -1,4 +1,4 @@
-.modal {
+.main {
   position: fixed;
   top: 0;
   right: 0;
@@ -11,6 +11,16 @@
   outline: 0;
   display: flex;
   box-sizing: border-box;
+  animation: opacity 0.3s ease-in-out;
+}
+
+@keyframes opacity {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 .close_btn button {
@@ -27,11 +37,10 @@
 }
 
 @media screen and (max-width: 560px) {
-  div.modal {
+  div.main {
     padding-left: 0;
     padding-right: 0;
     padding-top: 60px;
-    border: 2px solid red;
     display: block;
   }
 }

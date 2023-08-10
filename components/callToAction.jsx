@@ -107,10 +107,10 @@ const CallToAction = ({ openModal, setModal }) => {
         <div className={styles.wrapper}>
           <div className={styles.images}>
             <div className={styles.imageBack_inner}>
-              <Image className={styles.imageBack} src={imageBack.src} fill sizes="(max-width: 1200px) 560" alt={imageBack.alt} priority={true}></Image>
+              <Image className={styles.imageBack} src={imageBack.src} fill sizes="(max-width: 1200px) 560" alt={imageBack.alt}></Image>
             </div>
 
-            <Image className={styles.imageFront} src={imageFront.src} width={412} height={483} alt={imageFront.alt} priority={true}></Image>
+            <Image className={styles.imageFront} src={imageFront.src} width={412} height={483} alt={imageFront.alt}></Image>
           </div>
           <div className={styles.text}>
             <h1 className={styles.title}>{title}</h1>

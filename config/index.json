@@ -27,11 +27,7 @@
       "Лорри — лидер на рынке грузоперевозок Уральского Федерального округа, сочетающий в своем бизнесе многолетнюю историю и современные тенденции перевозок. ",
       "Мы осуществляем автогрузоперевозки по РФ и ближнему зарубежью ",
       "входим в TOP-10 крупнейших автоперевозчиков."
-    ],
-    "image": {
-      "src": "/../public/assets/images/main-bg.png",
-      "alt": "мужчина около фуры"
-    }
+    ]
   },
 
   "benefits": {
@@ -92,7 +88,7 @@
       "subtitleAccentEnd": " \"",
       "bonusAccent": "10 000 рублей"
     },
-    "subtitleBeforeAccent": "В Компании действует акция:\n ",
+    "subtitleBeforeAccent": "В Компании действует акция: ",
     "subtitleAfterAccent": "Больше друзей - больше бонусов!",
     "image": {
       "src": "/../public/assets/images/invite-friend-bg.png",
@@ -124,8 +120,7 @@
     "emailIcon": "../public/assets/icons/mail.svg",
     "telIcon": "../public/assets/icons/tel.svg",
     "privacy": {
-      "text": "Политика конфиденциальности",
-      "href": "#"
+      "text": "Политика конфиденциальности"
     },
     "copy": "© 2020 Все права защищены"
   },

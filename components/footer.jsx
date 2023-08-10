@@ -38,15 +38,14 @@ const Footer = ({ openModal, setModal }) => {
           </div>
           <div className={styles.terms}>
             <div className={styles.privacy}>
-              <Link
+              <button
                 onClick={() => {
                   openModal(true), setModal(modalType);
                 }}
-                className={styles.privacy_link}
-                href={privacy.href}
+                className={styles.privacy_btn}
               >
                 {privacy.text}
-              </Link>
+              </button>
             </div>
             <div className={styles.copy}>{copy}</div>
           </div>

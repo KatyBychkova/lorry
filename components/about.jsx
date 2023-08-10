@@ -1,7 +1,6 @@
 import styles from "../styles/About.module.css";
 import config from "../config/index";
 import Header from "./header";
-import Image from "next/image";
 
 const About = ({ openModal, setModal }) => {
   const { about } = config;

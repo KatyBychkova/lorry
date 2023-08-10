@@ -1,7 +1,7 @@
 "use client";
 
 import styles from "../styles/modal/Modal.module.css";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import ModalForm from "./modal/modalForm";
 import ModalTerms from "./modal/modalTerms";
 import ModalSubmitted from "./modal/modalSubmitted";
@@ -14,9 +14,11 @@ const Modal = ({ isVisible, onClose, modalType, openModal, setModal }) => {
   const typeTerms = "modalTerms";
   const typeModalSubmitted = "modalSubmitted ";
 
-  isVisible && !pageScroll
-    ? ((document.body.style.overflow = "hidden"), (document.body.style.paddingRight = "22px"))
-    : ((document.body.style.overflow = "auto"), (document.body.style.paddingRight = "0")); // paddingRight задан, чтобы страница за модальным окном не дергалась из-за пропадающего/появляющегося скролла справа
+  useEffect(() => {
+    isVisible && !pageScroll
+      ? ((document.body.style.overflow = "hidden"), (document.body.style.paddingRight = "22px"))
+      : ((document.body.style.overflow = "auto"), (document.body.style.paddingRight = "0")); // paddingRight задан, чтобы страница за модальным окном не дергалась из-за пропадающего/появляющегося скролла справа
+  });
 
   if (!isVisible) return null;
 
@@ -26,7 +28,7 @@ const Modal = ({ isVisible, onClose, modalType, openModal, setModal }) => {
 
   return (
     <div
-      className={styles.modal}
+      className={styles.main}
       onClick={() => {
         onClose();
       }}

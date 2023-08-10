@@ -1,4 +1,4 @@
-const closeButtonIconForModal = () => {
+const CloseButtonIconForModal = () => {
   return (
     <svg width="23px" height="23px" viewBox="0 0 23 23" version="1.1">
       <g stroke="none" strokeWidth="1" fill="#fff" fillRule="evenodd">
@@ -9,4 +9,4 @@ const closeButtonIconForModal = () => {
   );
 };
 
-export default closeButtonIconForModal;
+export default CloseButtonIconForModal;
