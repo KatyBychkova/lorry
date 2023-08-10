@@ -1,12 +1,12 @@
 "use client";
 
-import config from "../config/index";
+import config from "../../config/index";
 import { useEffect, useState } from "react";
 import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/material.css";
-import inputStyles from "../styles/inputTelStyles";
-import styles from "../styles/ModalForm.module.css";
-import { validator } from "../utils/validator";
+import inputStyles from "../../styles/inputTelStyles";
+import styles from "../../styles/modal/ModalForm.module.css";
+import { validator } from "../../utils/validator";
 
 const ModalForm = ({ openModalSubmitted, onClose }) => {
   const { modal, cities } = config;

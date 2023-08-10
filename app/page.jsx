@@ -7,7 +7,6 @@ import Capabilities from "@/components/capabilities";
 import Footer from "@/components/footer";
 import InviteFriend from "@/components/inviteFriend";
 import Modal from "@/components/modal";
-import ModalSubmitted from "@/components/modalSubmitted";
 
 import { useState } from "react";
 

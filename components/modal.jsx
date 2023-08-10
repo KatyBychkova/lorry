@@ -1,12 +1,12 @@
 "use client";
 
-import styles from "../styles/Modal.module.css";
+import styles from "../styles/modal/Modal.module.css";
 import { useState } from "react";
-import ModalForm from "./modalForm";
-import ModalTerms from "./modalTerms";
-import ModalSubmitted from "./modalSubmitted";
-import CloseButtonForModal from "./closeButtonForModal";
-import CloseButtonIconForModal from "./closeButtonIconForModal";
+import ModalForm from "./modal/modalForm";
+import ModalTerms from "./modal/modalTerms";
+import ModalSubmitted from "./modal/modalSubmitted";
+import CloseButtonForModal from "./modal/closeButtonForModal";
+import CloseButtonIconForModal from "./images/iconCloseForModal";
 
 const Modal = ({ isVisible, onClose, modalType, openModal, setModal }) => {
   const [pageScroll] = useState(false);

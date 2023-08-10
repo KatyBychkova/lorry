@@ -1,7 +1,7 @@
 "use client";
 
-import styles from "../styles/ModalTerms.module.css";
-import termsContent from "../config/terms";
+import styles from "../../styles/modal/ModalTerms.module.css";
+import termsContent from "../../config/terms";
 
 const ModalTerms = ({ ...props }) => {
   const { title, paragraphs, agreement } = termsContent;

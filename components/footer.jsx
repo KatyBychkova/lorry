@@ -1,7 +1,7 @@
 import styles from "../styles/Footer.module.css";
 import config from "../config/index";
-import LogoLorryFooter from "./logoLorryFooter";
-import LogoGtFooter from "./logoGtFooter";
+import LogoLorryFooter from "./images/logoLorryFooter";
+import LogoGtFooter from "./images/logoGtFooter";
 import Link from "next/link";
 
 const Footer = ({ openModal, setModal }) => {

@@ -1,9 +1,9 @@
 "use client";
 
-import styles from "../styles/ModalSubmitted.module.css";
-import config from "../config/index";
-import IconSubmitted from "./iconSubmitted";
-import CloseButtonIconForModalSubmitted from "./closeButtonIconForModalSubmitted";
+import styles from "../../styles/modal/ModalSubmitted.module.css";
+import config from "../../config/index";
+import IconSubmitted from "../images/iconSubmitted";
+import CloseButtonIconForModalSubmitted from "../images/iconCloseForModalSubmitted";
 import CloseButtonForModal from "./closeButtonForModal";
 
 const modalSubmitted = ({ onClose }) => {

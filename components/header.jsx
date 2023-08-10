@@ -1,6 +1,6 @@
 import styles from "../styles/Header.module.css";
 import config from "../config/index";
-import LogoLorryHeader from "../components/logoLorryHeader";
+import LogoLorryHeader from "../components/images/logoLorryHeader";
 import Link from "next/link";
 
 const Header = ({ openModal, setModal }) => {
