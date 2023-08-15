@@ -1,4 +1,4 @@
-function CloseButtonForModal({ onClose, children }) {
+function CloseButton({ onClose, children }) {
     return (
         <button
             onClick={() => {
@@ -10,4 +10,4 @@ function CloseButtonForModal({ onClose, children }) {
     );
 }
 
-export default CloseButtonForModal;
+export default CloseButton;

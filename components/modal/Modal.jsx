@@ -2,13 +2,13 @@
 
 import { useEffect, useState } from 'react';
 
-import ModalForm from './modal/modalForm.jsx';
-import ModalTerms from './modal/modalTerms.jsx';
-import ModalSubmitted from './modal/modalSubmitted.jsx';
-import CloseButtonForModal from './modal/closeButtonForModal.jsx';
-import CloseButtonIconForModal from './images/iconCloseForModal.jsx';
+import ModalForm from './ModalForm.jsx';
+import ModalTerms from './ModalTerms.jsx';
+import ModalSubmitted from './ModalSubmitted.jsx';
+import CloseButton from './CloseButton.jsx';
 
-import styles from '@/styles/modal/Modal.module.css';
+import CrossIcon from '@/icons/cross.svg';
+import styles from './Modal.module.css';
 
 const typeForm = 'modalForm';
 const typeTerms = 'modalTerms';
@@ -44,9 +44,9 @@ function Modal({ isVisible, onClose, modalType, openModal, setModal }) {
             {modalType === typeModalSubmitted && <ModalSubmitted onClose={onClose}> </ModalSubmitted>}
             {modalType !== typeModalSubmitted && (
                 <div className={styles.close_btn}>
-                    <CloseButtonForModal onClose={onClose}>
-                        <CloseButtonIconForModal />
-                    </CloseButtonForModal>
+                    <CloseButton onClose={onClose}>
+                        <CrossIcon className={styles.closeCross} />
+                    </CloseButton>
                 </div>
             )}
         </div>

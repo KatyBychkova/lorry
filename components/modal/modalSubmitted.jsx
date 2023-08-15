@@ -1,11 +1,11 @@
 'use client';
 
-import CloseButtonForModal from './closeButtonForModal.jsx';
+import CloseButton from './CloseButton.jsx';
+import styles from './ModalSubmitted.module.css';
 
-import CloseButtonIconForModalSubmitted from '@/components/images/iconCloseForModalSubmitted.jsx';
+import CrossIcon from '@/icons/cross.svg';
 import IconSubmitted from '@/components/images/iconSubmitted.jsx';
 import config from '@/config/index.json';
-import styles from '@/styles/modal/ModalSubmitted.module.css';
 
 const modalSubmitted = ({ onClose }) => {
     const { successSubmit } = config;
@@ -17,13 +17,13 @@ const modalSubmitted = ({ onClose }) => {
                     <div className={styles.icon_wrapper}>
                         <IconSubmitted />
                     </div>
-
-                    <div className={styles.text}>{text}</div>
-
+                    <div className={styles.text}>
+                        {text}
+                    </div>
                     <div className={styles.close_btn}>
-                        <CloseButtonForModal onClose={onClose}>
-                            <CloseButtonIconForModalSubmitted />
-                        </CloseButtonForModal>
+                        <CloseButton onClose={onClose}>
+                            <CrossIcon className={styles.closeCross} />
+                        </CloseButton>
                     </div>
                 </div>
             </div>

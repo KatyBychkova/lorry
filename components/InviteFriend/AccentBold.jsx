@@ -1,7 +1,8 @@
-import config from '@/config/index.json';
-import styles from '@/styles/InviteFriendAccentBold.module.css';
+import styles from './AccentBold.module.css';
 
-function InviteFriendAccentBold() {
+import config from '@/config/index.json';
+
+function AccentBold() {
     const { inviteFriend } = config;
     const { inviteFriendAccentBold } = inviteFriend;
     const { subtitleAccentBegin, subtitleAccentEnd, bonusAccent } = inviteFriendAccentBold;
@@ -17,4 +18,4 @@ function InviteFriendAccentBold() {
     );
 }
 
-export default InviteFriendAccentBold;
+export default AccentBold;

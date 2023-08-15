@@ -36,6 +36,12 @@
   font-size: 36px;
 }
 
+.closeCross {
+  width: 30px;
+  height: 30px;
+  color: #fff;
+}
+
 @media screen and (max-width: 560px) {
   div.main {
     padding-left: 0;

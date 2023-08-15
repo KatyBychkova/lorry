@@ -3,11 +3,12 @@
 import { useEffect, useState } from 'react';
 import PhoneInput from 'react-phone-input-2';
 
-import config from '@/config/index.json';
 import 'react-phone-input-2/lib/material.css';
-import inputStyles from '@/styles/inputTelStyles.json';
-import styles from '@/styles/modal/ModalForm.module.css';
+import styles from './ModalForm.module.css';
+
 import { validator } from '@/utils/validator.jsx';
+import inputStyles from '@/styles/inputTelStyles.json';
+import config from '@/config/index.json';
 
 function ModalForm({ openModalSubmitted, onClose }) {
     const { modal, cities } = config;

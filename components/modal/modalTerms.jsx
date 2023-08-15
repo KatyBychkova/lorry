@@ -1,6 +1,7 @@
 'use client';
 
-import styles from '@/styles/modal/ModalTerms.module.css';
+import styles from './ModalTerms.module.css';
+
 import termsContent from '@/config/terms.json';
 
 function ModalTerms() {

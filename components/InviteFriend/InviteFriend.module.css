@@ -4,7 +4,7 @@
 }
 
 .inner {
-  background-image: url(../public/assets/images/invite-friend-bg.png);
+  background-image: url(../../public/assets/images/invite-friend-bg.png);
   background-repeat: no-repeat;
   background-size: contain;
   background-position: right top;

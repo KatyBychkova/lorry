@@ -4,7 +4,7 @@
 
 .inner {
   max-width: 1980px;
-  background-image: url(../public/assets/images/main-bg.png);
+  background-image: url(../../public/assets/images/main-bg.png);
   background-repeat: no-repeat;
   background-size: contain;
   background-position: right top;

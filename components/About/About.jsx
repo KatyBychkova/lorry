@@ -1,6 +1,6 @@
-import Header from './header.jsx';
+import styles from './About.module.css';
 
-import styles from '@/styles/About.module.css';
+import Header from '@/components/header.jsx';
 import config from '@/config/index.json';
 
 function About({ openModal, setModal }) {

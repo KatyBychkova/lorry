@@ -1,6 +1,6 @@
-import InviteFriendAccentBold from './inviteFriendAccentBold.jsx';
+import AccentBold from './AccentBold.jsx';
+import styles from './InviteFriend.module.css';
 
-import styles from '@/styles/InviteFriend.module.css';
 import config from '@/config/index.json';
 
 function InviteFriend() {
@@ -16,7 +16,7 @@ function InviteFriend() {
                             <h1 className={styles.title}>{title}</h1>
                             <div className={styles.text}>
                                 <p>{subtitleBeforeAccent}</p>
-                                <InviteFriendAccentBold />
+                                <AccentBold />
                                 <p>Больше друзей - больше бонусов!</p>
                             </div>
                         </div>
