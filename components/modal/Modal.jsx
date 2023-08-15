@@ -6,9 +6,9 @@ import ModalForm from './ModalForm.jsx';
 import ModalTerms from './ModalTerms.jsx';
 import ModalSubmitted from './ModalSubmitted.jsx';
 import CloseButton from './CloseButton.jsx';
+import styles from './Modal.module.css';
 
 import CrossIcon from '@/icons/cross.svg';
-import styles from './Modal.module.css';
 
 const typeForm = 'modalForm';
 const typeTerms = 'modalTerms';
