@@ -1,4 +1,3 @@
-"use client";
 import Main from "./page";
 import "../styles/globals.css";
 import "../styles/fonts.css";
