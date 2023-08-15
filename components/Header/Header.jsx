@@ -1,8 +1,8 @@
 import Link from 'next/link';
 
-import LogoLorryHeader from './images/logoLorryHeader.jsx';
+import LogoLorryHeader from './LogoLorryHeader.jsx';
+import styles from './Header.module.css';
 
-import styles from '@/styles/Header.module.css';
 import config from '@/config/index.json';
 
 function Header({ openModal, setModal }) {

@@ -37,7 +37,7 @@
 
 .tel::before {
   content: "";
-  background-image: url(../public/assets/icons/tel.svg);
+  background-image: url(../../public/assets/icons/tel.svg);
   background-repeat: no-repeat;
   background-size: cover;
   position: absolute;
@@ -55,7 +55,8 @@
 
 .email_link::before {
   content: "";
-  background-image: url(../public/assets/icons/mail.svg);
+
+  background-image: url(../../public/assets/icons/mail.svg);
   background-repeat: no-repeat;
   background-size: cover;
   position: absolute;

@@ -39,9 +39,17 @@ function Modal({ isVisible, onClose, modalType, openModal, setModal }) {
 
     return (
         <div className={styles.main} onClick={onClose}>
-            {modalType === typeForm && <ModalForm openModalSubmitted={handleModalSubmittedIsOpen} setModal={setModal} onClose={onClose} />}
+            {modalType === typeForm && (
+                <ModalForm
+                    openModalSubmitted={handleModalSubmittedIsOpen}
+                    setModal={setModal}
+                    onClose={onClose}
+                />
+            )}
             {modalType === typeTerms && <ModalTerms onClose={onClose} />}
-            {modalType === typeModalSubmitted && <ModalSubmitted onClose={onClose}> </ModalSubmitted>}
+            {modalType === typeModalSubmitted && (
+                <ModalSubmitted onClose={onClose}> </ModalSubmitted>
+            )}
             {modalType !== typeModalSubmitted && (
                 <div className={styles.close_btn}>
                     <CloseButton onClose={onClose}>

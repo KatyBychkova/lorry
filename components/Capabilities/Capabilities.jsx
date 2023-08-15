@@ -1,7 +1,8 @@
 import Image from 'next/image';
 
+import styles from './Capabilities.module.css';
+
 import config from '@/config/index.json';
-import styles from '@/styles/Capabilities.module.css';
 
 function Capabilities({ openModal, setModal }) {
     const { capabilities, cities } = config;
@@ -44,14 +45,7 @@ function Capabilities({ openModal, setModal }) {
 
                     <div className={styles.imageInner}>
                         <div className={styles.imageWrapper}>
-                            <Image
-                                alt={image.alt}
-                                className={styles.image}
-                                height={430}
-                                src={image.src}
-                                width={760}
-                                priority
-                            />
+                            <Image alt={image.alt} className={styles.image} height={430} src={image.src} width={760} priority />
                         </div>
                     </div>
                 </div>

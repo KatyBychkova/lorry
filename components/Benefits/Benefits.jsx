@@ -1,4 +1,5 @@
-import styles from '@/styles/Benefits.module.css';
+import styles from './Benefits.module.css';
+
 import config from '@/config/index.json';
 
 function Benefits() {

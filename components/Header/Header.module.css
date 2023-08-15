@@ -27,7 +27,7 @@
 
 .telegram::before {
   content: "";
-  background-image: url(../public/assets/icons/teleg.svg);
+  background-image: url(../../public/assets/icons/teleg.svg);
   background-repeat: no-repeat;
   background-size: cover;
   position: absolute;

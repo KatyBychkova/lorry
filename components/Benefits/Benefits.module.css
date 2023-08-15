@@ -61,7 +61,7 @@
 
 .imageStabilize::before {
   content: "";
-  background-image: url(../public/assets/images/benefits-stabilize.png);
+  background-image: url(../../public/assets/images/benefits-stabilize.png);
   background-repeat: no-repeat;
   background-size: cover;
   position: absolute;
@@ -74,7 +74,7 @@
 
 .imagerPotection::before {
   content: "";
-  background-image: url(../public/assets/images/benefits-protection.png);
+  background-image: url(../../public/assets/images/benefits-protection.png);
   background-repeat: no-repeat;
   background-size: cover;
   position: absolute;
@@ -87,7 +87,7 @@
 
 .imageComfort::before {
   content: "";
-  background-image: url(../public/assets/images/benefits-comfort.png);
+  background-image: url(../../public/assets/images/benefits-comfort.png);
   background-repeat: no-repeat;
   background-size: cover;
   position: absolute;

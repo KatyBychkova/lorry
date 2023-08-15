@@ -4,11 +4,13 @@ import Image from 'next/image';
 import { useEffect, useState } from 'react';
 import PhoneInput from 'react-phone-input-2';
 
+import inputStyles from '../../styles/inputTelStyles.json';
+import styles from './CallToAction.module.css';
+
 import config from '@/config/index.json';
 import { validator } from '@/utils/validator.jsx';
-import inputStyles from '@/styles/inputTelStyles.json';
+
 import 'react-phone-input-2/lib/material.css';
-import styles from '@/styles/CallToAction.module.css';
 
 function CallToAction({ openModal, setModal }) {
     const { callToAction } = config;
@@ -147,15 +149,27 @@ function CallToAction({ openModal, setModal }) {
                     <div className={styles.text}>
                         <h1 className={styles.title}>{title}</h1>
                         <div className={styles.form}>
-                            <form className={styles.form} onSubmit={handleSubmit}>
-                                <div className={telDirty && errors.tel ? styles.form_error : styles.form_name}>
+                            <form
+                                className={styles.form}
+                                onSubmit={handleSubmit}
+                            >
+                                <div
+                                    className={
+                                        telDirty && errors.tel
+                                            ? styles.form_error
+                                            : styles.form_name
+                                    }
+                                >
                                     <input
                                         id="name"
                                         name="name"
                                         placeholder={placeholderName}
                                         style={
                                             errors.name && nameDirty
-                                                ? { borderColor: '#d1274a', boxShadow: 'none' }
+                                                ? {
+                                                    borderColor: '#d1274a',
+                                                    boxShadow: 'none',
+                                                }
                                                 : { borderColor: '#064488' }
                                         }
                                         type="text"
@@ -163,12 +177,17 @@ function CallToAction({ openModal, setModal }) {
                                         onBlur={(e) => blurHandlerName(e)}
                                         onChange={handleNameChange}
                                     />
-                                    {errors.name && nameDirty
-                                        ? <div className={styles.error_text}>{errors.name}</div>
-                                        : null}
+                                    {errors.name && nameDirty ? (
+                                        <div className={styles.error_text}>
+                                            {errors.name}
+                                        </div>
+                                    ) : null}
                                 </div>
                                 <div className={styles.form_tel}>
-                                    <label className={styles.label_tel} htmlFor="tel">
+                                    <label
+                                        className={styles.label_tel}
+                                        htmlFor="tel"
+                                    >
                                         {labelTel}
                                     </label>
                                     <PhoneInput
@@ -176,9 +195,11 @@ function CallToAction({ openModal, setModal }) {
                                         error={errors.tel}
                                         id="tel"
                                         inputProps={{ required: true }}
-                                        inputStyle={telDirty && errors.tel
-                                            ? { ...inputTelStylesError }
-                                            : { ...inputTelStyles }}
+                                        inputStyle={
+                                            telDirty && errors.tel
+                                                ? { ...inputTelStylesError }
+                                                : { ...inputTelStyles }
+                                        }
                                         name="tel"
                                         placeholder={placeholderTel}
                                         specialLabel={null}
@@ -186,14 +207,20 @@ function CallToAction({ openModal, setModal }) {
                                         onBlur={() => setTelDirty(true)}
                                         onChange={handleTelChange}
                                     />
-                                    {telDirty && errors.tel
-                                        ? <div className={styles.error_text}>{errors.tel}</div>
-                                        : null}
+                                    {telDirty && errors.tel ? (
+                                        <div className={styles.error_text}>
+                                            {errors.tel}
+                                        </div>
+                                    ) : null}
                                 </div>
 
                                 <div className={styles.callToAction}>
                                     <div>
-                                        <button className={styles.callToAction_btn} disabled={!hasErrors} type="submit">
+                                        <button
+                                            className={styles.callToAction_btn}
+                                            disabled={!hasErrors}
+                                            type="submit"
+                                        >
                                             {submitBtnText}
                                         </button>
                                     </div>

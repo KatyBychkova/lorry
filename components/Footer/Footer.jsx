@@ -1,9 +1,9 @@
 import Link from 'next/link';
 
-import LogoLorryFooter from './images/logoLorryFooter.jsx';
-import LogoGtFooter from './images/logoGtFooter.jsx';
+import LogoLorryFooter from './LogoLorryFooter.jsx';
+import LogoGtFooter from './LogoGtFooter.jsx';
 
-import styles from '@/styles/Footer.module.css';
+import styles from '@/components/Footer/Footer.module.css';
 import config from '@/config/index.json';
 
 function Footer({ openModal, setModal }) {
@@ -27,13 +27,20 @@ function Footer({ openModal, setModal }) {
                     <div className={styles.contacts}>
                         <div className={styles.tel}>
                             {contacts.map((item) => (
-                                <Link key={item} className={styles.tel_item} href={`tel:${item}`}>
+                                <Link
+                                    key={item}
+                                    className={styles.tel_item}
+                                    href={`tel:${item}`}
+                                >
                                     {item}
                                 </Link>
                             ))}
                         </div>
                         <div className={styles.email}>
-                            <Link className={styles.email_link} href={`mailto:${email.href}`}>
+                            <Link
+                                className={styles.email_link}
+                                href={`mailto:${email.href}`}
+                            >
                                 {email.name}
                             </Link>
                         </div>

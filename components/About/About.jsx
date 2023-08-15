@@ -1,11 +1,17 @@
 import styles from './About.module.css';
 
-import Header from '@/components/header.jsx';
+import Header from '@/components/Header/Header.jsx';
 import config from '@/config/index.json';
 
 function About({ openModal, setModal }) {
     const { about } = config;
-    const { titleBeforAccent, titleAccent, titleAfterAccent, subtitle, description } = about;
+    const {
+        titleBeforAccent,
+        titleAccent,
+        titleAfterAccent,
+        subtitle,
+        description,
+    } = about;
     return (
         <section className={styles.section}>
             <div className={styles.inner}>
