@@ -1,34 +1,34 @@
-import styles from "../styles/Benefits.module.css";
-import config from "../config/index";
+import styles from '@/styles/Benefits.module.css';
+import config from '@/config/index.json';
 
-const Benefits = () => {
-  const { benefits } = config;
-  const { title, items } = benefits;
+function Benefits() {
+    const { benefits } = config;
+    const { title, items } = benefits;
 
-  return (
-    <section className={styles.container}>
-      <h1 className={styles.title}>{title}</h1>
+    return (
+        <section className={styles.container}>
+            <h1 className={styles.title}>{title}</h1>
 
-      <div className={styles.items}>
-        {items.map((item, index) => (
-          <div className={styles.item} key={`${item}-${index}`}>
-            <div className={styles.item_wrapper}>
-              <div className={styles.item_image}>
-                <div className={styles[item.imageName]}></div>
-              </div>
+            <div className={styles.items}>
+                {items.map((item) => (
+                    <div key={item.name} className={styles.item}>
+                        <div className={styles.item_wrapper}>
+                            <div className={styles.item_image}>
+                                <div className={styles[item.imageName]} />
+                            </div>
 
-              <h2 className={styles.item_title}>{item.name}</h2>
-              <ul className={styles.item_list}>
-                {item.features.map((feature) => (
-                  <li key={`${feature}-${index}`}>{feature}</li>
+                            <h2 className={styles.item_title}>{item.name}</h2>
+                            <ul className={styles.item_list}>
+                                {item.features.map((feature) => (
+                                    <li key={feature}>{feature}</li>
+                                ))}
+                            </ul>
+                        </div>
+                    </div>
                 ))}
-              </ul>
             </div>
-          </div>
-        ))}
-      </div>
-    </section>
-  );
-};
+        </section>
+    );
+}
 
 export default Benefits;

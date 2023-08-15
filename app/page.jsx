@@ -1,38 +1,41 @@
-"use client";
+'use client';
 
-import About from "@/components/about";
-import Benefits from "@/components/benefits";
-import CallToAction from "@/components/callToAction";
-import Capabilities from "@/components/capabilities";
-import Footer from "@/components/footer";
-import InviteFriend from "@/components/inviteFriend";
-import Modal from "@/components/modal";
+import { useState } from 'react';
 
-import { useState } from "react";
+import About from '@/components/about.jsx';
+import Benefits from '@/components/benefits.jsx';
+import CallToAction from '@/components/callToAction.jsx';
+import Capabilities from '@/components/capabilities.jsx';
+import Footer from '@/components/footer.jsx';
+import InviteFriend from '@/components/inviteFriend.jsx';
+import Modal from '@/components/modal.jsx';
 
-const Main = () => {
-  const [showModal, setShowModal] = useState(false);
-  const [modalType, setModalType] = useState(null);
+function Main() {
+    const [showModal, setShowModal] = useState(false);
+    const [modalType, setModalType] = useState(null);
 
-  const handleClose = () => {
-    setShowModal(false), setModalType(null);
-  };
+    const handleClose = () => {
+        setShowModal(false);
+        setModalType(null);
+    };
 
-  const handleModalType = (modalType) => {
-    setModalType(modalType);
-  };
-
-  return (
-    <div>
-      <About openModal={setShowModal} setModal={handleModalType}></About>
-      <Benefits></Benefits>
-      <CallToAction openModal={setShowModal} setModal={handleModalType} onClose={handleClose}></CallToAction>
-      <InviteFriend></InviteFriend>
-      <Capabilities openModal={setShowModal} setModal={handleModalType}></Capabilities>
-      <Footer openModal={setShowModal} setModal={handleModalType}></Footer>
-      <Modal isVisible={showModal} onClose={handleClose} openModal={setShowModal} setModal={handleModalType} modalType={modalType}></Modal>
-    </div>
-  );
-};
+    return (
+        <div>
+            <About openModal={setShowModal} setModal={setModalType} />
+            <Benefits />
+            <CallToAction openModal={setShowModal} setModal={setModalType} onClose={handleClose} />
+            <InviteFriend />
+            <Capabilities openModal={setShowModal} setModal={setModalType} />
+            <Footer openModal={setShowModal} setModal={setModalType} />
+            <Modal
+                isVisible={showModal}
+                modalType={modalType}
+                openModal={setShowModal}
+                setModal={setModalType}
+                onClose={handleClose}
+            />
+        </div>
+    );
+}
 
 export default Main;
