@@ -1,8 +1,8 @@
 import Link from 'next/link';
 
 import LogoLorryFooter from './LogoLorryFooter.jsx';
-import LogoGtFooter from './LogoGtFooter.jsx';
 
+import GlobaltruckLogoIcon from '@/icons/logo/globaltruck.svg';
 import styles from '@/components/Footer/Footer.module.css';
 import config from '@/config/index.json';
 
@@ -21,7 +21,7 @@ function Footer({ openModal, setModal }) {
                             <LogoLorryFooter />
                         </div>
                         <div className={styles.logo_gt}>
-                            <LogoGtFooter />
+                            <GlobaltruckLogoIcon height="33" />
                         </div>
                     </div>
                     <div className={styles.contacts}>
