@@ -1,6 +1,7 @@
+import { content } from '@/config/index.js';
+
 import styles from './Benefits.module.css';
 
-import { content } from '@/config/index.js';
 
 const { benefits } = content;
 const { title, items } = benefits;

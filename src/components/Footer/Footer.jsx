@@ -1,10 +1,11 @@
 import Link from 'next/link';
 
-import LogoLorryFooter from './LogoLorryFooter.jsx';
 
 import GlobaltruckLogoIcon from '@/icons/logo/globaltruck.svg';
 import styles from '@/components/Footer/Footer.module.css';
 import { content } from '@/config/index.js';
+
+import LogoLorryFooter from './LogoLorryFooter.jsx';
 
 const { company, footer } = content;
 const { contacts, email } = company;

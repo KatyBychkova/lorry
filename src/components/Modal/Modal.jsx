@@ -2,13 +2,14 @@
 
 import { useEffect, useState } from 'react';
 
+import CrossIcon from '@/icons/cross.svg';
+
 import ModalForm from './ModalForm.jsx';
 import ModalTerms from './ModalTerms.jsx';
 import ModalSubmitted from './ModalSubmitted.jsx';
 import CloseButton from './CloseButton.jsx';
 import styles from './Modal.module.css';
 
-import CrossIcon from '@/icons/cross.svg';
 
 const typeForm = 'modalForm';
 const typeTerms = 'modalTerms';

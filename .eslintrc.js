@@ -38,8 +38,6 @@ module.exports = {
         'max-len': OFF, // todo
 
         indent: [ERROR, 4],
-        'default-case': OFF,
-        'object-curly-newline': OFF,
         'import/prefer-default-export': OFF,
 
         // 'max-len': [ERROR, {
@@ -53,7 +51,7 @@ module.exports = {
         'import/order': [ERROR, {
             'newlines-between': 'always',
             pathGroups: [
-                { pattern: '~/**', group: 'external', position: 'after' },
+                { pattern: '@/**', group: 'external', position: 'after' },
                 { pattern: '*.css', group: 'sibling', position: 'after' },
             ],
             groups: [
@@ -64,24 +62,14 @@ module.exports = {
 
         // React
         'react/prop-types': OFF,
-        'react/jsx-no-bind': OFF,
-        'react/jsx-indent': OFF,
-        'react/jsx-indent-props': OFF,
         'react/react-in-jsx-scope': OFF,
-        'react/require-default-props': OFF,
         'react/button-has-type': OFF,
-        'react/no-unstable-nested-components': OFF,
         'react/jsx-sort-props': [ERROR, {
             callbacksLast: true,
             shorthandLast: true,
             ignoreCase: true,
             noSortAlphabetically: false,
             reservedFirst: true,
-        }],
-        'react/jsx-props-no-spreading': [ERROR, {
-            html: 'enforce',
-            custom: 'ignore',
-            explicitSpread: 'enforce',
         }],
     },
 };

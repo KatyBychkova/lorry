@@ -1,9 +1,10 @@
 
 
-import styles from './About.module.css';
 
 import { content } from '@/config/index.js';
 import Header from '@/components/Header/Header.jsx';
+
+import styles from './About.module.css';
 
 const { about } = content;
 const {

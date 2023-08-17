@@ -1,8 +1,9 @@
 import Image from 'next/image';
 
+import { geo, content } from '@/config/index.js'
+
 import styles from './Capabilities.module.css';
 
-import { geo, content } from '@/config/index.js'
 
 const { cities } = geo;
 const { capabilities } = content;

@@ -1,6 +1,7 @@
+import { content } from '@/config/index.js';
+
 import styles from './AccentBold.module.css';
 
-import { content } from '@/config/index.js';
 
 const { inviteFriend } = content;
 const { inviteFriendAccentBold } = inviteFriend;

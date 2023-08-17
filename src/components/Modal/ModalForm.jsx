@@ -4,11 +4,12 @@ import { useEffect, useState } from 'react';
 import PhoneInput from 'react-phone-input-2';
 
 import 'react-phone-input-2/lib/material.css';
-import styles from './ModalForm.module.css';
 
 import { validator } from '@/utils/validator.jsx';
 import inputStyles from '@/styles/inputTelStyles.json';
 import { geo, content } from '@/config/index.js';
+
+import styles from './ModalForm.module.css';
 
 const { cities } = geo;const { modal } = content;
 const { placeholderName, labelTel, labelDept, submitBtnText } = modal;

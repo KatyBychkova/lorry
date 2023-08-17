@@ -1,9 +1,10 @@
 import Link from 'next/link';
 
+import { content } from '@/config/index.js';
+
 import LogoLorryHeader from './LogoLorryHeader.jsx';
 import styles from './Header.module.css';
 
-import { content } from '@/config/index.js';
 
 const { company } = content;
 const { telegram, contacts, callToAction } = company;

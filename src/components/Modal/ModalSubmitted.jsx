@@ -1,10 +1,11 @@
 'use client';
 
+import CrossIcon from '@/icons/cross.svg';
+import IconSubmitted from '@/components/Modal/IconSubmitted.jsx';
+
 import CloseButton from './CloseButton.jsx';
 import styles from './ModalSubmitted.module.css';
 
-import CrossIcon from '@/icons/cross.svg';
-import IconSubmitted from '@/components/Modal/IconSubmitted.jsx';
 
 const modalSubmitted = ({ onClose }) => (
     <div className={styles.container}>

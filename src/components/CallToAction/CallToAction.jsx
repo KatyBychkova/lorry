@@ -4,11 +4,12 @@ import Image from 'next/image';
 import { useEffect, useState } from 'react';
 import PhoneInput from 'react-phone-input-2';
 
+import { content } from '@/config/index.js';
+import { validator } from '@/utils/validator.jsx';
+
 import inputStyles from '../../styles/inputTelStyles.json';
 import styles from './CallToAction.module.css';
 
-import { content } from '@/config/index.js';
-import { validator } from '@/utils/validator.jsx';
 
 import 'react-phone-input-2/lib/material.css';
 
