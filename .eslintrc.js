@@ -26,10 +26,9 @@ module.exports = {
     },
     extends: [
         'eslint:recommended',
-        'plugin:@next/next/recommended',
-        'next/core-web-vitals',
         'airbnb',
         'airbnb/hooks',
+        'prettier',
     ],
     rules: {
         'jsx-a11y/click-events-have-key-events': OFF, // todo
