@@ -28,6 +28,7 @@ module.exports = {
         'eslint:recommended',
         'airbnb',
         'airbnb/hooks',
+        'plugin:@next/next/recommended',
         'prettier',
     ],
     rules: {
