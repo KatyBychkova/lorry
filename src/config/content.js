@@ -1,6 +1,4 @@
-{
-    "cities": ["Екатеринбург", "Пермь", "Елабуга", "Тюмень", "Омск"],
-
+export const content = {
     "company": {
         "telegram": {
             "name": "Мы в телеграм",
@@ -123,13 +121,7 @@
     },
 
     "footer": {
-        "logoLorry": "../public/assets/images/logo-lorry-white.svg",
-        "logoGT": "../public/assets/images/logo-gt.svg",
-        "emailIcon": "../public/assets/icons/mail.svg",
-        "telIcon": "../public/assets/icons/tel.svg",
-        "privacy": {
-            "text": "Политика конфиденциальности"
-        },
+        "privacy": "Политика конфиденциальности",
         "copy": "© 2023 Все права защищены"
     },
 
@@ -139,9 +131,5 @@
         "placeholderTel": "+7 (999) 999-99-99",
         "labelDept": "Какое подразделение ближе всего к Вам",
         "submitBtnText": "Заказать звонок"
-    },
-
-    "successSubmit": {
-        "text": "Спасибо! Данные успешно отправлены!"
     }
 }

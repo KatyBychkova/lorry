@@ -1,11 +1,11 @@
 import styles from './Benefits.module.css';
 
-import config from '@/config/index.json';
+import { content } from '@/config/index.js';
+
+const { benefits } = content;
+const { title, items } = benefits;
 
 function Benefits() {
-    const { benefits } = config;
-    const { title, items } = benefits;
-
     return (
         <section className={styles.container}>
             <h1 className={styles.title}>{title}</h1>

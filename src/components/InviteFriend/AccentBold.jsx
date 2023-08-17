@@ -1,12 +1,12 @@
 import styles from './AccentBold.module.css';
 
-import config from '@/config/index.json';
+import { content } from '@/config/index.js';
+
+const { inviteFriend } = content;
+const { inviteFriendAccentBold } = inviteFriend;
+const { subtitleAccentBegin, subtitleAccentEnd, bonusAccent } = inviteFriendAccentBold;
 
 function AccentBold() {
-    const { inviteFriend } = config;
-    const { inviteFriendAccentBold } = inviteFriend;
-    const { subtitleAccentBegin, subtitleAccentEnd, bonusAccent } = inviteFriendAccentBold;
-
     return (
         <p className={styles.boldText}>
             {subtitleAccentBegin}

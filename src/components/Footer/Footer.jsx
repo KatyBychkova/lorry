@@ -4,14 +4,15 @@ import LogoLorryFooter from './LogoLorryFooter.jsx';
 
 import GlobaltruckLogoIcon from '@/icons/logo/globaltruck.svg';
 import styles from '@/components/Footer/Footer.module.css';
-import config from '@/config/index.json';
+import { content } from '@/config/index.js';
+
+const { company, footer } = content;
+const { contacts, email } = company;
+const { privacy, copy } = footer;
+
+const modalType = 'modalTerms';
 
 function Footer({ openModal, setModal }) {
-    const { company, footer } = config;
-    const { contacts, email } = company;
-    const { privacy, copy } = footer;
-    const modalType = 'modalTerms';
-
     return (
         <footer className={styles.section}>
             <div className={styles.container}>

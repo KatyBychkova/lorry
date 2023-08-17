@@ -7,28 +7,28 @@ import PhoneInput from 'react-phone-input-2';
 import inputStyles from '../../styles/inputTelStyles.json';
 import styles from './CallToAction.module.css';
 
-import config from '@/config/index.json';
+import { content } from '@/config/index.js';
 import { validator } from '@/utils/validator.jsx';
 
 import 'react-phone-input-2/lib/material.css';
 
+const { callToAction } = content;
+const {
+    title,
+    imageBack,
+    imageFront,
+    terms,
+    labelTel,
+    placeholderName,
+    placeholderTel,
+    submitBtnText,
+} = callToAction;
+const { inputTelStyles, inputTelStylesError } = inputStyles;
+
+const typeTerms = 'modalTerms';
+const typeModalSubmitted = 'modalSubmitted';
+
 function CallToAction({ openModal, setModal }) {
-    const { callToAction } = config;
-    const {
-        title,
-        imageBack,
-        imageFront,
-        terms,
-        labelTel,
-        placeholderName,
-        placeholderTel,
-        submitBtnText,
-    } = callToAction;
-    const { inputTelStyles, inputTelStylesError } = inputStyles;
-
-    const typeTerms = 'modalTerms';
-    const typeModalSubmitted = 'modalSubmitted ';
-
     const [nameDirty, setNameDirty] = useState(false);
     const [telDirty, setTelDirty] = useState(false);
 

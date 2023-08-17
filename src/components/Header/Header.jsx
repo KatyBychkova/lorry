@@ -3,14 +3,14 @@ import Link from 'next/link';
 import LogoLorryHeader from './LogoLorryHeader.jsx';
 import styles from './Header.module.css';
 
-import config from '@/config/index.json';
+import { content } from '@/config/index.js';
+
+const { company } = content;
+const { telegram, contacts, callToAction } = company;
+const { href } = telegram;
+const modalType = 'modalForm';
 
 function Header({ openModal, setModal }) {
-    const { company } = config;
-    const { telegram, contacts, callToAction } = company;
-    const { href } = telegram;
-    const modalType = 'modalForm';
-
     return (
         <header className={styles.section}>
             <div className={styles.wrapper}>

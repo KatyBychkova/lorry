@@ -8,13 +8,13 @@ import styles from './ModalForm.module.css';
 
 import { validator } from '@/utils/validator.jsx';
 import inputStyles from '@/styles/inputTelStyles.json';
-import config from '@/config/index.json';
+import { geo, content } from '@/config/index.js';
+
+const { cities } = geo;const { modal } = content;
+const { placeholderName, labelTel, labelDept, submitBtnText } = modal;
+const { inputTelStylesModal, inputTelStylesModalError } = inputStyles;
 
 function ModalForm({ openModalSubmitted, onClose }) {
-    const { modal, cities } = config;
-    const { placeholderName, labelTel, labelDept, submitBtnText } = modal;
-    const { inputTelStylesModal, inputTelStylesModalError } = inputStyles;
-
     const [nameDirty, setNameDirty] = useState(false);
     const [telDirty, setTelDirty] = useState(false);
 

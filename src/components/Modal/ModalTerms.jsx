@@ -1,8 +1,7 @@
 'use client';
 
+import termsContent from './terms.js';
 import styles from './ModalTerms.module.css';
-
-import termsContent from '@/config/terms.json';
 
 function ModalTerms() {
     const { title, paragraphs, agreement } = termsContent;

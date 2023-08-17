@@ -1,12 +1,12 @@
 import AccentBold from './AccentBold.jsx';
 import styles from './InviteFriend.module.css';
 
-import config from '@/config/index.json';
+import { content } from '@/config/index.js';
+
+const { inviteFriend } = content;
+const { title, subtitleBeforeAccent } = inviteFriend;
 
 function InviteFriend() {
-    const { inviteFriend } = config;
-    const { title, subtitleBeforeAccent } = inviteFriend;
-
     return (
         <section className={styles.section}>
             <div className={styles.inner}>
