@@ -22,10 +22,10 @@ function validate(validateMethod, data, config) {
     }
 
     if (statusValidate) {
-        return config.message
-    };
+        return config.message;
+    }
 
-    return null
+    return null;
 }
 
 export function validator(data, config) {

@@ -3,7 +3,6 @@ import { content } from '@/config/index.js';
 import AccentBold from './AccentBold.jsx';
 import styles from './InviteFriend.module.css';
 
-
 const { inviteFriend } = content;
 const { title, subtitleBeforeAccent } = inviteFriend;
 

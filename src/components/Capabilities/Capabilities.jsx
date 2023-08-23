@@ -1,13 +1,14 @@
 import Image from 'next/image';
 
-import { geo, content } from '@/config/index.js'
+import { geo, content } from '@/config/index.js';
 
 import styles from './Capabilities.module.css';
 
-
 const { cities } = geo;
 const { capabilities } = content;
-const { title, image, text, callToAction } = capabilities;
+const {
+    title, image, text, callToAction,
+} = capabilities;
 const modalType = 'modalForm';
 
 function Capabilities({ openModal, setModal }) {

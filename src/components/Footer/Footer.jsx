@@ -1,16 +1,16 @@
-import Link from "next/link";
+import Link from 'next/link';
 
-import styles from "@/components/Footer/Footer.module.css";
-import { content } from "@/config/index.js";
+import styles from '@/components/Footer/Footer.module.css';
+import { content } from '@/config/index.js';
 
-import GlobaltruckLogoIcon from "../../assets/logo/globaltruck.svg";
-import LorryBlueLogoIcon from "../../assets/logo/lorry-blue.svg";
+import GlobaltruckLogoIcon from '../../assets/logo/globaltruck.svg';
+import LorryBlueLogoIcon from '../../assets/logo/lorry-blue.svg';
 
 const { company, footer } = content;
 const { contacts, email } = company;
 const { privacy, copy } = footer;
 
-const modalType = "modalTerms";
+const modalType = 'modalTerms';
 
 function Footer({ openModal, setModal }) {
     return (

@@ -1,29 +1,31 @@
-"use client";
+'use client';
 
-import { useEffect, useState } from "react";
+import { useEffect, useState } from 'react';
 
-import CrossIcon from "../../assets/icons/cross.svg";
-import ModalForm from "./ModalForm.jsx";
-import ModalTerms from "./ModalTerms.jsx";
-import ModalSubmitted from "./ModalSubmitted.jsx";
-import CloseButton from "./CloseButton.jsx";
-import styles from "./Modal.module.css";
+import CrossIcon from '../../assets/icons/cross.svg';
+import ModalForm from './ModalForm.jsx';
+import ModalTerms from './ModalTerms.jsx';
+import ModalSubmitted from './ModalSubmitted.jsx';
+import CloseButton from './CloseButton.jsx';
+import styles from './Modal.module.css';
 
-const typeForm = "modalForm";
-const typeTerms = "modalTerms";
-const typeModalSubmitted = "modalSubmitted";
+const typeForm = 'modalForm';
+const typeTerms = 'modalTerms';
+const typeModalSubmitted = 'modalSubmitted';
 
-function Modal({ isVisible, onClose, modalType, openModal, setModal }) {
+function Modal({
+    isVisible, onClose, modalType, openModal, setModal,
+}) {
     const [pageScroll] = useState(false);
 
     useEffect(() => {
         if (isVisible && !pageScroll) {
-            document.body.style.overflow = "hidden";
-            document.body.style.paddingRight = "22px";
+            document.body.style.overflow = 'hidden';
+            document.body.style.paddingRight = '22px';
         } else {
-            document.body.style.overflow = "auto";
+            document.body.style.overflow = 'auto';
             // paddingRight задан, чтобы страница за модальным окном не дергалась из-за пропадающего/появляющегося скрола справа
-            document.body.style.paddingRight = "0";
+            document.body.style.paddingRight = '0';
         }
     });
 
