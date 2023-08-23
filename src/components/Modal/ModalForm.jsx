@@ -11,8 +11,10 @@ import { geo, content } from '@/config/index.js';
 
 import styles from './ModalForm.module.css';
 
-const { cities } = geo;const { modal } = content;
-const { placeholderName, labelTel, labelDept, submitBtnText } = modal;
+const { cities } = geo; const { modal } = content;
+const {
+    placeholderName, labelTel, labelDept, submitBtnText,
+} = modal;
 const { inputTelStylesModal, inputTelStylesModalError } = inputStyles;
 
 function ModalForm({ openModalSubmitted, onClose }) {

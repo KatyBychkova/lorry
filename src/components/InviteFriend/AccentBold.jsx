@@ -2,7 +2,6 @@ import { content } from '@/config/index.js';
 
 import styles from './AccentBold.module.css';
 
-
 const { inviteFriend } = content;
 const { inviteFriendAccentBold } = inviteFriend;
 const { subtitleAccentBegin, subtitleAccentEnd, bonusAccent } = inviteFriendAccentBold;
@@ -14,7 +13,7 @@ function AccentBold() {
             <span className={styles.colorText}>{bonusAccent}</span>
             {' '}
             {subtitleAccentEnd}
-.
+            .
         </p>
     );
 }

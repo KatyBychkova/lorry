@@ -10,7 +10,6 @@ import { validator } from '@/utils/validator.jsx';
 import inputStyles from '../../styles/inputTelStyles.json';
 import styles from './CallToAction.module.css';
 
-
 import 'react-phone-input-2/lib/material.css';
 
 const { callToAction } = content;
