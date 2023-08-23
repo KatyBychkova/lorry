@@ -3,7 +3,7 @@ import Link from "next/link";
 import { content } from "@/config/index.js";
 
 import styles from "./Header.module.css";
-import LorryWhiteLogoIcon from "../../assets/logo/lorrywhite.svg";
+import LorryWhiteLogoIcon from "../../assets/logo/lorry-white.svg";
 
 const { company } = content;
 const { telegram, contacts, callToAction } = company;

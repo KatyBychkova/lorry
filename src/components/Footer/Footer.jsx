@@ -4,7 +4,7 @@ import styles from "@/components/Footer/Footer.module.css";
 import { content } from "@/config/index.js";
 
 import GlobaltruckLogoIcon from "../../assets/logo/globaltruck.svg";
-import LorryBlueLogoIcon from "../../assets/logo/lorryblue.svg";
+import LorryBlueLogoIcon from "../../assets/logo/lorry-blue.svg";
 
 const { company, footer } = content;
 const { contacts, email } = company;
