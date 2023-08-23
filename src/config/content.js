@@ -67,11 +67,11 @@ export const content = {
     "callToAction": {
         "title": "ВОДИТЕЛЬ КАТЕГОРИИ \"Е\" ПРИСОЕДИНЯЙСЯ К НАМ",
         "imageBack": {
-            "src": "/../public/assets/images/call-to-action-back.png",
+            "src": "../public/assets/images/call-to-action-back.png",
             "alt": "фура"
         },
         "imageFront": {
-            "src": "/../public/assets/images/call-to-action-front.png",
+            "src": "../public/assets/images/call-to-action-front.png",
             "alt": "мужчина с телефоном в руке"
         },
 
@@ -97,7 +97,7 @@ export const content = {
         "subtitleBeforeAccent": "В Компании действует акция: ",
         "subtitleAfterAccent": "Больше друзей - больше бонусов!",
         "image": {
-            "src": "/../public/assets/images/invite-friend-bg.png",
+            "src": "../public/assets/images/invite-friend-bg.png",
             "alt": "мужчина дружественно протягивет руку"
         }
     },
@@ -105,7 +105,7 @@ export const content = {
     "capabilities": {
         "title": "КИЛОМЕТРЫ ВОЗМОЖНОСТЕЙ",
         "image": {
-            "src": "/../public/assets/images/capabilities-bg.png",
+            "src": "../public/assets/images/capabilities-bg.png",
             "alt": "карта России"
         },
 
