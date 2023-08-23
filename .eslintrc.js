@@ -33,12 +33,10 @@ module.exports = {
     ],
     rules: {
         indent: [ERROR, 4],
-
-        // 'max-len': [ERROR, {
-        //     code: 120,
-        //     ignoreComments: true,
-        // }],
-
+        'max-len': [ERROR, {
+            code: 120,
+            ignoreComments: true,
+        }],
         'import/extensions': ['error', 'always', {
             ignorePackages: true,
         }],

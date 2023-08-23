@@ -1,11 +1,11 @@
-import { content } from "@/config/index.js";
-import Header from "@/components/Header/Header.jsx";
+import { content } from '@/config/index.js';
+import Header from '@/components/Header/Header.jsx';
 
-import styles from "./About.module.css";
+import styles from './About.module.css';
 
 const { about } = content;
 const {
-    titleBeforAccent,
+    titleBeforeAccent,
     titleAccent,
     titleAfterAccent,
     subtitle,
@@ -19,8 +19,11 @@ function About({ openModal, setModal }) {
                 <div className={styles.container}>
                     <Header openModal={openModal} setModal={setModal} />
                     <h1 className={styles.title}>
-                        {titleBeforAccent}
-                        <span> {titleAccent}</span>
+                        {titleBeforeAccent}
+                        <span>
+                            {' '}
+                            {titleAccent}
+                        </span>
                         {titleAfterAccent}
                     </h1>
                     <h3 className={styles.subtitle}>{subtitle}</h3>
