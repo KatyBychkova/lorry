@@ -8,7 +8,7 @@
     "start": "next start",
     "lint": "next lint",
     "lint-fix": "next lint -- --fix",
-    "svgo": "svgo ./icons/**"
+    "svgo": "svgo ./src/assets/**"
   },
   "dependencies": {
     "@hookform/error-message": "^2.0.1",
