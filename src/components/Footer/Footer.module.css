@@ -1,190 +1,189 @@
 .section {
-  background-color: var(--primary-color);
-  color: #fff;
-  height: 170px;
+    background-color: var(--primary-color);
+    color: #fff;
+    height: 170px;
 }
 
 .container {
-  max-width: var(--container-width);
-  padding: 0 15px;
-  margin: 0 auto;
+    max-width: var(--container-width);
+    padding: 0 15px;
+    margin: 0 auto;
 }
 
 .wrapper {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  column-gap: 15px;
-  padding: 35px 110px 35px 0;
-  height: 90px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    column-gap: 15px;
+    padding: 35px 110px 35px 0;
+    height: 90px;
 }
 
 .logos,
 .contacts,
 .terms {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .tel {
-  display: flex;
-  flex-direction: column;
-  min-width: 145px;
-  position: relative;
-  padding-left: 30px;
+    display: flex;
+    flex-direction: column;
+    min-width: 145px;
+    position: relative;
+    padding-left: 30px;
 }
 
 .tel::before {
-  content: "";
-  background-image: url(../../public/assets/icons/tel.svg);
-  background-repeat: no-repeat;
-  background-size: cover;
-  position: absolute;
-  top: 50%;
-  left: 0;
-  width: 20px;
-  height: 20px;
-  transform: translateY(-50%);
+    content: "";
+    background-image: url(../../public/assets/icons/tel.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 20px;
+    height: 20px;
+    transform: translateY(-50%);
 }
 
 .email_link {
-  position: relative;
-  padding-left: 30px;
+    position: relative;
+    padding-left: 30px;
 }
 
 .email_link::before {
-  content: "";
-
-  background-image: url("../../icons/mail.svg");
-  background-repeat: no-repeat;
-  background-size: cover;
-  position: absolute;
-  top: 50%;
-  left: 0;
-  width: 20px;
-  height: 20px;
-  transform: translateY(-50%);
+    content: "";
+    background-image: url("../../assets/icons/mail.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 20px;
+    height: 20px;
+    transform: translateY(-50%);
 }
 .privacy_btn {
-  background-color: transparent;
-  border: none;
-  text-align: left;
-  padding: 0;
+    background-color: transparent;
+    border: none;
+    text-align: left;
+    padding: 0;
 }
 
 .tel_item,
 .email_link,
 .privacy_btn,
 .copy {
-  font-size: 14px;
-  font-weight: 400;
-  line-height: 22px;
-  text-decoration: none;
-  color: inherit;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 22px;
+    text-decoration: none;
+    color: inherit;
 }
 
 .email_link,
 .privacy_btn,
 .tel_item {
-  cursor: pointer;
+    cursor: pointer;
 }
 
 @media screen and (max-width: 1200px) {
-  .wrapper {
-    padding-right: 160px;
-  }
+    .wrapper {
+        padding-right: 160px;
+    }
 
-  .tel::before {
-    top: 12px;
-  }
+    .tel::before {
+        top: 12px;
+    }
 
-  .logo_lorry {
-    position: relative;
-    top: -18px;
-  }
+    .logo_lorry {
+        position: relative;
+        top: -18px;
+    }
 }
 
 @media screen and (max-width: 960px) {
-  .section {
-    height: 230px;
-  }
-  .wrapper {
-    flex-direction: column;
-    row-gap: 15px;
-    padding-right: 60px;
-  }
+    .section {
+        height: 230px;
+    }
+    .wrapper {
+        flex-direction: column;
+        row-gap: 15px;
+        padding-right: 60px;
+    }
 
-  .logos,
-  .contacts,
-  .terms {
-    flex-direction: row;
-    justify-content: space-between;
-    row-gap: 10px;
-  }
+    .logos,
+    .contacts,
+    .terms {
+        flex-direction: row;
+        justify-content: space-between;
+        row-gap: 10px;
+    }
 
-  .logo_lorry,
-  .logo_gt,
-  .tel,
-  .email,
-  .privacy,
-  .copy {
-    width: 210px;
-  }
+    .logo_lorry,
+    .logo_gt,
+    .tel,
+    .email,
+    .privacy,
+    .copy {
+        width: 210px;
+    }
 
-  .logo_lorry {
-    top: -8px;
-  }
+    .logo_lorry {
+        top: -8px;
+    }
 
-  .tel::before {
-    top: 50%;
-    transform: translateY(-50%);
-  }
+    .tel::before {
+        top: 50%;
+        transform: translateY(-50%);
+    }
 }
 
 @media screen and (max-width: 640px) {
-  .section {
-    height: 240px;
-  }
-  .wrapper {
-    padding-right: 0px;
-  }
+    .section {
+        height: 240px;
+    }
+    .wrapper {
+        padding-right: 0px;
+    }
 }
 
 @media screen and (max-width: 492px) {
-  .section,
-  .container {
-    height: 340px;
-    text-align: center;
-  }
+    .section,
+    .container {
+        height: 340px;
+        text-align: center;
+    }
 
-  .wrapper {
-    align-items: center;
-  }
+    .wrapper {
+        align-items: center;
+    }
 
-  .logos,
-  .contacts,
-  .terms {
-    flex-direction: column;
-    align-items: center;
-  }
+    .logos,
+    .contacts,
+    .terms {
+        flex-direction: column;
+        align-items: center;
+    }
 
-  .logo_lorry,
-  .logo_gt,
-  .tel,
-  .email,
-  .privacy,
-  .copy {
-    width: auto;
-  }
+    .logo_lorry,
+    .logo_gt,
+    .tel,
+    .email,
+    .privacy,
+    .copy {
+        width: auto;
+    }
 
-  .tel_item {
-    align-self: center;
-  }
+    .tel_item {
+        align-self: center;
+    }
 
-  .tel::before {
-    left: 18px;
-    top: 0;
-    transform: translate(0);
-  }
+    .tel::before {
+        left: 18px;
+        top: 0;
+        transform: translate(0);
+    }
 }

@@ -1,17 +1,16 @@
-import Link from 'next/link';
+import Link from "next/link";
 
+import styles from "@/components/Footer/Footer.module.css";
+import { content } from "@/config/index.js";
 
-import GlobaltruckLogoIcon from '@/icons/logo/globaltruck.svg';
-import styles from '@/components/Footer/Footer.module.css';
-import { content } from '@/config/index.js';
-
-import LogoLorryFooter from './LogoLorryFooter.jsx';
+import GlobaltruckLogoIcon from "../../assets/logo/globaltruck.svg";
+import LorryBlueLogoIcon from "../../assets/logo/lorryblue.svg";
 
 const { company, footer } = content;
 const { contacts, email } = company;
 const { privacy, copy } = footer;
 
-const modalType = 'modalTerms';
+const modalType = "modalTerms";
 
 function Footer({ openModal, setModal }) {
     return (
@@ -20,7 +19,7 @@ function Footer({ openModal, setModal }) {
                 <div className={styles.wrapper}>
                     <div className={styles.logos}>
                         <div className={styles.logo_lorry}>
-                            <LogoLorryFooter />
+                            <LorryBlueLogoIcon height="46" />
                         </div>
                         <div className={styles.logo_gt}>
                             <GlobaltruckLogoIcon height="33" />

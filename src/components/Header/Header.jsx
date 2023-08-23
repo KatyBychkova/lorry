@@ -1,22 +1,21 @@
-import Link from 'next/link';
+import Link from "next/link";
 
-import { content } from '@/config/index.js';
+import { content } from "@/config/index.js";
 
-import LogoLorryHeader from './LogoLorryHeader.jsx';
-import styles from './Header.module.css';
-
+import styles from "./Header.module.css";
+import LorryWhiteLogoIcon from "../../assets/logo/lorrywhite.svg";
 
 const { company } = content;
 const { telegram, contacts, callToAction } = company;
 const { href } = telegram;
-const modalType = 'modalForm';
+const modalType = "modalForm";
 
 function Header({ openModal, setModal }) {
     return (
         <header className={styles.section}>
             <div className={styles.wrapper}>
                 <div className={styles.logo}>
-                    <LogoLorryHeader />
+                    <LorryWhiteLogoIcon height="72" />
                 </div>
                 <div className={styles.telegram}>
                     <Link className={styles.telegram_link} href={href}>
@@ -25,7 +24,11 @@ function Header({ openModal, setModal }) {
                 </div>
                 <div className={styles.tel}>
                     {contacts.map((item) => (
-                        <Link key={item} className={styles.tel_item} href={`tel:${item}`}>
+                        <Link
+                            key={item}
+                            className={styles.tel_item}
+                            href={`tel:${item}`}
+                        >
                             {item}
                         </Link>
                     ))}
