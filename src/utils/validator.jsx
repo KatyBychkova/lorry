@@ -31,6 +31,7 @@ function validate(validateMethod, data, config) {
 export function validator(data, config) {
     const errors = {};
 
+    /* eslint-disable no-restricted-syntax, guard-for-in */
     for (const fieldName in data) {
         for (const validateMethod in config[fieldName]) {
             const error = validate(validateMethod, data[fieldName], config[fieldName][validateMethod]);
@@ -39,5 +40,7 @@ export function validator(data, config) {
             }
         }
     }
+    /* eslint-enable */
+
     return errors;
 }
