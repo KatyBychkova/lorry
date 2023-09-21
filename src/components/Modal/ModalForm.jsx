@@ -1,20 +1,19 @@
-'use client';
+"use client";
 
-import { useEffect, useState } from 'react';
-import PhoneInput from 'react-phone-input-2';
+import { useEffect, useState } from "react";
+import PhoneInput from "react-phone-input-2";
 
-import 'react-phone-input-2/lib/material.css';
+import "react-phone-input-2/lib/material.css";
 
-import { validator } from '@/utils/validator.jsx';
-import inputStyles from '@/styles/inputTelStyles.json';
-import { geo, content } from '@/config/index.js';
+import { validator } from "@/utils/validator.jsx";
+import inputStyles from "@/styles/inputTelStyles.json";
+import { geo, content } from "@/config/index.js";
 
-import styles from './ModalForm.module.css';
+import styles from "./ModalForm.module.css";
 
-const { cities } = geo; const { modal } = content;
-const {
-    placeholderName, labelTel, labelDept, submitBtnText,
-} = modal;
+const { cities } = geo;
+const { modal } = content;
+const { placeholderName, labelTel, labelDept, submitBtnText } = modal;
 const { inputTelStylesModal, inputTelStylesModalError } = inputStyles;
 
 function ModalForm({ openModalSubmitted, onClose }) {
@@ -22,15 +21,15 @@ function ModalForm({ openModalSubmitted, onClose }) {
     const [telDirty, setTelDirty] = useState(false);
 
     const [data, setData] = useState({
-        name: '',
-        tel: '',
-        dept: 'Екатеринбург',
+        name: "",
+        tel: "",
+        dept: "Екатеринбург",
     });
 
     const [errors, setErrors] = useState({});
 
     const blurHandlerName = (e) => {
-        if (e.target.name === 'name') {
+        if (e.target.name === "name") {
             setNameDirty(true);
         }
     };
@@ -61,25 +60,25 @@ function ModalForm({ openModalSubmitted, onClose }) {
     const validatorConfig = {
         name: {
             isRequired: {
-                message: 'Поле обязательно для заполнения',
+                message: "Поле обязательно для заполнения",
             },
             min: {
-                message: 'Имя должно содержать минимум 2 символа',
+                message: "Имя должно содержать минимум 2 символа",
                 value: 2,
             },
             isName: {
-                message: 'Имя некорректно',
+                message: "Имя некорректно",
             },
         },
         tel: {
             isRequired: {
-                message: 'Поле обязательно для заполнения',
+                message: "Поле обязательно для заполнения",
             },
             isTel: {
-                message: 'Номер введен некорректно',
+                message: "Номер введен некорректно",
             },
             min: {
-                message: 'Слишком короткий номер',
+                message: "Слишком короткий номер",
                 value: 9,
             },
         },
@@ -91,8 +90,6 @@ function ModalForm({ openModalSubmitted, onClose }) {
         return Object.keys(validatorErrors).length === 0;
     };
 
-    const hasErrors = Object.keys(errors).length === 0;
-
     useEffect(() => {
         validate();
     }, [data]);
@@ -102,6 +99,7 @@ function ModalForm({ openModalSubmitted, onClose }) {
         const isValid = validate();
 
         if (!isValid) {
+            setTelDirty(true);
             return;
         }
 
@@ -114,22 +112,40 @@ function ModalForm({ openModalSubmitted, onClose }) {
 
     return (
         <div className={styles.container}>
-            <div className={styles.wrapper} onClick={(e) => e.stopPropagation()}>
+            <div
+                className={styles.wrapper}
+                onClick={(e) => e.stopPropagation()}
+            >
                 <form className={styles.form} onSubmit={handleSubmit}>
-                    <div className={telDirty && errors.tel ? styles.form_error : styles.form_name}>
+                    <div
+                        className={
+                            telDirty && errors.tel
+                                ? styles.form_error
+                                : styles.form_name
+                        }
+                    >
                         <input
                             id="name"
                             name="name"
                             placeholder={placeholderName}
-                            style={errors.name && nameDirty
-                                ? { borderColor: '#d1274a', boxShadow: 'none' }
-                                : { borderColor: '#c9c9c9' }}
+                            style={
+                                errors.name && nameDirty
+                                    ? {
+                                          borderColor: "#d1274a",
+                                          boxShadow: "none",
+                                      }
+                                    : { borderColor: "#c9c9c9" }
+                            }
                             type="text"
                             value={data.name}
                             onBlur={(e) => blurHandlerName(e)}
                             onChange={handleNameChange}
                         />
-                        {errors.name && nameDirty ? <div className={styles.error_text}>{errors.name}</div> : null}
+                        {errors.name && nameDirty ? (
+                            <div className={styles.error_text}>
+                                {errors.name}
+                            </div>
+                        ) : null}
                     </div>
                     <div className={styles.form_tel}>
                         <label className={styles.label_tel} htmlFor="tel">
@@ -140,9 +156,11 @@ function ModalForm({ openModalSubmitted, onClose }) {
                             error={errors.tel}
                             id="tel"
                             inputProps={{ required: true }}
-                            inputStyle={telDirty && errors.tel
-                                ? { ...inputTelStylesModalError }
-                                : { ...inputTelStylesModal }}
+                            inputStyle={
+                                telDirty && errors.tel
+                                    ? { ...inputTelStylesModalError }
+                                    : { ...inputTelStylesModal }
+                            }
                             name="tel"
                             placeholder={placeholderName}
                             specialLabel={null}
@@ -150,11 +168,19 @@ function ModalForm({ openModalSubmitted, onClose }) {
                             onBlur={() => setTelDirty(true)}
                             onChange={handleTelChange}
                         />
-                        {telDirty && errors.tel ? <div className={styles.error_text}>{errors.tel}</div> : null}
+                        {telDirty && errors.tel ? (
+                            <div className={styles.error_text}>
+                                {errors.tel}
+                            </div>
+                        ) : null}
                     </div>
                     <div className={styles.form_dept}>
                         <div className={styles.label_dept}>{labelDept}</div>
-                        <select className={styles.depts} name="dept" onChange={handleDeptChange}>
+                        <select
+                            className={styles.depts}
+                            name="dept"
+                            onChange={handleDeptChange}
+                        >
                             {cities.map((city) => (
                                 <option key={city} value={city}>
                                     {city}
@@ -163,7 +189,10 @@ function ModalForm({ openModalSubmitted, onClose }) {
                         </select>
                     </div>
                     <div className={styles.callToAction}>
-                        <button className={styles.callToAction_btn} disabled={!hasErrors} type="submit">
+                        <button
+                            className={styles.callToAction_btn}
+                            type="submit"
+                        >
                             {submitBtnText}
                         </button>
                     </div>
