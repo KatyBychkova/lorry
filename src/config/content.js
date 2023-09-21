@@ -33,8 +33,7 @@ export const content = {
         items: [
             {
                 name: 'стабильность',
-                imageName: 'imageStabilize',
-                icon: '../public/assets/images/benefits-stabilize.png',
+                icon: '/images/benefits-stabilize.png',
                 features: [
                     '■ компания входит в группу компаний GT Globaltruck, являющейся одной из системообразующих организаций страны',
                     '■ стабильный доход от 130.000 рублей с фиксированными датами выплат',
@@ -43,8 +42,7 @@ export const content = {
             },
             {
                 name: 'БЕЗОПАСНОСТЬ',
-                imageName: 'imagerPotection',
-                icon: '../public/assets/images/benefits-protection.png',
+                icon: '/images/benefits-protection.png',
                 features: [
                     '■ техническая и информационная поддержка в пути',
                     '■ поддержка водителей в сложных жизненных ситуациях',
@@ -53,8 +51,7 @@ export const content = {
             },
             {
                 name: 'КОМФОРТ',
-                imageName: 'imageComfort',
-                icon: '../public/assets/images/benefits-comfort.png',
+                icon: '/images/benefits-comfort.png',
                 features: [
                     '■ собственный автопарк',
                     '■ различные графики работы',
@@ -70,11 +67,6 @@ export const content = {
             src: '/../assets/images/call-to-action-back.png',
             alt: 'фура',
         },
-        imageFront: {
-            src: '/../assets/images/call-to-action-front.png',
-            alt: 'мужчина с телефоном в руке',
-        },
-
         labelName: 'Ваше имя',
         labelTel: 'Телефон',
         placeholderName: 'Ваше имя',

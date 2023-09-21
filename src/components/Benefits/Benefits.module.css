@@ -37,20 +37,20 @@
   column-gap: 40px;
 }
 
-.item_wrapper {
+.item {
+    width: 360px;
+    text-align: left;
+    border-radius: 6px;
+    border-color: transparent;
+    border-style: solid;
+    box-shadow: 0px 0px 10px 0px rgba(48, 48, 48, 0.2);
+}
+
+.itemWrapper {
   padding: 15px 25px 15px 15px;
 }
 
-.item {
-  width: 360px;
-  text-align: left;
-  border-radius: 6px;
-  border-color: transparent;
-  border-style: solid;
-  box-shadow: 0px 0px 10px 0px rgba(48, 48, 48, 0.2);
-}
-
-.item_image {
+.itemImage {
   width: 120px;
   height: 120px;
   background-color: var(--primary-color);
@@ -59,53 +59,26 @@
   margin-bottom: 20px;
 }
 
-.imageStabilize::before {
-  content: "";
-  background-image: url(../../public/assets/images/benefits-stabilize.png);
-  background-repeat: no-repeat;
-  background-size: cover;
-  position: absolute;
-  width: 80px;
-  height: 80px;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+.itemIcon {
+    content: "";
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
-.imagerPotection::before {
-  content: "";
-  background-image: url(../../public/assets/images/benefits-protection.png);
-  background-repeat: no-repeat;
-  background-size: cover;
-  position: absolute;
-  width: 80px;
-  height: 80px;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-
-.imageComfort::before {
-  content: "";
-  background-image: url(../../public/assets/images/benefits-comfort.png);
-  background-repeat: no-repeat;
-  background-size: cover;
-  position: absolute;
-  width: 80px;
-  height: 80px;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-
-.item_title {
+.itemTitle {
   text-transform: uppercase;
   font-size: 24px;
   font-weight: 800;
   margin-bottom: 20px;
 }
 
-.item_list {
+.itemList {
   text-decoration: none;
   font-weight: 500;
 }
