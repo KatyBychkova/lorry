@@ -1,145 +1,163 @@
 .container {
-  max-width: var(--container-width);
-  padding: 0 15px;
-  margin: 0 auto;
-  text-align: center;
-  margin-bottom: 85px;
+    max-width: var(--container-width);
+    margin: 0 auto;
+    margin-bottom: 85px;
+    padding: 0 15px;
+
+    text-align: center;
 }
 
 .title {
-  display: inline-block;
-  font-size: var(--title-font-size);
-  line-height: var(--title-line-height);
-  font-weight: 800;
-  text-decoration: none solid rgb(48, 48, 48);
-  letter-spacing: normal;
-  position: relative;
-  padding-top: 90px;
-  padding-bottom: 15px;
-  margin-bottom: 40px;
-  text-transform: uppercase;
+    position: relative;
+
+    display: inline-block;
+    margin-bottom: 40px;
+    padding-top: 90px;
+    padding-bottom: 15px;
+
+    font-weight: 800;
+    font-size: var(--title-font-size);
+    line-height: var(--title-line-height);
+    letter-spacing: normal;
+    text-transform: uppercase;
+    text-decoration: none solid rgb(48, 48, 48);
 }
 
 .title::after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  height: 3px;
-  width: 100px;
-  background-color: var(--primary-color);
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+
+    width: 100px;
+    height: 3px;
+
+    background-color: var(--primary-color);
+    transform: translateX(-50%);
+
+    content: "";
 }
 
 .items {
-  display: flex;
-  justify-content: center;
-  column-gap: 40px;
+    display: flex;
+    justify-content: center;
+
+    column-gap: 40px;
 }
 
 .item {
     width: 360px;
+
     text-align: left;
-    border-radius: 6px;
+
     border-color: transparent;
     border-style: solid;
+    border-radius: 6px;
     box-shadow: 0px 0px 10px 0px rgba(48, 48, 48, 0.2);
 }
 
 .itemWrapper {
-  padding: 15px 25px 15px 15px;
+    padding: 15px 25px 15px 15px;
 }
 
 .itemImage {
-  width: 120px;
-  height: 120px;
-  background-color: var(--primary-color);
-  border-radius: 5% 5% 0 5%;
-  position: relative;
-  margin-bottom: 20px;
+    position: relative;
+
+    width: 120px;
+    height: 120px;
+    margin-bottom: 20px;
+
+    background-color: var(--primary-color);
+    border-radius: 5% 5% 0 5%;
 }
 
 .itemIcon {
-    content: "";
-    background-repeat: no-repeat;
-    background-size: cover;
     position: absolute;
-    width: 80px;
-    height: 80px;
     top: 50%;
     left: 50%;
+
+    width: 80px;
+    height: 80px;
+
+    background-repeat: no-repeat;
+    background-size: cover;
     transform: translate(-50%, -50%);
+
+    content: "";
 }
 
 .itemTitle {
-  text-transform: uppercase;
-  font-size: 24px;
-  font-weight: 800;
-  margin-bottom: 20px;
+    margin-bottom: 20px;
+
+    font-weight: 800;
+    font-size: 24px;
+    text-transform: uppercase;
 }
 
 .itemList {
-  text-decoration: none;
-  font-weight: 500;
+    font-weight: 500;
+    text-decoration: none;
 }
 
 .item_list li + li {
-  margin: 25px 0;
+    margin: 25px 0;
 }
 @media screen and (max-width: 1200px) {
-  .item_wrapper {
-    padding: 6px 20px 6px 6px;
-  }
-  .items {
-    column-gap: 20px;
-  }
+    .item_wrapper {
+        padding: 6px 20px 6px 6px;
+    }
+    .items {
+        column-gap: 20px;
+    }
 
-  .title {
-    padding-top: 55px;
-    margin-bottom: 25px;
-  }
+    .title {
+        margin-bottom: 25px;
+        padding-top: 55px;
+    }
 
-  .item_title {
-    text-transform: uppercase;
-    font-size: 20px;
-    margin-bottom: 6px;
-  }
+    .item_title {
+        margin-bottom: 6px;
 
-  .item_list {
-    font-size: 14px;
-  }
+        font-size: 20px;
+        text-transform: uppercase;
+    }
 
-  .item_list li + li {
-    margin: 10px 0;
-  }
+    .item_list {
+        font-size: 14px;
+    }
+
+    .item_list li + li {
+        margin: 10px 0;
+    }
 }
 @media screen and (max-width: 960px) {
-  .items {
-    flex-wrap: wrap;
-    column-gap: 15px;
-    row-gap: 30px;
-    justify-content: start;
-  }
+    .items {
+        flex-wrap: wrap;
+        justify-content: start;
 
-  .item {
-    width: 280px;
-  }
+        column-gap: 15px;
+        row-gap: 30px;
+    }
 
-  .container {
-    margin-bottom: 70px;
-  }
+    .item {
+        width: 280px;
+    }
+
+    .container {
+        margin-bottom: 70px;
+    }
 }
 @media screen and (max-width: 640px) {
-  .title {
-    padding-bottom: 10px;
-  }
+    .title {
+        padding-bottom: 10px;
+    }
 
-  .items {
-    row-gap: 30px;
-    justify-content: start;
-  }
+    .items {
+        row-gap: 30px;
 
-  .item {
-    width: 460px;
-  }
+        justify-content: start;
+    }
+
+    .item {
+        width: 460px;
+    }
 }

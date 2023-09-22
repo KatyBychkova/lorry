@@ -1,13 +1,13 @@
 .section {
-    overflow: hidden;
     padding-top: 30px;
     padding-bottom: 70px;
+    overflow: hidden;
 }
 
 .container {
     max-width: var(--container-width);
-    padding: 0 15px;
     margin: 0 auto;
+    padding: 0 15px;
 }
 
 .wrapper {
@@ -23,32 +23,38 @@
 
 .text {
     width: 500px;
+
     font-size: 18px;
 }
 
 .title {
-    font-size: var(--title-font-size);
-    line-height: var(--title-line-height);
-    font-weight: 800;
-    text-decoration: none solid rgb(48, 48, 48);
-    letter-spacing: normal;
     position: relative;
+    bottom: -70px;
+
+    max-width: 500px;
+    margin-bottom: 30px;
     padding-top: 70px;
     padding-bottom: 15px;
-    margin-bottom: 30px;
-    bottom: -70px;
-    max-width: 500px;
+
+    font-weight: 800;
+    font-size: var(--title-font-size);
+    line-height: var(--title-line-height);
+    letter-spacing: normal;
     text-transform: uppercase;
+    text-decoration: none solid rgb(48, 48, 48);
 }
 
 .title::after {
-    content: "";
     position: absolute;
     bottom: 0;
     left: 0;
-    height: 3px;
+
     width: 100px;
+    height: 3px;
+
     background-color: var(--primary-color);
+
+    content: "";
 }
 
 .cities {
@@ -58,19 +64,24 @@
 
 .cities_item {
     position: relative;
-    padding-left: 18px;
-    font-size: 18px;
+
     margin-top: 2px;
+    padding-left: 18px;
+
+    font-size: 18px;
 }
 
 .cities_item::before {
-    content: "";
     position: absolute;
     bottom: 6px;
     left: 0;
+
     width: 8px;
     height: 8px;
+
     background-color: var(--font-color);
+
+    content: "";
 }
 
 .text_bottom {
@@ -78,18 +89,21 @@
 }
 
 .callToAction_btn {
+    padding: 0;
+
+    color: var(--primary-color);
+    font-weight: 700;
+    font-size: 18px;
+    text-decoration: solid underline currentColor 1px;
+
     background-color: transparent;
     border: none;
-    font-weight: 700;
-    color: var(--primary-color);
-    font-size: 18px;
     cursor: pointer;
-    text-decoration: solid underline currentColor 1px;
-    padding: 0;
 }
 
 .imageInner {
     position: relative;
+
     width: 500px;
 }
 
@@ -100,21 +114,23 @@
 
 img.image {
     position: relative;
-    object-fit: contain;
     z-index: 10;
+
     width: auto;
     height: auto;
+    object-fit: contain;
 }
 
 @media screen and (max-width: 1200px) {
     .section {
-        overflow: hidden;
         padding-top: 0px;
         padding-bottom: 70px;
+        overflow: hidden;
     }
 
     .text {
         width: 380px;
+
         font-size: 16px;
         line-height: 21px;
     }
@@ -125,9 +141,11 @@ img.image {
 
     .cities_item {
         position: relative;
-        padding-left: 14px;
-        font-size: 16px;
+
         margin-top: 0px;
+        padding-left: 14px;
+
+        font-size: 16px;
     }
 
     .cities_item::before {
@@ -144,17 +162,18 @@ img.image {
     }
 
     .image {
-        width: 600px;
         left: -25px;
+
+        width: 600px;
     }
 }
 
 @media screen and (max-width: 960px) {
     .wrapper {
         display: flex;
+        flex-direction: column-reverse;
         align-items: center;
         justify-content: left;
-        flex-direction: column-reverse;
     }
 
     .title {
@@ -170,13 +189,14 @@ img.image {
     }
 
     .info {
-        margin: 0;
         align-self: start;
+        margin: 0;
     }
 
     .image {
-        max-width: 620px;
         left: 0;
+
+        max-width: 620px;
     }
 }
 
@@ -185,23 +205,27 @@ img.image {
         padding-bottom: 40px;
     }
     .title {
-        padding-bottom: 10px;
-        width: 320px;
         top: 35px;
+
+        width: 320px;
+        padding-bottom: 10px;
     }
 
     .text {
         width: 460px;
+
         font-size: 14px;
         line-height: 18px;
     }
 
     .cities_item {
         padding-left: 14px;
+
         font-size: 14px;
     }
     .cities_item::before {
         bottom: 4px;
+
         width: 7px;
         height: 7px;
     }
@@ -215,8 +239,9 @@ img.image {
 
     .image,
     .imageInner {
-        max-width: 460px;
         left: 0;
+
+        max-width: 460px;
     }
 
     .image {
@@ -226,29 +251,35 @@ img.image {
 
 @media screen and (max-width: 480px) {
     .title {
-        padding-bottom: 10px;
-        width: 320px;
         top: 35px;
+
+        width: 320px;
+        padding-bottom: 10px;
     }
 
     .title::after {
-        height: 2px;
         left: 50%;
+
+        height: 2px;
+
         transform: translateX(-50%);
     }
 
     .text {
         width: 320px;
+
         font-size: 14px;
         line-height: 18px;
     }
 
     .cities_item {
         padding-left: 14px;
+
         font-size: 14px;
     }
     .cities_item::before {
         bottom: 4px;
+
         width: 7px;
         height: 7px;
     }
@@ -262,8 +293,9 @@ img.image {
 
     .image,
     .imageInner {
-        max-width: 320px;
         left: 0;
+
+        max-width: 320px;
     }
 
     .image {

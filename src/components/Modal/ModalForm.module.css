@@ -1,27 +1,30 @@
 .error_text {
+    margin-top: 3px;
+
     color: red;
     font-size: 14px;
     line-height: 16px;
-    margin-top: 3px;
 }
 
 .container {
-    display: flex;
-    margin: 0 auto;
-    top: 20%;
     position: relative;
-    left: auto;
+    top: 20%;
     right: auto;
-    height: max-content;
+    left: auto;
     z-index: 1;
-    cursor: default;
+
+    display: flex;
+    height: max-content;
+    margin: 0 auto;
+
     background-color: #fff;
+    cursor: default;
 }
 
 .wrapper {
     display: flex;
-    padding: 70px 45px 40px;
     width: auto;
+    padding: 70px 45px 40px;
 }
 
 .form {
@@ -38,8 +41,9 @@
 }
 
 .form_tel {
-    font-size: 14px;
     padding: 25px 0 15px;
+
+    font-size: 14px;
 }
 
 .label_tel {
@@ -54,14 +58,16 @@
 .depts {
     box-sizing: border-box;
     width: 100%;
-    padding-top: 20px;
-    border: 1px solid #c9c9c9;
-    border-radius: 5px;
-    margin: 0;
     height: 60px;
+    margin: 0;
     padding: 0 20px;
+    padding-top: 20px;
+
     font-size: 20px;
     line-height: 1.33;
+
+    border: 1px solid #c9c9c9;
+    border-radius: 5px;
     outline: none;
 }
 
@@ -79,35 +85,39 @@
 }
 
 .label_dept {
+    padding: 25px 10px 10px 0;
+
+    font-weight: 300;
     font-size: 20px;
     line-height: 1.55;
-    font-weight: 300;
-    padding: 25px 10px 10px 0;
 }
 
 .callToAction {
-    text-transform: uppercase;
     order: 4;
     margin-top: 30px;
+
+    text-transform: uppercase;
 }
 
 .callToAction_btn {
-    background-color: transparent;
-    border: none;
-    font-size: 20px;
-    line-height: 1.55;
-    font-weight: 500;
-    line-height: 26px;
-    cursor: pointer;
-    text-decoration: none;
-    color: #fff;
-    outline: none;
     width: 100%;
     min-width: 240px;
-    background-color: var(--primary-color);
     padding: 20px 40px;
-    border-radius: 5px;
+
+    color: #fff;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 1.55;
+    line-height: 26px;
     text-align: center;
+    text-decoration: none;
+
+    background-color: transparent;
+    background-color: var(--primary-color);
+    border: none;
+    border-radius: 5px;
+    outline: none;
+    cursor: pointer;
 }
 
 .callToAction .callToAction_btn:disabled {
@@ -117,9 +127,10 @@
 @media screen and (max-width: 560px) {
     .container {
         top: 60px;
-        left: auto;
         right: auto;
-        height: calc(100% - 60px);
+        left: auto;
         z-index: 1;
+
+        height: calc(100% - 60px);
     }
 }

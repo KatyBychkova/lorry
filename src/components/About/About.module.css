@@ -4,29 +4,31 @@
 
 .inner {
     max-width: 1980px;
+    margin: 0 auto;
+    padding-bottom: 95px;
+
     background-image: url(../../assets/images/main-bg.png);
     background-repeat: no-repeat;
-    background-size: contain;
     background-position: right top;
-    padding-bottom: 95px;
-    margin: 0 auto;
+    background-size: contain;
 }
 
 .container {
     max-width: var(--container-width);
-    padding: 0 15px;
     margin: 0 auto;
+    padding: 0 15px;
     overflow: hidden;
 }
 
 .title {
-    text-transform: uppercase;
-    font-size: 56px;
-    font-weight: 800;
-    line-height: 56px;
-    color: var(--primary-color);
     max-width: 840px;
     margin-bottom: 20px;
+
+    color: var(--primary-color);
+    font-weight: 800;
+    font-size: 56px;
+    line-height: 56px;
+    text-transform: uppercase;
 }
 
 .title span {
@@ -34,19 +36,21 @@
 }
 
 .subtitle {
-    font-size: 24px;
-    font-weight: 700;
-    line-height: 31px;
-    color: var(--accent-color);
     max-width: 450px;
     margin-bottom: 30px;
+
+    color: var(--accent-color);
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 31px;
 }
 
 .description {
-    font-size: 20px;
-    font-weight: 500;
-    line-height: 26px;
     max-width: 580px;
+
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 26px;
 }
 @media screen and (max-width: 1980px) {
     .inner {
@@ -59,36 +63,41 @@
     }
 
     .title {
+        max-width: 570px;
+
         font-size: 40px;
         line-height: 40px;
-        max-width: 570px;
     }
 
     .subtitle,
     .description {
+        max-width: 450px;
+
         font-size: 16px;
         line-height: 21px;
-        max-width: 450px;
     }
 }
 @media screen and (max-width: 960px) {
     .inner {
-        background-position: 30vw top;
         padding-bottom: 155px;
+
+        background-position: 30vw top;
         background-size: cover;
     }
 
     .title {
+        max-width: 470px;
+
         font-size: 36px;
         line-height: 36px;
-        max-width: 470px;
     }
 
     .subtitle,
     .description {
+        max-width: 380px;
+
         font-size: 16px;
         line-height: 21px;
-        max-width: 380px;
     }
 }
 @media screen and (max-width: 750px) {
@@ -106,22 +115,25 @@
         min-height: 950px;
     }
     .inner {
-        background-size: 100%;
-        background-position: center bottom;
         padding-bottom: 0;
+
+        background-position: center bottom;
+        background-size: 100%;
     }
 
     .title {
+        max-width: 100%;
+
         font-size: 32px;
         line-height: 32px;
-        max-width: 100%;
     }
 
     .subtitle,
     .description {
+        max-width: 100%;
+
         font-size: 16px;
         line-height: 21px;
-        max-width: 100%;
     }
 
     .subtitle {
@@ -129,8 +141,8 @@
     }
 
     .description {
-        padding-left: 20px;
         padding-bottom: 15px;
+        padding-left: 20px;
     }
 }
 @media screen and (max-width: 540px) {

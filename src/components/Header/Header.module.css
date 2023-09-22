@@ -1,9 +1,10 @@
 .section {
-    background-color: transparent;
     max-width: var(--container-width);
+    margin: 0 auto;
     padding-top: 50px;
     padding-bottom: 60px;
-    margin: 0 auto;
+
+    background-color: transparent;
 }
 
 .wrapper {
@@ -12,38 +13,43 @@
 }
 
 .logo {
+    order: 1;
     width: 164px;
     height: 72px;
-    order: 1;
     margin-right: 35px;
 }
 
 .telegram {
     position: relative;
-    padding-left: 32px;
-    order: 2;
+
     flex: 0 1 560px;
+    order: 2;
+    padding-left: 32px;
 }
 
 .telegram::before {
-    content: "";
-    background-image: url(../../assets/icons/telegram.svg);
-    background-repeat: no-repeat;
-    background-size: cover;
     position: absolute;
     top: 4px;
     left: 0;
+
     width: 20px;
     height: 20px;
+
+    background-image: url(../../assets/icons/telegram.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    content: "";
 }
 
 .telegram_link {
-    font-size: 18px;
-    font-weight: 700;
-    line-height: 28px;
-    cursor: pointer;
-    text-decoration: none;
     color: var(--font-color);
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 28px;
+    text-decoration: none;
+
+    cursor: pointer;
 }
 
 .tel {
@@ -54,13 +60,15 @@
 }
 
 .tel_item {
-    font-size: 18px;
-    font-weight: 700;
-    line-height: 28px;
-    cursor: pointer;
-    text-decoration: none;
-    color: var(--minor-color);
     align-self: end;
+
+    color: var(--minor-color);
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 28px;
+    text-decoration: none;
+
+    cursor: pointer;
 }
 
 .callToAction {
@@ -69,22 +77,25 @@
 }
 
 .callToAction div {
-    background-color: var(--minor-color);
     padding: 14px 40px;
+
+    background-color: var(--minor-color);
     border-radius: 5px;
 }
 
 .callToAction_btn {
     min-width: 180px;
+
+    color: var(--primary-color);
+    font-weight: 800;
+    font-size: 17px;
+    line-height: 26px;
     text-transform: uppercase;
+    text-decoration: none;
+
     background-color: transparent;
     border: none;
-    font-size: 17px;
-    font-weight: 800;
-    line-height: 26px;
     cursor: pointer;
-    text-decoration: none;
-    color: var(--primary-color);
 }
 
 @media (max-width: 960px) {
@@ -94,10 +105,10 @@
         align-items: center;
     }
     .telegram {
-        padding-left: 32px;
-        order: 4;
         flex: 0 1 560px;
+        order: 4;
         margin-top: 15px;
+        padding-left: 32px;
     }
 
     .callToAction {
@@ -106,8 +117,9 @@
     }
 
     .callToAction div {
-        background-color: var(--primary-color);
         padding: 14px 32px;
+
+        background-color: var(--primary-color);
         border-radius: 5px;
     }
 
@@ -138,8 +150,8 @@
     }
 
     .telegram {
-        order: 3;
         flex: 0 1 200px;
+        order: 3;
     }
     .tel {
         order: 4;
@@ -172,10 +184,10 @@
     }
 
     .telegram {
-        order: 2;
         flex: 0 1 100px;
-        padding-left: 25px;
+        order: 2;
         margin: 0;
+        padding-left: 25px;
     }
     .tel {
         order: 1;

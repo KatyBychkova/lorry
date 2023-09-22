@@ -1,22 +1,25 @@
 .section {
-    background-color: var(--primary-color);
-    color: #fff;
     height: 170px;
+
+    color: #fff;
+
+    background-color: var(--primary-color);
 }
 
 .container {
     max-width: var(--container-width);
-    padding: 0 15px;
     margin: 0 auto;
+    padding: 0 15px;
 }
 
 .wrapper {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    column-gap: 15px;
-    padding: 35px 110px 35px 0;
     height: 90px;
+    padding: 35px 110px 35px 0;
+
+    column-gap: 15px;
 }
 
 .logos,
@@ -28,59 +31,69 @@
 }
 
 .tel {
+    position: relative;
+
     display: flex;
     flex-direction: column;
     min-width: 145px;
-    position: relative;
     padding-left: 30px;
 }
 
 .tel::before {
-    content: "";
-    background-image: url(../../assets/icons/telephone.svg);
-    background-repeat: no-repeat;
-    background-size: cover;
     position: absolute;
     top: 50%;
     left: 0;
+
     width: 20px;
     height: 20px;
+
+    background-image: url(../../assets/icons/telephone.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
     transform: translateY(-50%);
+
+    content: "";
 }
 
 .email_link {
     position: relative;
+
     padding-left: 30px;
 }
 
 .email_link::before {
-    content: "";
-    background-image: url("../../assets/icons/mail.svg");
-    background-repeat: no-repeat;
-    background-size: cover;
     position: absolute;
     top: 50%;
     left: 0;
+
     width: 20px;
     height: 20px;
+
+    background-image: url("../../assets/icons/mail.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
     transform: translateY(-50%);
+
+    content: "";
 }
 .privacy_btn {
+    padding: 0;
+
+    text-align: left;
+
     background-color: transparent;
     border: none;
-    text-align: left;
-    padding: 0;
 }
 
 .tel_item,
 .email_link,
 .privacy_btn,
 .copy {
-    font-size: 14px;
+    color: inherit;
     font-weight: 400;
+    font-size: 14px;
     line-height: 22px;
     text-decoration: none;
-    color: inherit;
 }
 
 .email_link,
@@ -111,6 +124,7 @@
     .wrapper {
         flex-direction: column;
         row-gap: 15px;
+
         padding-right: 60px;
     }
 
@@ -137,6 +151,7 @@
 
     .tel::before {
         top: 50%;
+
         transform: translateY(-50%);
     }
 }
@@ -154,6 +169,7 @@
     .section,
     .container {
         height: 340px;
+
         text-align: center;
     }
 
@@ -182,8 +198,9 @@
     }
 
     .tel::before {
-        left: 18px;
         top: 0;
+        left: 18px;
+
         transform: translate(0);
     }
 }
