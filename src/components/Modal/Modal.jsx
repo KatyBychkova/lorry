@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
+import { lock as scrollLock, unlock as scrollUnlock } from 'tua-body-scroll-lock';
 
 import CrossIcon from '../../assets/icons/cross.svg';
 import ModalForm from './ModalForm.jsx';
@@ -16,16 +17,11 @@ const typeModalSubmitted = 'modalSubmitted';
 function Modal({
     isVisible, onClose, modalType, openModal, setModal,
 }) {
-    const [pageScroll] = useState(false);
-
     useEffect(() => {
-        if (isVisible && !pageScroll) {
-            document.body.style.overflow = 'hidden';
-            document.body.style.paddingRight = '22px';
+        if (isVisible) {
+            scrollLock();
         } else {
-            document.body.style.overflow = 'auto';
-            // paddingRight задан, чтобы страница за модальным окном не дергалась из-за пропадающего/появляющегося скрола справа
-            document.body.style.paddingRight = '0';
+            scrollUnlock();
         }
     });
 
