@@ -1,23 +1,22 @@
-"use client";
+'use client';
 
-import Image from "next/image";
-import { useEffect, useState } from "react";
-import PhoneInput from "react-phone-input-2";
+import Image from 'next/image';
+import { useEffect, useState } from 'react';
+import PhoneInput from 'react-phone-input-2';
 
-import { content } from "@/config/index.js";
-import { validator } from "@/utils/validator.jsx";
-import callToActionFrontImage from "@/assets/images/call-to-action-front.png";
-import callToActionBackImage from "@/assets/images/call-to-action-back.png";
-import inputStyles from "@/styles/inputTelStyles.json";
+import { content } from '@/config/index.js';
+import { validator } from '@/utils/validator.jsx';
+import callToActionFrontImage from '@/assets/images/call-to-action-front.png';
+import callToActionBackImage from '@/assets/images/call-to-action-back.png';
+import inputStyles from '@/styles/inputTelStyles.json';
 
-import styles from "./CallToAction.module.css";
+import styles from './CallToAction.module.css';
 
-import "react-phone-input-2/lib/material.css";
+import 'react-phone-input-2/lib/material.css';
 
 const { callToAction } = content;
 const {
     title,
-    imageBack,
     terms,
     labelTel,
     placeholderName,
@@ -26,16 +25,16 @@ const {
 } = callToAction;
 const { inputTelStyles, inputTelStylesError } = inputStyles;
 
-const typeTerms = "modalTerms";
-const typeModalSubmitted = "modalSubmitted";
+const typeTerms = 'modalTerms';
+const typeModalSubmitted = 'modalSubmitted';
 
 function CallToAction({ openModal, setModal }) {
     const [nameDirty, setNameDirty] = useState(false);
     const [telDirty, setTelDirty] = useState(false);
 
     const [initialData] = useState({
-        name: "",
-        tel: "",
+        name: '',
+        tel: '',
     });
 
     const [data, setData] = useState(initialData);
@@ -43,7 +42,7 @@ function CallToAction({ openModal, setModal }) {
     const [errors, setErrors] = useState({});
 
     const blurHandlerName = (e) => {
-        if (e.target.name === "name") {
+        if (e.target.name === 'name') {
             setNameDirty(true);
         }
     };
@@ -72,25 +71,25 @@ function CallToAction({ openModal, setModal }) {
     const validatorConfig = {
         name: {
             isRequired: {
-                message: "Поле обязательно для заполнения",
+                message: 'Поле обязательно для заполнения',
             },
             min: {
-                message: "Имя должно содержать минимум 2 символа",
+                message: 'Имя должно содержать минимум 2 символа',
                 value: 2,
             },
             isName: {
-                message: "Имя некорректно",
+                message: 'Имя некорректно',
             },
         },
         tel: {
             isRequired: {
-                message: "Поле обязательно для заполнения",
+                message: 'Поле обязательно для заполнения',
             },
             isTel: {
-                message: "Номер введен некорректно",
+                message: 'Номер введен некорректно',
             },
             min: {
-                message: "Слишком короткий номер",
+                message: 'Слишком короткий номер',
                 value: 9,
             },
         },
@@ -168,10 +167,10 @@ function CallToAction({ openModal, setModal }) {
                                         style={
                                             errors.name && nameDirty
                                                 ? {
-                                                      borderColor: "#d1274a",
-                                                      boxShadow: "none",
-                                                  }
-                                                : { borderColor: "#064488" }
+                                                    borderColor: '#d1274a',
+                                                    boxShadow: 'none',
+                                                }
+                                                : { borderColor: '#064488' }
                                         }
                                         type="text"
                                         value={data.name}
