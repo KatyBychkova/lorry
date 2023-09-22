@@ -194,6 +194,7 @@ function CallToAction({ openModal, setModal }) {
                                         country="ru"
                                         error={errors.tel}
                                         id="tel"
+                                        inputClass={styles.phone}
                                         inputProps={{ required: true }}
                                         inputStyle={
                                             telDirty && errors.tel

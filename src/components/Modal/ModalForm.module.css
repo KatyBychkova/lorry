@@ -28,7 +28,7 @@
 }
 
 .form {
-    max-width: 400px;
+    max-width: 600px;
 }
 
 .form_error input {
@@ -44,10 +44,6 @@
     padding: 25px 0 15px;
 
     font-size: 14px;
-}
-
-.label_tel {
-    line-height: 4;
 }
 
 .form input::placeholder {
@@ -79,7 +75,7 @@
 }
 
 .label_tel {
-    line-height: 4;
+    line-height: 3;
 }
 
 .label_dept {
