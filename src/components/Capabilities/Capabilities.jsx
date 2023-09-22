@@ -1,15 +1,14 @@
-import Image from 'next/image';
+import Image from "next/image";
 
-import { geo, content } from '@/config/index.js';
+import { geo, content } from "@/config/index.js";
 
-import styles from './Capabilities.module.css';
+import styles from "./Capabilities.module.css";
+import capabilitiesBgImage from "@/assets/images/capabilities-bg.png";
 
 const { cities } = geo;
 const { capabilities } = content;
-const {
-    title, image, text, callToAction,
-} = capabilities;
-const modalType = 'modalForm';
+const { title, image, text, callToAction } = capabilities;
+const modalType = "modalForm";
 
 function Capabilities({ openModal, setModal }) {
     return (
@@ -23,12 +22,17 @@ function Capabilities({ openModal, setModal }) {
                                 <p className={styles.text_top}>{text.top}</p>
                                 <ul className={styles.cities}>
                                     {cities.map((city) => (
-                                        <p key={city} className={styles.cities_item}>
+                                        <p
+                                            key={city}
+                                            className={styles.cities_item}
+                                        >
                                             {city}
                                         </p>
                                     ))}
                                 </ul>
-                                <p className={styles.text_bottom}>{text.bottom}</p>
+                                <p className={styles.text_bottom}>
+                                    {text.bottom}
+                                </p>
                             </div>
                         </div>
 
@@ -48,7 +52,14 @@ function Capabilities({ openModal, setModal }) {
 
                     <div className={styles.imageInner}>
                         <div className={styles.imageWrapper}>
-                            <Image alt={image.alt} className={styles.image} height={430} src={image.src} width={760} priority />
+                            <Image
+                                alt="карта России"
+                                className={styles.image}
+                                height={430}
+                                src={capabilitiesBgImage}
+                                width={760}
+                                priority
+                            />
                         </div>
                     </div>
                 </div>

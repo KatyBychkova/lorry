@@ -1,21 +1,19 @@
-'use client';
+"use client";
 
-import { useEffect, useState } from 'react';
-import PhoneInput from 'react-phone-input-2';
+import { useEffect, useState } from "react";
+import PhoneInput from "react-phone-input-2";
 
-import 'react-phone-input-2/lib/material.css';
+import "react-phone-input-2/lib/material.css";
 
-import { validator } from '@/utils/validator.jsx';
-import inputStyles from '@/styles/inputTelStyles.json';
-import { geo, content } from '@/config/index.js';
+import { validator } from "@/utils/validator.jsx";
+import inputStyles from "@/styles/inputTelStyles.json";
+import { geo, content } from "@/config/index.js";
 
-import styles from './ModalForm.module.css';
+import styles from "./ModalForm.module.css";
 
 const { cities } = geo;
 const { modal } = content;
-const {
-    placeholderName, labelTel, labelDept, submitBtnText,
-} = modal;
+const { placeholderName, labelTel, labelDept, submitBtnText } = modal;
 const { inputTelStylesModal, inputTelStylesModalError } = inputStyles;
 
 function ModalForm({ openModalSubmitted, onClose }) {
@@ -23,15 +21,15 @@ function ModalForm({ openModalSubmitted, onClose }) {
     const [telDirty, setTelDirty] = useState(false);
 
     const [data, setData] = useState({
-        name: '',
-        tel: '',
-        dept: 'Екатеринбург',
+        name: "",
+        tel: "",
+        dept: "Екатеринбург",
     });
 
     const [errors, setErrors] = useState({});
 
     const blurHandlerName = (e) => {
-        if (e.target.name === 'name') {
+        if (e.target.name === "name") {
             setNameDirty(true);
         }
     };
@@ -62,25 +60,25 @@ function ModalForm({ openModalSubmitted, onClose }) {
     const validatorConfig = {
         name: {
             isRequired: {
-                message: 'Поле обязательно для заполнения',
+                message: "Поле обязательно для заполнения",
             },
             min: {
-                message: 'Имя должно содержать минимум 2 символа',
+                message: "Имя должно содержать минимум 2 символа",
                 value: 2,
             },
             isName: {
-                message: 'Имя некорректно',
+                message: "Имя некорректно",
             },
         },
         tel: {
             isRequired: {
-                message: 'Поле обязательно для заполнения',
+                message: "Поле обязательно для заполнения",
             },
             isTel: {
-                message: 'Номер введен некорректно',
+                message: "Номер введен некорректно",
             },
             min: {
-                message: 'Слишком короткий номер',
+                message: "Слишком короткий номер",
                 value: 9,
             },
         },
@@ -101,6 +99,7 @@ function ModalForm({ openModalSubmitted, onClose }) {
         const isValid = validate();
 
         if (!isValid) {
+            setNameDirty(true);
             setTelDirty(true);
             return;
         }
@@ -133,10 +132,10 @@ function ModalForm({ openModalSubmitted, onClose }) {
                             style={
                                 errors.name && nameDirty
                                     ? {
-                                        borderColor: '#d1274a',
-                                        boxShadow: 'none',
-                                    }
-                                    : { borderColor: '#c9c9c9' }
+                                          borderColor: "#d1274a",
+                                          boxShadow: "none",
+                                      }
+                                    : { borderColor: "#c9c9c9" }
                             }
                             type="text"
                             value={data.name}
